@@ -1,0 +1,11 @@
+*/*-lock.json
+*/node_modules
+*.sqlite
+*.lock
+*target
+*.db
+**.DS_Store
+*.DS_Store
+/scpt/*.jpeg
+/scpt/*.png
+config
