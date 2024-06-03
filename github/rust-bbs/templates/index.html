@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Simple BBS</title>
+	</head>
+	<body>
+		<div class="post-form" id="post-form">
+		<form action="/submit" method="post">
+			<input type="hidden" name="handle" id="handleInput">
+			<textarea name="content" required></textarea>
+			<input type="submit" value="Post">
+		</form>
+		</div>
+		<div class="post-list">
+		<ul>
+			{% for post in posts %}
+			<li><span class="user-post">{{ post }}</span></li>
+			{% endfor %}
+		</ul>
+		</div>
+	</body>
+
+	<script>
+		function getHandleFromUrl() {
+			const urlParams = new URLSearchParams(window.location.search);
+			return urlParams.get('handle');
+		}
+		window.onload = function() {
+			const handle = getHandleFromUrl();
+			if (handle) {
+				document.getElementById('handleInput').value = handle;
+			} else {
+				document.getElementById('handleInput').value = "anonymous";
+				var post = document.getElementById('post-form');
+				post.style.display = 'none';
+			}
+		};
+	</script>
+
+	<style>
+		ul {
+			overflow-y: scroll;
+			white-space: normal;
+			word-break: break-word;
+		}
+		li {
+			width: 100%;
+			list-style: none;
+			padding: 10px 0px;
+			border-bottom: 1px solid #ccc;
+		}
+		textarea {
+			width: 100%;
+			border-radius: 5px;
+			resize: none;
+			border-bottom: 3px solid #2060df;
+			box-sizing: border-box;
+		}
+		input[type="submit"] {
+			border-radius: 5px;
+			width: 100%;
+			color: #fff;
+			background: #2060df;
+			border: none;
+			padding: 10px;
+			font-size 20px;
+		}
+		ul {
+			border-radius: 5px;
+			padding: 0px;
+			margin: 0 auto;
+			border: 1px solid #ccc;
+		}
+		span.user-post {
+			padding: 0px 10px;
+		}
+	</style>
+
+</html>
