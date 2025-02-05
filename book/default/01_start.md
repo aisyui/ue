@@ -51,5 +51,6 @@ ueを長く使っているとわかることですが、ゲーム制作にはあ
 |repository|repo|リポジトリ、主にsrc codeの一式が置いてある場所|
 |project||プロジェクト、ueでは主に新しいゲームを作った時のフォルダ一式|
 |blueprint|bp|ブループリント、ueのノードベースで書く形式。anim blueprintはabp、character blueprintはcbpと略される事が多く、ファイル名は`BP_XXX`, `ABP_XXX`, `CBP_XXX`となる。基本大文字が使われる|
+|variable|var|変数、一時的な値の保存場所|
 
 基本的に英語で書けるものは英語で書きます。ueのmenuは英語にするのがおすすめです。様々な単語に慣れておきましょう。

@@ -27,7 +27,7 @@
 
 |name|latest|
 |---|---|
-|[ultra dynamic sky](https://docs.google.com/document/d/1xAr0Hd3mY7Mp0g0waKLUvJaddUPaVxEeRoEEFXctCE0/)|20250203|天候|
+|[ultra dynamic sky](https://docs.google.com/document/d/1xAr0Hd3mY7Mp0g0waKLUvJaddUPaVxEeRoEEFXctCE0/)|20250203|空や天候を自動化|
 |[superhero flight animations](https://www.fab.com/ja/listings/41185c19-5191-4153-8293-8cc9901efa95)|20241217|空を飛ぶ|
 
 ## link 
