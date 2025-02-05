@@ -1,0 +1,392 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>custom · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.0.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../end/" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Unreal Engine 5 Guild Book
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../default/">
+            
+                <a href="../default/">
+            
+                    
+                    default
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../default/00_version.html">
+            
+                <a href="../default/00_version.html">
+            
+                    
+                    version
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../default/01_start.html">
+            
+                <a href="../default/01_start.html">
+            
+                    
+                    start
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../default/02_install.html">
+            
+                <a href="../default/02_install.html">
+            
+                    
+                    install
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    gas
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.3.1" data-path="00_custom.html">
+            
+                <a href="00_custom.html">
+            
+                    
+                    custom
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../end/">
+            
+                <a href="../end/">
+            
+                    
+                    end
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >custom</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="新しいキャラを追加する">新しいキャラを追加する</h2>
+<p>これには<code>IKリターゲット</code>が必要です。</p>
+<ol>
+<li><code>Content/Blueprints/CBP_SandboxCharacter_Manny</code>をcopyして<code>CBP_SandboxCharacter_test</code>を作ります。</li>
+<li><code>CBP_SandboxCharacter_test</code>を開いて、<code>Mesh</code>の下にあるSKM(スケルタルメッシュ)の<code>Manny</code>を選択します。その状態で<code>詳細(details) -&gt; タグ(tags)</code>からインデックス(index)の0を<code>RTG_UEFN_to_UE5_test</code>に書き換えます。</li>
+<li><code>Content/Blueprints/RetargetedCharacters/ABP_GenericRetarget</code>を開き、変数の<code>IKRetargeter_Map</code>に新しく<code>RTG_UEFN_to_UE5_test</code>を追加し、ファイルは<code>/Content/Characters/UE5_Mannequins/Rigs/RTG_UEFN_to_UE5_Mannequin</code>を参照します。</li>
+<li><code>/Content/Widgets/GameAnimationWidget</code>を開いて、characterのiconのところをcopyして貼り付けます。そして、詳細からObjectで <code>Content/Blueprints/CBP_SandboxCharacter_test</code>を参照します。</li>
+</ol>
+<p>これで新しいキャラを使用することが可能になります。</p>
+<h2 id="飛びつける高さを増やす">飛びつける高さを増やす</h2>
+<ol>
+<li><code>Content/Blueprints/CBP_SandboxCharacter</code>を開いて、関数の<code>TryTraversalAction</code>を編集します。</li>
+<li>一番下の<code>Max:275</code>を<code>Max:475</code>に変更します。</li>
+<li><code>/Content/Characters/UEFN_Mannequin/Animations/Traversal/CHT_TraversalAnims</code>を開きます。</li>
+<li><code>Mantles(編集)</code>から先程変更した値のところを全部<code>275 -&gt; 475</code>に書き換えます。</li>
+</ol>
+<p>例えば、levelにあるblockの高さを変更して飛びつけるか確認します。</p>
+<ol>
+<li><code>LevelBlock_TraversableXX</code>を選択します。</li>
+<li>トランスフォーム(transform)の拡大(scale)のところで青色(transform-scale-z)を<code>4.5</code>にします。</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: gas">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../end/" class="navigation navigation-next " aria-label="Next page: end">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"custom","level":"1.3.1","depth":2,"next":{"title":"end","level":"1.4","depth":1,"path":"end/README.md","ref":"end/README.md","articles":[]},"previous":{"title":"gas","level":"1.3","depth":1,"path":"gas/README.md","ref":"gas/README.md","articles":[{"title":"custom","level":"1.3.1","depth":2,"path":"gas/00_custom.md","ref":"gas/00_custom.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"gas/00_custom.md","mtime":"2025-02-05T16:39:47.959Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-02-05T16:40:01.914Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
