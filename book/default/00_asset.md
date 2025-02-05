@@ -1,0 +1,38 @@
+# asset/plugin
+
+現在使用しているplugin(プラグイン)やasset(アセット)の`version(バージョン)`を記述します。
+
+ゲームは無料のassetだけでも作れます。しかし、時間やクオリティを向上させたい場合は有料のassetを使いましょう。
+
+本書の一部では有料assetの使い方を解説します。[sale](https://www.fab.com/ja/channels/unreal-engine?ui_filter_price=1&ui_filter_is_discounted=1&is_discounted=1)中のものを探しましょう。
+
+## asset
+
+|name|latest|body|
+|---|---|---|
+|[game animation sample](https://dev.epicgames.com/documentation/en-us/unreal-engine/game-animation-sample-project-in-unreal-engine)|5.5|キャラクターをパルクールアクション|
+|[city sample](https://www.unrealengine.com/marketplace/ja/product/city-sample)|5.5|大規模な都市を構築|
+|[control rig sample](https://www.fab.com/ja/listings/2ce3fe44-9ee6-4fa7-99fc-b9424a402386)|5.5|人間以外のキャラクター|
+
+## plugin
+
+|name|latest|body|
+|---|---|---|
+|[pixel streaming](https://github.com/EpicGamesExt/PixelStreamingInfrastructure/blob/master/Docs/pixel-streaming-2-migration-guide.md)|2|ゲームをserverにdeployしてwebからプレイ|
+|[twinmotion](https://www.twinmotion.com/ja)|20250101p|建造物をインポート|
+|[vrm4u](https://github.com/ruyo/VRM4U/releases/tag/20250206)|20250206|vrmモデルを動かす|
+|[kawaiiphysics](https://github.com/pafuhana1213/KawaiiPhysics)|20241201|揺れものを設定|
+|[varest](https://github.com/ufna/VaRest)|20240828|curlのようなもの。supportが終了しているのでbuildが必要|
+|[tatools](https://www.fab.com/ja/listings/a5d3b60d-b886-4564-bf6d-15d46a8d27fe)|20241206|animを作る|
+
+## 有料
+
+[こちら](/plan/README.md)
+
+## link 
+
+こちらで最新情報を取り扱っています。
+
+- https://git.syui.ai/ai/ue/
+- https://blueprintue.com/profile/ai/
+- https://dev.epicgames.com/community/profile/organization/gdkg/ai/
