@@ -59,7 +59,7 @@
     <link rel="next" href="00_character_new.html" />
     
     
-    <link rel="prev" href="../default/02_install.html" />
+    <link rel="prev" href="../default/03_blueprint.html" />
     
 
     </head>
@@ -147,6 +147,19 @@
             
                     
                     install
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../default/03_blueprint.html">
+            
+                <a href="../default/03_blueprint.html">
+            
+                    
+                    blueprint
             
                 </a>
             
@@ -336,61 +349,9 @@
 <p>次に、<code>IA_One</code>を先程の<code>CBP_SandboxCharacter</code>にドラッグ&amp;ドロップ(D&amp;D)します。</p>
 <p>すると<code>EnhancedInputAction IA_One</code>という赤いノードが作成されたと思います。<code>Debug Key 1</code>を削除して代わりにつなぎます。色にも意味がありますが、そのうちわかってくると思います。</p>
 <p>ゲームを再生してみると先ほどと同じkeyで動きます。</p>
-<h3 id="variablevar">variable(var)</h3>
-<p>ここから本当に重要なことを書きます。最初はわからないかもしれませんが、最後まで読んでまた来ると、わかるようになっているかもしれません。</p>
-<ol>
-<li>フォルダの<code>/Content/Blueprints/</code>で右クリックして、ブループリントクラス、<code>GameInstance</code>を作り、名前を<code>GM_DefaultConfig</code>にします。</li>
-<li><code>設定 -&gt; プロジェクト設定 -&gt; マップ&amp;モード</code>の<code>Game Instance:GameInstance Class</code>に<code>GM_DefaultConfig</code>を読み込みます。</li>
-</ol>
-<p>これを開いて、変数のところで<code>UserTest</code>という名前で<code>string</code>型の変数を作ります。コンパイル(compile)してください。デフォルト値は<code>World</code>とでも入れておきましょう。</p>
-<p>次に、<code>/Content/Blueprints/CBP_SandboxCharacter</code>を開いて、EventGraphで右クリックし、<code>Cast To GM_DefaultConfig</code>を選択します。</p>
-<p>インプット(input)のpin(ピン)にあるObjectには<code>Get Game Instance</code>をつなぎます。そして、アウトプット(output)の青線は<code>Get UserTest</code>と検索し、それを<code>Print String</code>につなぎます。</p>
-<p>さて、こにkeyを設定して再生すると<code>World</code>と表示されるはずです。</p>
-<p>特に重要なのが<code>変数の型</code>です。種類もそうですが、変数の型の右側にある色アイコンをクリックしてみると、たくさんの形式があることがわかります。</p>
-<ul>
-<li>単一</li>
-<li>配列</li>
-<li>設定</li>
-<li>マップ</li>
-</ul>
-<p>配列を使ってみましょう。<code>UserTestList</code>という名前で<code>string</code>の配列を作成します。</p>
-<p>ここで、デフォルト値に追加できることに気づくはずです。</p>
-<p>例えば、単語を3つ追加してみます。</p>
-<ul>
-<li>[0]ai</li>
-<li>[1]burst</li>
-<li>[2]can</li>
-</ul>
-<p><code>Cast To GM_DefaultConfig</code>から<code>Get UserTestList</code>を引っ張り出し、<code>Length</code>につなげます。それをprintしてみると、<code>2</code>と表示されるはずです。</p>
-<p><code>length(len)</code>はその配列に追加された数を知ることができます。</p>
-<p>では、全部の値を取り出すため<code>for</code>を書きましょう。<code>UserTestList</code>から<code>For Each Loop</code>を伸ばして<code>Loop Body</code>からprintにつなぎます。値は<code>Array Element</code>から取ります。</p>
-<p>もし文字列をつなぎたいなら<code>Append</code>が使えます。</p>
-<p>変数にはObjectをいれることもできます。たくさんのObjectを入れておき、<code>Find</code>で検索して取り出すこともできます。</p>
-<p>では、characterを全部まとめて検索できる変数を作ってみます。</p>
-<p>名前は<code>UserCharacterObj</code>でstringを選択し、マップを選択します。右側のマップは<code>オブジェクト(object)</code>と検索し、object参照を選択します。</p>
-<pre><code class="lang-sh">str obj
---- ---
-</code></pre>
-<p><code>cbp character</code>と検索し、characterのcbpを入れていきます。名前はわかりやすいものにしてください。例えば、<code>manny</code>, <code>quinn</code>など。</p>
-<p>では繋いでいきます。</p>
-<pre><code class="lang-sh">[Get Game Instance] --&gt; [Cast To GM_Defaultconfig] --&gt; [UserCharacterObj]
-
---&gt; [Find(manny)] --&gt; [Get Object Name] --&gt; [Print String]
-</code></pre>
-<iframe src="https://blueprintue.com/render/_q-q_ffz/" scrolling="no" allowfullscreen="" style="width:100%;height:400px"></iframe>
-
-<p>基本的にこれを利用して、他のBPと値をやり取りすることになります。例えば、<code>ABP_SandboxCharacter</code>で条件を満たしたとき実行してほしいアニメーション(anim)があったとします。</p>
-<p>この場合、まず<code>GM_DefaultConfig</code>の変数で<code>UserCharacterAnim</code>をboolean型で作り、実行してほしいタイミングで<code>CBP_SandboxCharacter</code>に書いた<code>Cast To GM_Defaultconfig</code>から<code>UserCharacterAnim</code>を<code>true</code>に変更します。<code>Set UserCharacterAnim</code>で検索してください。そして、ABPには<code>UserCharacterAnim</code>がtrueならanimを再生する処理を書きます。</p>
-<h2 id="functionfunc">function(func)</h2>
-<p>次は関数です。関数は簡単で、何度も繰り返す部分を再利用可能な形で残します。それが関数です。</p>
-<p>新しい関数を作ってみましょう。左バーの関数(+)を押せば作成されます。名前は<code>FuncTest</code>にします。</p>
-<p>関数を表す紫色のボックス(box)を選択した状態でinputとoutputの見てもらって、inputにboolという名前でboolean型を作ります。outputにはstrという名前でstring型を作ります。</p>
-<p>処理の内容はboolがtrueなら<code>[yes]</code>というstringを出力し、falseなら<code>[no]</code>にします。</p>
-<iframe src="https://blueprintue.com/render/pvn4lao9/2" scrolling="no" allowfullscreen="" style="width:100%;height:400px"></iframe>
-
-<p>確認してみましょう。<code>[9]</code>を押すと<code>[yes][no]</code>が表示されます。</p>
-<iframe src="https://blueprintue.com/render/pvn4lao9/1" scrolling="no" allowfullscreen="" style="width:100%;height:400px"></iframe>
-
+<h2 id="blueprint">blueprint</h2>
+<p>基本的なテクニックを紹介しています。</p>
+<p><a href="../default/03_blueprint.html">/default/03_blueprint.html</a></p>
 
                                 
                                 </section>
@@ -418,7 +379,7 @@
 
             
                 
-                <a href="../default/02_install.html" class="navigation navigation-prev " aria-label="Previous page: install">
+                <a href="../default/03_blueprint.html" class="navigation navigation-prev " aria-label="Previous page: blueprint">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -434,7 +395,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"gas","level":"1.3","depth":1,"next":{"title":"新しいキャラを追加する","level":"1.3.1","depth":2,"path":"gas/00_character_new.md","ref":"gas/00_character_new.md","articles":[]},"previous":{"title":"install","level":"1.2.3","depth":2,"path":"default/02_install.md","ref":"default/02_install.md","articles":[]},"articles":[{"title":"新しいキャラを追加する","level":"1.3.1","depth":2,"path":"gas/00_character_new.md","ref":"gas/00_character_new.md","articles":[]},{"title":"飛びつける高さを増やす","level":"1.3.2","depth":2,"path":"gas/01_jump_high.md","ref":"gas/01_jump_high.md","articles":[]}],"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"gas/README.md","mtime":"2025-02-05T19:45:52.994Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-02-05T19:46:08.027Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"gas","level":"1.3","depth":1,"next":{"title":"新しいキャラを追加する","level":"1.3.1","depth":2,"path":"gas/00_character_new.md","ref":"gas/00_character_new.md","articles":[]},"previous":{"title":"blueprint","level":"1.2.4","depth":2,"path":"default/03_blueprint.md","ref":"default/03_blueprint.md","articles":[]},"articles":[{"title":"新しいキャラを追加する","level":"1.3.1","depth":2,"path":"gas/00_character_new.md","ref":"gas/00_character_new.md","articles":[]},{"title":"飛びつける高さを増やす","level":"1.3.2","depth":2,"path":"gas/01_jump_high.md","ref":"gas/01_jump_high.md","articles":[]}],"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"gas/README.md","mtime":"2025-02-05T20:23:37.428Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-02-05T20:23:51.423Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
