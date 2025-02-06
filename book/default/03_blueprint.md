@@ -4,16 +4,20 @@
 
 ## variable(var)
 
-1. フォルダの`/Content/Blueprints/`で右クリックして、ブループリントクラス、`GameInstance`を作り、名前を`GM_DefaultConfig`にします。
-2. `設定 -> プロジェクト設定 -> マップ&モード`の`Game Instance:GameInstance Class`に`GM_DefaultConfig`を読み込みます。
+まずは変数の紹介です。変数はローカル変数(local)、グローバル変数(global)があります。最初はprojectで読み込むところに作ります。
+
+1. フォルダの`/Content/Blueprints/`で右クリックして、ブループリントクラス、`GameInstance`を作ります。例えば、`GM_xxx`にします。(名前はなんでもいいです)
+2. `設定 -> プロジェクト設定 -> マップ&モード`の`Game Instance:GameInstance Class`に`GM_xxx`を読み込みます。
+
+なお、名前に`Default`, `Test`, `Config`などを使う場合は予約されていることがあります。注意してください。
 
 これを開いて、変数のところで`UserTest`という名前で`string`型の変数を作ります。コンパイル(compile)してください。デフォルト値は`World`とでも入れておきましょう。
 
-次に、`/Content/Blueprints/CBP_SandboxCharacter`を開いて、EventGraphで右クリックし、`Cast To GM_DefaultConfig`を選択します。
+次に、`/Content/Blueprints/CBP_SandboxCharacter`を開いて、EventGraphで右クリックし、`Cast To GM_xxx`を選択します。
 
 インプット(input)のpin(ピン)にあるObjectには`Get Game Instance`をつなぎます。そして、アウトプット(output)の青線は`Get UserTest`と検索し、それを`Print String`につなぎます。
 
-さて、こにkeyを設定して再生すると`World`と表示されるはずです。
+さて、ここにkeyを設定して再生すると`World`と表示されるはずです。
 
 特に重要なのが`変数の型`です。種類もそうですが、変数の型の右側にある色アイコンをクリックしてみると、たくさんの形式があることがわかります。
 
@@ -32,7 +36,7 @@
 - [1]burst
 - [2]can
 
-`Cast To GM_DefaultConfig`から`Get UserTestList`を引っ張り出し、`Length`につなげます。それをprintしてみると、`2`と表示されるはずです。
+`Cast To GM_xxx`から`Get UserTestList`を引っ張り出し、`Length`につなげます。それをprintしてみると、`2`と表示されるはずです。
 
 `length(len)`はその配列に追加された数を知ることができます。
 
@@ -65,7 +69,7 @@ str obj
 
 基本的にこれを利用して、他のBPと値をやり取りすることになります。例えば、`ABP_SandboxCharacter`で条件を満たしたとき実行してほしいアニメーション(anim)があったとします。
 
-この場合、まず`GM_DefaultConfig`の変数で`UserCharacterAnim`をboolean型で作り、実行してほしいタイミングで`CBP_SandboxCharacter`に書いた`Cast To GM_Defaultconfig`から`UserCharacterAnim`を`true`に変更します。`Set UserCharacterAnim`で検索してください。そして、ABPには`UserCharacterAnim`がtrueならanimを再生する処理を書きます。
+この場合、まず`GM_xxx`の変数で`UserCharacterAnim`をboolean型で作り、実行してほしいタイミングで`CBP_SandboxCharacter`に書いた`Cast To GM_Defaultconfig`から`UserCharacterAnim`を`true`に変更します。`Set UserCharacterAnim`で検索してください。そして、ABPには`UserCharacterAnim`がtrueならanimを再生する処理を書きます。
 
 ## function(func)
 

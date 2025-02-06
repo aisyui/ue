@@ -14,7 +14,7 @@ https://www.unrealengine.com/download
 
 まずは新しいprojectを作り、package buildできるかを試してみましょう。
 
-ueではbuildが通らないことがよくあります。長い時間をかけて作り上げたもののbuildが通らない自体は避けましょう。
+ueではbuildが通らないことがよくあります。長い時間をかけて作り上げたもののbuildが通らない事態は避けましょう。
 
 なお、`mac`, `linux`は、ほとんどうまくいきません。package化に成功してもappが正常に起動しないことがあります。使用するpluginやassetなども影響します。
 
