@@ -5,7 +5,7 @@
  * [version](default/00_version.md)
  * [start](default/01_start.md)
  * [install](default/02_install.md)
- * [blueprint](default/03_blueprint.md)
+ * [tips](default/03_tips.md)
 * [gas](gas/README.md)
  * [新しいキャラを追加する](gas/00_character_new.md)
  * [飛びつける高さを増やす](gas/01_jump_high.md)
