@@ -513,8 +513,36 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="海の境界を消す">海の境界を消す</h1>
+                                <h1 id="惑星形式のmapを作る">惑星形式のmapを作る</h1>
+<h2 id="海の境界を消す">海の境界を消す</h2>
 <p>海には境界があってそれが惑星システム(planet system)を構築する際に邪魔になるので消します。</p>
+<h2 id="ocean-wavesで惑星の海を作る">ocean wavesで惑星の海を作る</h2>
+<p>必要なものを<code>/Content/OceanWaves/Levels/EarthSizedOceanPlanet</code>からcopyして持ってきましょう。</p>
+<ul>
+<li><code>BP_EarthSizedSphericalMesh</code></li>
+<li><code>BP_EarthSizedOcean</code></li>
+<li><code>WaterVolume</code></li>
+</ul>
+<p><code>BP_EarthSizedSphericalMesh</code>の<code>transform-location-z:-63600000</code>にします。<code>Sphere Radius:63600000</code>にします。<code>SphereEdge Length:16000000</code>になるはずです。</p>
+<p>次に海上の影問題を修正するため<code>Material Overrides</code>, <code>Material Outer/Inner</code>をすべて変更します。私は<code>/Vefects/Water/VFX/WaterMaterials</code>を使用しました。</p>
+<p>次に<code>BP_EarthSizedOcean</code>の<code>Volume Maaterials</code>で<code>WaterVolume</code>をセットします。<code>Above/Underwater</code>を<code>/Vefects/Water/VFX/UnderWater</code>に変更します。<code>height:0</code>にします。これは海に入って出たときに海中を適用する高さを設定します。</p>
+<h2 id="ultra-dynamic-skyで天候と惑星を作る">ultra dynamic skyで天候と惑星を作る</h2>
+<ol>
+<li><code>/Content/UltraDynamicSky/Blueprints/Ultra_Dynamic_Sky</code>を開きます。</li>
+<li>そこに地球と月と太陽のBPを入れます。各自が用意してください。なお、地球は<code>SkyAtmosphere</code>の下に置いてください。<blockquote>
+<p>名前は 地球(BP_Earth), 月(BP_Moon), 太陽(BP_Sun) としておきます。</p>
+</blockquote>
+</li>
+<li><code>BP_Earth</code>は詳細から<code>transform-location-z:-636000000</code>, <code>transform-scale:6360000</code>にします。</li>
+<li><code>Sky_Sphere_Mesh</code>の<code>transform-scale:50000</code>にします。</li>
+<li>関数の<code>Current Star Color(pure)</code>にて高度を取得できるため、各componentの表示と非表示(visibility)を切り替えます。</li>
+</ol>
+<iframe src="https://blueprintue.com/render/k3xgicx_/1" scrolling="no" allowfullscreen="" style="width:100%;height:400px"></iframe>
+
+<ul>
+<li><code>BP_Earth</code>: <code>transform-location-z:-636000000</code>, <code>transform-scale:6360000</code></li>
+<li><code>Sky_Sphere_Mesh</code>: <code>transform-scale:50000</code></li>
+</ul>
 
                                 
                                 </section>
@@ -558,7 +586,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"海の境界を消す","level":"1.5.1","depth":2,"next":{"title":"json blueprint utilities","level":"1.6","depth":1,"path":"json/README.md","ref":"json/README.md","articles":[{"title":"apiから情報を取得する","level":"1.6.1","depth":2,"path":"json/01_varest.md","ref":"json/01_varest.md","articles":[]}]},"previous":{"title":"city sample","level":"1.5","depth":1,"path":"city/README.md","ref":"city/README.md","articles":[{"title":"海の境界を消す","level":"1.5.1","depth":2,"path":"city/01_remove.md","ref":"city/01_remove.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"city/01_remove.md","mtime":"2025-02-07T20:33:52.924Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-02-07T20:34:06.702Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"海の境界を消す","level":"1.5.1","depth":2,"next":{"title":"json blueprint utilities","level":"1.6","depth":1,"path":"json/README.md","ref":"json/README.md","articles":[{"title":"apiから情報を取得する","level":"1.6.1","depth":2,"path":"json/01_varest.md","ref":"json/01_varest.md","articles":[]}]},"previous":{"title":"city sample","level":"1.5","depth":1,"path":"city/README.md","ref":"city/README.md","articles":[{"title":"海の境界を消す","level":"1.5.1","depth":2,"path":"city/01_remove.md","ref":"city/01_remove.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"city/01_remove.md","mtime":"2025-02-07T21:29:41.994Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-02-07T21:29:57.196Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
