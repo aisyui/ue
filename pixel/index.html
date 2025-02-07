@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>ultra dynamic sky · HonKit</title>
+        <title>pixel streaming · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 6.0.2">
@@ -56,10 +56,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="03_ocean.html" />
+    <link rel="next" href="01_server.html" />
     
     
-    <link rel="prev" href="01_flying.html" />
+    <link rel="prev" href="../json/01_varest.html" />
     
 
     </head>
@@ -365,9 +365,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="../pixel/">
+        <li class="chapter active" data-level="1.7" data-path="./">
             
-                <a href="../pixel/">
+                <a href="./">
             
                     
                     pixel streaming
@@ -379,9 +379,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.7.1" data-path="../pixel/01_server.html">
+        <li class="chapter " data-level="1.7.1" data-path="01_server.html">
             
-                <a href="../pixel/01_server.html">
+                <a href="01_server.html">
             
                     
                     基本事項
@@ -397,9 +397,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8" data-path="./">
+        <li class="chapter " data-level="1.8" data-path="../plan/">
             
-                <a href="./">
+                <a href="../plan/">
             
                     
                     有料アセット
@@ -411,9 +411,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.8.1" data-path="01_flying.html">
+        <li class="chapter " data-level="1.8.1" data-path="../plan/01_flying.html">
             
-                <a href="01_flying.html">
+                <a href="../plan/01_flying.html">
             
                     
                     superhero fligth animations
@@ -424,9 +424,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.8.2" data-path="02_uds.html">
+        <li class="chapter " data-level="1.8.2" data-path="../plan/02_uds.html">
             
-                <a href="02_uds.html">
+                <a href="../plan/02_uds.html">
             
                     
                     ultra dynamic sky
@@ -437,9 +437,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.3" data-path="03_ocean.html">
+        <li class="chapter " data-level="1.8.3" data-path="../plan/03_ocean.html">
             
-                <a href="03_ocean.html">
+                <a href="../plan/03_ocean.html">
             
                     
                     ocean waves
@@ -498,7 +498,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >ultra dynamic sky</a>
+        <a href=".." >pixel streaming</a>
     </h1>
 </div>
 
@@ -513,9 +513,28 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="ultra-dynamic-sky">ultra dynamic sky</h1>
-<p><a href="https://docs.google.com/document/d/1xAr0Hd3mY7Mp0g0waKLUvJaddUPaVxEeRoEEFXctCE0/" target="_blank">ultra dynamic sky</a></p>
-<p>blueprintなどでも<code>uds</code>と略されます。</p>
+                                <h1 id="pixel-streaming">pixel streaming</h1>
+<p><code>pixel streaming</code>は<code>.exe</code>をサーバー(server)に置いてwebからプレイするためのものです。</p>
+<p><a href="https://github.com/EpicGamesExt/PixelStreamingInfrastructure/" target="_blank">pixel streaming 2</a>が最新です。<a href="https://github.com/EpicGamesExt/PixelStreamingInfrastructure/blob/master/Docs/pixel-streaming-2-migration-guide.md" target="_blank">ガイド</a>に従い構築しましょう。</p>
+<ol>
+<li>projectのpluginで<code>pixel streaming</code>をdisableにし、<code>pixel streaming 2</code>をenableにする。</li>
+<li>これをpackage buildして、app.exeを作ります。引数は以下のようにしてください。</li>
+</ol>
+<p>なお、sshなどで作業している場合はfirewallの許可が出ませんので、local-desktopで作業してください。または手動でruleを更新してください。</p>
+<pre><code class="lang-sh">./<span class="hljs-variable">$project</span>/Windows/app.exe -AudioMixer -RenderOffScreen -PixelStreamingSignallingURL=<span class="hljs-string">"ws://127.0.0.1:8888"</span>
+</code></pre>
+<p>次にserverの設定です。</p>
+<pre><code class="lang-sh"><span class="hljs-comment"># git clone https://github.com/EpicGamesExt/PixelStreamingInfrastructure.git</span>
+$ git <span class="hljs-built_in">clone</span> --branch UE5.5 https://github.com/EpicGamesExt/PixelStreamingInfrastructure.git
+$ <span class="hljs-built_in">cd</span> PixelStreamingInfrastructure/SignallingWebServer/platform_scripts/cmd
+$ ./setup.bat
+$ ./start.bat
+</code></pre>
+<p><code>PixelStreamingInfrastructure/SignallingWebServer/config.json</code>の書き換えと起動。特に注意すべきは<code>http_root</code>です。Publicからwwwに変更されています。path(パス)にも注意してください。</p>
+<pre><code class="lang-sh">$ <span class="hljs-built_in">cd</span> PixelStreamingInfrastructure/SignallingWebServer
+$ vim config.json
+$ npm start -- --public_ip localhost
+</code></pre>
 
                                 
                                 </section>
@@ -543,12 +562,12 @@
 
             
                 
-                <a href="01_flying.html" class="navigation navigation-prev " aria-label="Previous page: superhero fligth animations">
+                <a href="../json/01_varest.html" class="navigation navigation-prev " aria-label="Previous page: apiから情報を取得する">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="03_ocean.html" class="navigation navigation-next " aria-label="Next page: ocean waves">
+                <a href="01_server.html" class="navigation navigation-next " aria-label="Next page: 基本事項">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -559,7 +578,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ultra dynamic sky","level":"1.8.2","depth":2,"next":{"title":"ocean waves","level":"1.8.3","depth":2,"path":"plan/03_ocean.md","ref":"plan/03_ocean.md","articles":[]},"previous":{"title":"superhero fligth animations","level":"1.8.1","depth":2,"path":"plan/01_flying.md","ref":"plan/01_flying.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"plan/02_uds.md","mtime":"2025-02-07T20:33:52.928Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-02-07T20:34:06.702Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"pixel streaming","level":"1.7","depth":1,"next":{"title":"基本事項","level":"1.7.1","depth":2,"path":"pixel/01_server.md","ref":"pixel/01_server.md","articles":[]},"previous":{"title":"apiから情報を取得する","level":"1.6.1","depth":2,"path":"json/01_varest.md","ref":"json/01_varest.md","articles":[]},"articles":[{"title":"基本事項","level":"1.7.1","depth":2,"path":"pixel/01_server.md","ref":"pixel/01_server.md","articles":[]}],"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pixel/README.md","mtime":"2025-02-07T20:33:52.928Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-02-07T20:34:06.702Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

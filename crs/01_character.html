@@ -365,7 +365,39 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="../plan/">
+        <li class="chapter " data-level="1.7" data-path="../pixel/">
+            
+                <a href="../pixel/">
+            
+                    
+                    pixel streaming
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../pixel/01_server.html">
+            
+                <a href="../pixel/01_server.html">
+            
+                    
+                    基本事項
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../plan/">
             
                 <a href="../plan/">
             
@@ -379,7 +411,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.7.1" data-path="../plan/01_flying.html">
+        <li class="chapter " data-level="1.8.1" data-path="../plan/01_flying.html">
             
                 <a href="../plan/01_flying.html">
             
@@ -392,7 +424,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.2" data-path="../plan/02_uds.html">
+        <li class="chapter " data-level="1.8.2" data-path="../plan/02_uds.html">
             
                 <a href="../plan/02_uds.html">
             
@@ -405,7 +437,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.3" data-path="../plan/03_ocean.html">
+        <li class="chapter " data-level="1.8.3" data-path="../plan/03_ocean.html">
             
                 <a href="../plan/03_ocean.html">
             
@@ -423,7 +455,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8" data-path="../end/">
+        <li class="chapter " data-level="1.9" data-path="../end/">
             
                 <a href="../end/">
             
@@ -483,6 +515,19 @@
                                 
                                 <h1 id="crでキャラクターを動かす">CRでキャラクターを動かす</h1>
 <p><code>control rig</code>は<code>CR_xxx</code>というファイル名がつけられています。</p>
+<h2 id="dragon">dragon</h2>
+<p>例えば、ABPで<code>head_global_ctrl</code>の値を更新します。</p>
+<iframe src="https://blueprintue.com/render/o3glwh72/1" scrolling="no" allowfullscreen="" style="width:100%;height:400px"></iframe>
+
+<h2 id="mech">mech</h2>
+<ol>
+<li><code>/Content/ControlRig/Characters/Mech/Meshes/SKM_Mech</code>からABP, BP, SM(StaticMesh)を作成します。</li>
+<li>ABPから<code>Control Rig</code>で<code>cannon_ctrl</code>などを動かせます。</li>
+</ol>
+<pre><code class="lang-sh">- /Content/ControlRig/Characters/Mech/BP_Mech
+- /Content/ControlRig/Characters/Mech/ABP_Mech
+- /Content/ControlRig/Characters/Mech/Meshes/SM_Mech
+</code></pre>
 
                                 
                                 </section>
@@ -526,7 +571,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"CRでキャラクターを動かす","level":"1.4.1","depth":2,"next":{"title":"city sample","level":"1.5","depth":1,"path":"city/README.md","ref":"city/README.md","articles":[{"title":"海の境界を消す","level":"1.5.1","depth":2,"path":"city/01_remove.md","ref":"city/01_remove.md","articles":[]}]},"previous":{"title":"control rig sample","level":"1.4","depth":1,"path":"crs/README.md","ref":"crs/README.md","articles":[{"title":"CRでキャラクターを動かす","level":"1.4.1","depth":2,"path":"crs/01_character.md","ref":"crs/01_character.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"crs/01_character.md","mtime":"2025-02-07T18:56:22.113Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-02-07T18:56:40.271Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"CRでキャラクターを動かす","level":"1.4.1","depth":2,"next":{"title":"city sample","level":"1.5","depth":1,"path":"city/README.md","ref":"city/README.md","articles":[{"title":"海の境界を消す","level":"1.5.1","depth":2,"path":"city/01_remove.md","ref":"city/01_remove.md","articles":[]}]},"previous":{"title":"control rig sample","level":"1.4","depth":1,"path":"crs/README.md","ref":"crs/README.md","articles":[{"title":"CRでキャラクターを動かす","level":"1.4.1","depth":2,"path":"crs/01_character.md","ref":"crs/01_character.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"crs/01_character.md","mtime":"2025-02-07T20:33:52.926Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-02-07T20:34:06.702Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
