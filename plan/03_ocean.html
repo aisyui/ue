@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>install · HonKit</title>
+        <title>ocean waves · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 6.0.2">
@@ -56,10 +56,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="03_tips.html" />
+    <link rel="next" href="../end/" />
     
     
-    <link rel="prev" href="01_start.html" />
+    <link rel="prev" href="02_uds.html" />
     
 
     </head>
@@ -101,9 +101,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="../default/">
             
-                <a href="./">
+                <a href="../default/">
             
                     
                     default
@@ -115,9 +115,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="00_version.html">
+        <li class="chapter " data-level="1.2.1" data-path="../default/00_version.html">
             
-                <a href="00_version.html">
+                <a href="../default/00_version.html">
             
                     
                     version
@@ -128,9 +128,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="01_start.html">
+        <li class="chapter " data-level="1.2.2" data-path="../default/01_start.html">
             
-                <a href="01_start.html">
+                <a href="../default/01_start.html">
             
                     
                     start
@@ -141,9 +141,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.3" data-path="02_install.html">
+        <li class="chapter " data-level="1.2.3" data-path="../default/02_install.html">
             
-                <a href="02_install.html">
+                <a href="../default/02_install.html">
             
                     
                     install
@@ -154,9 +154,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="03_tips.html">
+        <li class="chapter " data-level="1.2.4" data-path="../default/03_tips.html">
             
-                <a href="03_tips.html">
+                <a href="../default/03_tips.html">
             
                     
                     tips
@@ -365,9 +365,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="../plan/">
+        <li class="chapter " data-level="1.7" data-path="./">
             
-                <a href="../plan/">
+                <a href="./">
             
                     
                     有料アセット
@@ -379,9 +379,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.7.1" data-path="../plan/01_flying.html">
+        <li class="chapter " data-level="1.7.1" data-path="01_flying.html">
             
-                <a href="../plan/01_flying.html">
+                <a href="01_flying.html">
             
                     
                     superhero fligth animations
@@ -392,9 +392,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.2" data-path="../plan/02_uds.html">
+        <li class="chapter " data-level="1.7.2" data-path="02_uds.html">
             
-                <a href="../plan/02_uds.html">
+                <a href="02_uds.html">
             
                     
                     ultra dynamic sky
@@ -405,9 +405,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.3" data-path="../plan/03_ocean.html">
+        <li class="chapter active" data-level="1.7.3" data-path="03_ocean.html">
             
-                <a href="../plan/03_ocean.html">
+                <a href="03_ocean.html">
             
                     
                     ocean waves
@@ -466,7 +466,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >install</a>
+        <a href=".." >ocean waves</a>
     </h1>
 </div>
 
@@ -481,61 +481,8 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="install">install</h2>
-<p>srcからbuildしない場合は<code>epicgames launcher</code>からinstallします。</p>
-<p><a href="https://www.unrealengine.com/download" target="_blank">https://www.unrealengine.com/download</a></p>
-<p>また、<a href="https://visualstudio.microsoft.com/ja/downloads/" target="_blank">vsinstaller</a>を使用して必要なpackageを入れてください。</p>
-<p><img src="../img/0001.png" alt=""></img></p>
-<p><a href="https://github.com/microsoft/vscode" target="_blank">vscode</a>でbuildするには<code>.uproject</code>を右クリックして<code>.sln</code>を作ります。</p>
-<h2 id="package-build">package build</h2>
-<p>まずは新しいprojectを作り、package buildできるかを試してみましょう。</p>
-<p>ueではbuildが通らないことがよくあります。長い時間をかけて作り上げたもののbuildが通らない事態は避けましょう。</p>
-<p>なお、<code>mac</code>, <code>linux</code>は、ほとんどうまくいきません。package化に成功してもappが正常に起動しないことがあります。使用するpluginやassetなども影響します。</p>
-<pre><code class="lang-sh"><span class="hljs-comment"># corss compile tool : https://dev.epicgames.com/documentation/ja-jp/unreal-engine/linux-development-requirements-for-unreal-engine</span>
-<span class="hljs-comment"># ubuntu(xorg + nvidia)</span>
-
-$ <span class="hljs-built_in">sudo</span> apt-get install xorg xvfb
-Xvfb :99 &amp;
-<span class="hljs-built_in">export</span> DISPLAY=:99
-
-$ <span class="hljs-built_in">sudo</span> apt-get install vulkan-tools
-$ <span class="hljs-built_in">sudo</span> apt-get install mesa-vulkan-drivers
-</code></pre>
-<h2 id="engineとproject">engineとproject</h2>
-<p>installする場所は自分で決められます。参考の場所を紹介します。</p>
-<pre><code class="lang-sh"><span class="hljs-comment"># engine</span>
-C:\Program Files\Epic\UE_5.5\Engine\Binaries\Win64\UnrealEditor.exe
-
-<span class="hljs-comment"># project</span>
-C:\Users\<span class="hljs-variable">$USER</span>\Documents\Unreal Projects\MyProject\MyProject.uproject
-</code></pre>
-<h2 id="windows-tool">windows tool</h2>
-<table>
-<thead>
-<tr>
-<th>name</th>
-<th>url</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>pwsh</td>
-<td><a href="https://github.com/PowerShell/PowerShell" target="_blank">https://github.com/PowerShell/PowerShell</a></td>
-</tr>
-<tr>
-<td>windows terminal</td>
-<td><a href="https://github.com/microsoft/terminal" target="_blank">https://github.com/microsoft/terminal</a></td>
-</tr>
-<tr>
-<td>openssh</td>
-<td><a href="https://github.com/PowerShell/Win32-OpenSSH" target="_blank">https://github.com/PowerShell/Win32-OpenSSH</a></td>
-</tr>
-<tr>
-<td>vscode</td>
-<td><a href="https://github.com/microsoft/vscode" target="_blank">https://github.com/microsoft/vscode</a></td>
-</tr>
-</tbody>
-</table>
+                                <h1 id="ocean-waves">ocean waves</h1>
+<p><a href="https://www.unrealengine.com/marketplace/ja/product/ocean-waves" target="_blank">ocean waves</a></p>
 
                                 
                                 </section>
@@ -563,12 +510,12 @@ C:\Users\<span class="hljs-variable">$USER</span>\Documents\Unreal Projects\MyPr
 
             
                 
-                <a href="01_start.html" class="navigation navigation-prev " aria-label="Previous page: start">
+                <a href="02_uds.html" class="navigation navigation-prev " aria-label="Previous page: ultra dynamic sky">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="03_tips.html" class="navigation navigation-next " aria-label="Next page: tips">
+                <a href="../end/" class="navigation navigation-next " aria-label="Next page: end">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -579,7 +526,7 @@ C:\Users\<span class="hljs-variable">$USER</span>\Documents\Unreal Projects\MyPr
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"install","level":"1.2.3","depth":2,"next":{"title":"tips","level":"1.2.4","depth":2,"path":"default/03_tips.md","ref":"default/03_tips.md","articles":[]},"previous":{"title":"start","level":"1.2.2","depth":2,"path":"default/01_start.md","ref":"default/01_start.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"default/02_install.md","mtime":"2025-02-07T17:43:49.897Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-02-07T17:44:07.959Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ocean waves","level":"1.7.3","depth":2,"next":{"title":"end","level":"1.8","depth":1,"path":"end/README.md","ref":"end/README.md","articles":[]},"previous":{"title":"ultra dynamic sky","level":"1.7.2","depth":2,"path":"plan/02_uds.md","ref":"plan/02_uds.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"plan/03_ocean.md","mtime":"2025-02-07T17:43:49.900Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-02-07T17:44:07.959Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
