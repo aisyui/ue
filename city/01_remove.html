@@ -610,17 +610,6 @@
 <p>地球があって、上に飛ぶと大気圏があり、大気圏を抜けると宇宙があり、月があり、太陽があるという形にすることを目指します。全てはつながっていて、そこに行くことができます。</p>
 <h2 id="海の境界を消す">海の境界を消す</h2>
 <p>海には境界があってそれが惑星システム(planet system)を構築する際に邪魔になるので消します。</p>
-<h2 id="ocean-wavesで惑星の海を作る">ocean wavesで惑星の海を作る</h2>
-<p><a href="https://www.unrealengine.com/marketplace/ja/product/ocean-waves" target="_blank">ocean waves</a></p>
-<p>必要なものを<code>/Content/OceanWaves/Levels/EarthSizedOceanPlanet</code>からcopyして持ってきましょう。</p>
-<ul>
-<li><code>BP_EarthSizedSphericalMesh</code></li>
-<li><code>BP_EarthSizedOcean</code></li>
-<li><code>WaterVolume</code></li>
-</ul>
-<p><code>BP_EarthSizedSphericalMesh</code>の<code>transform-location-z:-63600000</code>にします。<code>Sphere Radius:63600000</code>にします。<code>SphereEdge Length:16000000</code>になるはずです。</p>
-<p>次に海上の影問題を修正するため<code>Material Overrides</code>, <code>Material Outer/Inner</code>をすべて変更します。私は<code>/Vefects/Water/VFX/WaterMaterials</code>を使用しました。</p>
-<p>次に<code>BP_EarthSizedOcean</code>の<code>Volume Maaterials</code>で<code>WaterVolume</code>をセットします。<code>Above/Underwater</code>を<code>/Vefects/Water/VFX/UnderWater</code>に変更します。<code>height:0</code>にします。これは海に入って出たときに海中を適用する高さを設定します。</p>
 <h2 id="ultra-dynamic-skyで天候と惑星を作る">ultra dynamic skyで天候と惑星を作る</h2>
 <p><a href="https://docs.google.com/document/d/1xAr0Hd3mY7Mp0g0waKLUvJaddUPaVxEeRoEEFXctCE0/" target="_blank">ultra dynamic sky</a></p>
 <ol>
@@ -639,6 +628,8 @@
 <li><code>BP_Earth</code>: <code>transform-location-z:-636000000</code>, <code>transform-scale:6360000</code></li>
 <li><code>Sky_Sphere_Mesh</code>: <code>transform-scale:50000</code></li>
 </ul>
+<h2 id="ocean-wavesで惑星の海を作る">ocean wavesで惑星の海を作る</h2>
+<p><a href="../plan/03_ocean.html">こちら</a></p>
 
                                 
                                 </section>
@@ -682,7 +673,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"惑星形式のmapを作る","level":"1.5.1","depth":2,"next":{"title":"橋を作る","level":"1.5.2","depth":2,"path":"city/02_bridge.md","ref":"city/02_bridge.md","articles":[]},"previous":{"title":"city sample","level":"1.5","depth":1,"path":"city/README.md","ref":"city/README.md","articles":[{"title":"惑星形式のmapを作る","level":"1.5.1","depth":2,"path":"city/01_remove.md","ref":"city/01_remove.md","articles":[]},{"title":"橋を作る","level":"1.5.2","depth":2,"path":"city/02_bridge.md","ref":"city/02_bridge.md","articles":[]},{"title":"建造物を作る","level":"1.5.3","depth":2,"path":"city/03_house.md","ref":"city/03_house.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"city/01_remove.md","mtime":"2025-02-08T18:40:49.795Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-02-08T18:41:05.295Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"惑星形式のmapを作る","level":"1.5.1","depth":2,"next":{"title":"橋を作る","level":"1.5.2","depth":2,"path":"city/02_bridge.md","ref":"city/02_bridge.md","articles":[]},"previous":{"title":"city sample","level":"1.5","depth":1,"path":"city/README.md","ref":"city/README.md","articles":[{"title":"惑星形式のmapを作る","level":"1.5.1","depth":2,"path":"city/01_remove.md","ref":"city/01_remove.md","articles":[]},{"title":"橋を作る","level":"1.5.2","depth":2,"path":"city/02_bridge.md","ref":"city/02_bridge.md","articles":[]},{"title":"建造物を作る","level":"1.5.3","depth":2,"path":"city/03_house.md","ref":"city/03_house.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"city/01_remove.md","mtime":"2025-02-08T22:24:54.181Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-02-08T22:25:08.308Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
