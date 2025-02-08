@@ -8,5 +8,8 @@
 |[nice interaction system](https://www.fab.com/ja/listings/63b61e4a-dc11-4ee0-a6b1-f4860bd29198)|3|20250206|アイテムを取得する|[docs](https://niceshadow.gitbook.io/nice-interaction-system)|
 |[magicalanimset](https://www.fab.com/ja/listings/a63386b8-7cad-42cd-8b81-a9de147e1f08)|3|20241222|少女の戦闘アニメーション||
 |[space frontier stations & ships](https://www.fab.com/listings/79323b40-dc56-43bf-8aea-b13800266329)|1|20241114|宇宙船のシステム|[docs](https://docs.google.com/document/d/1p5MY13cpTlVtqP7sCQpAoE_k5VHklmndZ4cHeBy105Y/)|
+|[logicdriver](https://www.fab.com/ja/listings/a3e2fc1f-2aaa-49a1-bc26-4d5d38f7d82f)|3|20241212|ロジックのシステム|[docs](https://logicdriver.com/docs/pages/prochangelog/)|
+|[dragon ik plugin](https://www.fab.com/ja/listings/d3f8d256-d8d9-4d27-91c1-c61e55e984a6)|3|20250122|animをターゲットに追従|[docs](https://dragonik.eternalmonke.com/)|
+|[replicated interaction kit vol 3](https://www.fab.com/ja/listings/3ce13688-fd10-462f-b90d-964c85a090ad)|1|20241115|椅子に座る||
 
 `rank`は更新頻度(追加)や価格から判断されます。`3`のassetがオススメです。
