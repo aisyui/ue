@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>基本事項 · HonKit</title>
+        <title>橋を作る · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 6.0.2">
@@ -56,10 +56,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../plan/" />
+    <link rel="next" href="../json/" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="01_remove.html" />
     
 
     </head>
@@ -327,9 +327,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="../city/">
+        <li class="chapter " data-level="1.5" data-path="./">
             
-                <a href="../city/">
+                <a href="./">
             
                     
                     city sample
@@ -341,9 +341,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../city/01_remove.html">
+        <li class="chapter " data-level="1.5.1" data-path="01_remove.html">
             
-                <a href="../city/01_remove.html">
+                <a href="01_remove.html">
             
                     
                     惑星形式のmapを作る
@@ -354,9 +354,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="../city/02_bridge.html">
+        <li class="chapter active" data-level="1.5.2" data-path="02_bridge.html">
             
-                <a href="../city/02_bridge.html">
+                <a href="02_bridge.html">
             
                     
                     橋を作る
@@ -404,9 +404,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="./">
+        <li class="chapter " data-level="1.7" data-path="../pixel/">
             
-                <a href="./">
+                <a href="../pixel/">
             
                     
                     pixel streaming
@@ -418,9 +418,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.7.1" data-path="01_server.html">
+        <li class="chapter " data-level="1.7.1" data-path="../pixel/01_server.html">
             
-                <a href="01_server.html">
+                <a href="../pixel/01_server.html">
             
                     
                     基本事項
@@ -550,7 +550,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >基本事項</a>
+        <a href=".." >橋を作る</a>
     </h1>
 </div>
 
@@ -565,8 +565,14 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="基本事項">基本事項</h1>
-<p>pcのdisplay(ディスプレイ)が必要になる。画面の電源もつけておく必要があります。</p>
+                                <h1 id="橋を作る">橋を作る</h1>
+<p><a href="https://www.fab.com/ja/listings/a472df9d-9179-4743-8d41-335f9ef55546" target="_blank">automotive bridge scene</a></p>
+<ol>
+<li><code>/Content/AutomotiveBridgeScene/Blueprints/BP_CurvedBridge</code>, <code>BP_StraightBridge</code>を開きます。これをつなぎ合わせていくことで橋を作ります。</li>
+<li>Lampが動きませんので、選択した上で<code>Static Mesh</code>を<code>city sample</code>に入っている<code>/Content/Prop/Kit_StreetLamp_C/Mesh/streetLampC</code>と入れ替えます。</li>
+<li>私はベンチのところを<code>traversable(トラバーサブル)</code>するためにGASの<code>/Content/LevelPrototyping/LevelBlock_Traversable</code>を入れています。Base Materialを<code>/Content/Characters/Echo/Materials/M_hide</code>にして透明にします。</li>
+</ol>
+<p><img src="../img/0003.png" alt=""></img></p>
 
                                 
                                 </section>
@@ -594,12 +600,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: pixel streaming">
+                <a href="01_remove.html" class="navigation navigation-prev " aria-label="Previous page: 惑星形式のmapを作る">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../plan/" class="navigation navigation-next " aria-label="Next page: 有料アセット">
+                <a href="../json/" class="navigation navigation-next " aria-label="Next page: json blueprint utilities">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -610,7 +616,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"基本事項","level":"1.7.1","depth":2,"next":{"title":"有料アセット","level":"1.8","depth":1,"path":"plan/README.md","ref":"plan/README.md","articles":[{"title":"superhero fligth animations","level":"1.8.1","depth":2,"path":"plan/01_flying.md","ref":"plan/01_flying.md","articles":[]},{"title":"ultra dynamic sky","level":"1.8.2","depth":2,"path":"plan/02_uds.md","ref":"plan/02_uds.md","articles":[]},{"title":"ocean waves","level":"1.8.3","depth":2,"path":"plan/03_ocean.md","ref":"plan/03_ocean.md","articles":[]},{"title":"nice interaction system","level":"1.8.4","depth":2,"path":"plan/04_item.md","ref":"plan/04_item.md","articles":[]}]},"previous":{"title":"pixel streaming","level":"1.7","depth":1,"path":"pixel/README.md","ref":"pixel/README.md","articles":[{"title":"基本事項","level":"1.7.1","depth":2,"path":"pixel/01_server.md","ref":"pixel/01_server.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pixel/01_server.md","mtime":"2025-02-08T12:59:06.341Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-02-08T12:59:21.271Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"橋を作る","level":"1.5.2","depth":2,"next":{"title":"json blueprint utilities","level":"1.6","depth":1,"path":"json/README.md","ref":"json/README.md","articles":[{"title":"apiから情報を取得する","level":"1.6.1","depth":2,"path":"json/01_varest.md","ref":"json/01_varest.md","articles":[]}]},"previous":{"title":"惑星形式のmapを作る","level":"1.5.1","depth":2,"path":"city/01_remove.md","ref":"city/01_remove.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"city/02_bridge.md","mtime":"2025-02-08T12:59:06.327Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-02-08T12:59:21.271Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
