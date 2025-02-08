@@ -10,21 +10,7 @@ game engineのmapは基本的に平面で作られています。どこまで行
 
 海には境界があってそれが惑星システム(planet system)を構築する際に邪魔になるので消します。
 
-## ocean wavesで惑星の海を作る
-
-[ocean waves](https://www.unrealengine.com/marketplace/ja/product/ocean-waves)
-
-必要なものを`/Content/OceanWaves/Levels/EarthSizedOceanPlanet`からcopyして持ってきましょう。
-
-- `BP_EarthSizedSphericalMesh`
-- `BP_EarthSizedOcean`
-- `WaterVolume`
-
-`BP_EarthSizedSphericalMesh`の`transform-location-z:-63600000`にします。`Sphere Radius:63600000`にします。`SphereEdge Length:16000000`になるはずです。
-
-次に海上の影問題を修正するため`Material Overrides`, `Material Outer/Inner`をすべて変更します。私は`/Vefects/Water/VFX/WaterMaterials`を使用しました。
-
-次に`BP_EarthSizedOcean`の`Volume Maaterials`で`WaterVolume`をセットします。`Above/Underwater`を`/Vefects/Water/VFX/UnderWater`に変更します。`height:0`にします。これは海に入って出たときに海中を適用する高さを設定します。
+`/Map/Small_City_LVL`を使います。`GroundCollisionCube`,`DroneBlockingVolume`を探して削除します。これは海面にplane(平面)を設置しています。
 
 ## ultra dynamic skyで天候と惑星を作る
 
@@ -41,3 +27,7 @@ game engineのmapは基本的に平面で作られています。どこまで行
 
 - `BP_Earth`: `transform-location-z:-636000000`, `transform-scale:6360000`
 - `Sky_Sphere_Mesh`: `transform-scale:50000`
+
+## ocean wavesで惑星の海を作る
+
+[こちら](/plan/03_ocean.html)

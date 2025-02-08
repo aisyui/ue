@@ -24,8 +24,20 @@
 |[kawaiiphysics](https://github.com/pafuhana1213/KawaiiPhysics)|20241201|揺れものを設定|
 |[varest](https://github.com/ufna/VaRest)|20240828|curlのようなもの。supportが終了しているのでbuildが必要|
 |[tatools](https://www.fab.com/ja/listings/a5d3b60d-b886-4564-bf6d-15d46a8d27fe)|20241206|animを作る|
+|[ui navigation 3.0](https://www.fab.com/ja/listings/a91f6e67-5c2d-46ef-926d-00a35525579c)|20250126|スタート画面を作る|
 
-## 有料
+## その他のasset
+
+ここからは無料のassetでおすすめのものを紹介します。使っていないものもあります。
+
+|name|body|
+|---|---|
+|[GASP-ALS](https://github.com/PolygonHive/GASP-ALS)|GASPの改造版|
+|[animal variety pack](https://www.fab.com/ja/listings/2dd7964c-a601-4264-a53d-465dcae1644c)|有名な動物モデル|
+|[quadruped fantasy creatures](https://www.fab.com/ja/listings/52d686b6-1180-4f26-901f-ce3c69a14767)|有名な幻獣モデル|
+|[ueplugin-accessvariablebyname](https://github.com/colory-games/UEPlugin-AccessVariableByName)|名前を取得するplugin|
+
+## 有料のasset
 
 [こちら](/plan/README.md)
 
