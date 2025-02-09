@@ -4,16 +4,47 @@
 
 ニューヨーク(NY)をモデルに都市が作られています。人と自動車が動いています。自動車は乗ることや破壊することができます。
 
-## AutomatedPerfTesting
+## game animation sampleとの統合
 
-`AutomatedPerfTesting`は5.5で追加されたpluginです。
+他のassetとの統合を考えるとき、city sampleをベースにします。なぜなら、city sampleは複雑すぎるためです。ここではcity sampleをinstallした上で、game animation sampleをそこにcopyします。
 
-> Experimental release of Automated Perf Testing Plugin v0.1, providing Gauntlet Test Controllers, UAT Test Nodes, and BuildGraph macros for adding common automated performance tests to a project’s automated build and test.
+なお、`GameAnimationSample/Binaries/Win64/UnrealEditor.modules`だけはcopyしません。
 
-- https://dev.epicgames.com/documentation/ja-jp/unreal-engine/unreal-engine-5.5-release-notes
-- https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Plugins/AutomatedPerfTesting
+```sh
+# 以下のfileをcopy
+GameAnimationSample
+    Binaries
+        Win64/UnrealEditor.modules #このfileだけはcopy(rewrite)しない
+    Build
+    Content
+```
 
-そのうち解消されると思いますが、現在(2024-11-18)、city sampleはbuildできません。`Engine/Plugins/Performance/AutomatedPerfTestingにAutomatedPerfTestConfig.cs`, `AutomatedPerfTestNode.cs`が含まれていないため`${project}/Build/Script/CitySample.Automation.csproj`に記述されているcompileが通らないのです。
+次に`CitySample/Binaries/Win64/UnrealEditor.modules`を編集します。
+
+```json
+{
+    "BuildId": "xxx",
+        "Modules":
+        {
+            "CitySample": "UnrealEditor-CitySample.dll",
+            "CitySampleAnimGraphRuntime": "UnrealEditor-CitySampleAnimGraphRuntime.dll",
+            "CitySampleEditor": "UnrealEditor-CitySampleEditor.dll"
+        },
+        {
+            "GameAnimationSample": "UnrealEditor-GameAnimationSample.dll"
+        }
+}
+```
+
+これでGASが機能すればokです。
+
+他には`$project/Config`と`$project/xxx.uproject`を見比べてみましょう。必要そうなものを追記します。
+
+## ue5.5ではbuildが通らない
+
+`2024-11-18`時点ではcity sampleはue5.5でbuildが通りません。ue5.4では通ります。
+
+`Engine/Plugins/Performance/AutomatedPerfTestingにAutomatedPerfTestConfig.cs`, `AutomatedPerfTestNode.cs`が含まれていないため`${project}/Build/Script/CitySample.Automation.csproj`に記述されているcompileが通らないのです。`AutomatedPerfTesting`は5.5で追加されたpluginです。
 
 ```html
 <Project Sdk="Microsoft.NET.Sdk">
@@ -30,6 +61,11 @@
 
 </Project>
 ```
+
+> Experimental release of Automated Perf Testing Plugin v0.1, providing Gauntlet Test Controllers, UAT Test Nodes, and BuildGraph macros for adding common automated performance tests to a project’s automated build and test.
+
+- https://dev.epicgames.com/documentation/ja-jp/unreal-engine/unreal-engine-5.5-release-notes
+- https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Plugins/AutomatedPerfTesting
 
 これはgithubにあるsrcから持ってくるしかありません。アクセスするにはorgに参加します。
 
