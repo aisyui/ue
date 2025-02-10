@@ -40,6 +40,13 @@ GameAnimationSample
 
 他には`$project/Config`と`$project/xxx.uproject`を見比べてみましょう。必要そうなものを追記します。
 
+例えば、camera(Gameplay)を有効にするには`$project/Config/DefaultEngine.ini`に`DDCVar.NewGameplayCameraSystem.Enable`の行を追加します。`CBP_SandboxCharacter`にある関数の`SetupCamera`を確認してください。
+
+```sh
+[/Script/Engine.DataDrivenConsoleVariableSettings]
++CVarsArray=(Type=CVarBool,Name="DDCVar.NewGameplayCameraSystem.Enable",ToolTip="",DefaultValueFloat=0.000000,DefaultValueInt=0,DefaultValueBool=True)
+```
+
 ## ue5.5ではbuildが通らない
 
 `2024-11-18`時点ではcity sampleはue5.5でbuildが通りません。ue5.4では通ります。
