@@ -10,7 +10,7 @@ game engineのmapは基本的に平面で作られています。どこまで行
 
 海には境界があってそれが惑星システム(planet system)を構築する際に邪魔になるので消します。
 
-`/Map/Small_City_LVL`を使います。`GroundCollisionCube`を探して削除します。これは海面にplane(平面)を設置しています。
+`/Map/Small_City_LVL`を使います。`GroundCollisionCube`,`DroneBlockingVolume`を探して削除します。これは海面にplane(平面)を設置しています。
 
 ## ultra dynamic skyで天候と惑星を作る
 
