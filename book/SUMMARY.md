@@ -23,6 +23,7 @@
  * [惑星形式のmapを作る](city/01_remove.md)
  * [橋を作る](city/02_bridge.md)
  * [建造物を作る](city/03_house.md)
+ * [エラーを解消する](city/04_err.md)
 * [json blueprint utilities](json/README.md)
  * [apiから情報を取得する](json/01_varest.md)
 * [pixel streaming](pixel/README.md)

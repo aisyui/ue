@@ -40,6 +40,8 @@ GameAnimationSample
 
 他には`$project/Config`と`$project/xxx.uproject`を見比べてみましょう。必要そうなものを追記します。
 
+### Gameplay Camera
+
 例えば、camera(Gameplay)を有効にするには`$project/Config/DefaultEngine.ini`に`DDCVar.NewGameplayCameraSystem.Enable`の行を追加します。`CBP_SandboxCharacter`にある関数の`SetupCamera`を確認してください。
 
 ```sh
@@ -47,34 +49,18 @@ GameAnimationSample
 +CVarsArray=(Type=CVarBool,Name="DDCVar.NewGameplayCameraSystem.Enable",ToolTip="",DefaultValueFloat=0.000000,DefaultValueInt=0,DefaultValueBool=True)
 ```
 
-## ue5.5ではbuildが通らない
+### Collision Trace Channel
 
-`2024-11-18`時点ではcity sampleはue5.5でbuildが通りません。ue5.4では通ります。
+Collision Trace Channelを設定するには、`Config/DefaultEngine.ini`を編集する必要があります。以下の手順で行います。GASは`traversable`を追加します。これが追加されていないと動きません。
 
-`Engine/Plugins/Performance/AutomatedPerfTestingにAutomatedPerfTestConfig.cs`, `AutomatedPerfTestNode.cs`が含まれていないため`${project}/Build/Script/CitySample.Automation.csproj`に記述されているcompileが通らないのです。`AutomatedPerfTesting`は5.5で追加されたpluginです。
-
-```html
-<Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="CitySample.Automation.csproj.props" Condition="Exists('CitySample.Automation.csproj.props')"/>
-  
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Include="$(EngineDir)\Plugins\Performance\AutomatedPerfTesting\Build\Scripts\AutomatedPerfTestConfig.cs" />
-    <Compile Include="$(EngineDir)\Plugins\Performance\AutomatedPerfTesting\Build\Scripts\AutomatedPerfTestNode.cs" />
-  </ItemGroup>
-
-</Project>
+```sh
+[/Script/Engine.CollisionProfile] 
++DefaultChannelResponses=(Channel=ECC_GameTraceChannel1,DefaultResponse=ECR_Ignore,bTraceType=True,bStaticObject=False,Name="Traversable")
 ```
 
-> Experimental release of Automated Perf Testing Plugin v0.1, providing Gauntlet Test Controllers, UAT Test Nodes, and BuildGraph macros for adding common automated performance tests to a project’s automated build and test.
+## 他のmapとの統合
 
-- https://dev.epicgames.com/documentation/ja-jp/unreal-engine/unreal-engine-5.5-release-notes
-- https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Plugins/AutomatedPerfTesting
+mapにはactorがまとめられているものがあり、それはmapにくっついていません。移動できない場合があります。
 
-これはgithubにあるsrcから持ってくるしかありません。アクセスするにはorgに参加します。
-
-https://github.com/EpicGames/UnrealEngine/tree/release/Engine/Plugins/Performance/AutomatedPerfTesting/Build/Scripts
+この場合は、city sampleのほうを別の場所に動かしたほうがいいでしょう。
 
