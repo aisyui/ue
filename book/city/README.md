@@ -378,6 +378,8 @@ GameAnimationSample
 +DefaultChannelResponses=(Channel=ECC_GameTraceChannel14,DefaultResponse=ECR_Ignore,bTraceType=True,bStaticObject=False,Name="LookAtTrace")
 ```
 
+`Collision Trace Channel`は作り直さなければ機能しないことがあります。
+
 ### Gameplay Camera
 
 例えば、camera(Gameplay)を有効にするには`$project/Config/DefaultEngine.ini`に`DDCVar.NewGameplayCameraSystem.Enable`の行を追加します。`CBP_SandboxCharacter`にある関数の`SetupCamera`を確認してください。
