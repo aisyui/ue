@@ -56,10 +56,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../json/" />
+    <link rel="next" href="01_remove.html" />
     
     
-    <link rel="prev" href="03_house.html" />
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -367,7 +367,20 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="01_remove.html">
+        <li class="chapter active" data-level="1.5.1" data-path="00_err.html">
+            
+                <a href="00_err.html">
+            
+                    
+                    エラーを解消する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="01_remove.html">
             
                 <a href="01_remove.html">
             
@@ -380,7 +393,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="02_bridge.html">
+        <li class="chapter " data-level="1.5.3" data-path="02_bridge.html">
             
                 <a href="02_bridge.html">
             
@@ -393,25 +406,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="03_house.html">
+        <li class="chapter " data-level="1.5.4" data-path="03_house.html">
             
                 <a href="03_house.html">
             
                     
                     建造物を作る
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter active" data-level="1.5.4" data-path="04_err.html">
-            
-                <a href="04_err.html">
-            
-                    
-                    エラーを解消する
             
                 </a>
             
@@ -618,16 +618,17 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="エラーを解消する">エラーを解消する</h1>
+<p>ここではcity sampleで発生する問題をまとめます。</p>
 <h2 id="buildが遅い場合">buildが遅い場合</h2>
 <p>もしcity sampleのmapを使わない場合は、buildが遅くなってしまいます。</p>
 <p>ueのpackage化が遅い場合、使用するmap以外をbuildしないようにすることで、処理時間を短縮できます。以下の手順で設定を行います。</p>
 <ol>
 <li><code>プロジェクト設定</code>を開きます。</li>
 <li>「パッケージ化」セクションに移動します。</li>
-<li>「マップのみをクック」オプションにチェックを入れます3。</li>
-<li>「パッケージ化されたビルドに含めるマップのリスト」に、必要なマップ（.umapファイル）を指定します3。</li>
+<li>「マップのみをクック」オプションにチェックを入れます。</li>
+<li>「パッケージ化されたビルドに含めるマップのリスト」に、必要なマップ（.umapファイル）を指定します。</li>
 </ol>
-<p>この設定により、指定したmapのみがpackage化され、データサイズが小さくなり、処理時間も短縮されます3。</p>
+<p>この設定により、指定したmapのみがpackage化され、データサイズが小さくなり、処理時間も短縮されます。</p>
 <h2 id="ue55ではbuildが通らない">ue5.5ではbuildが通らない</h2>
 <p><code>2024-11-18</code>時点ではcity sampleはue5.5でbuildが通りません。ue5.4では通ります。</p>
 <p><code>Engine/Plugins/Performance/AutomatedPerfTestingにAutomatedPerfTestConfig.cs</code>, <code>AutomatedPerfTestNode.cs</code>が含まれていないため<code>${project}/Build/Script/CitySample.Automation.csproj</code>に記述されているcompileが通らないのです。<code>AutomatedPerfTesting</code>は5.5で追加されたpluginです。</p>
@@ -701,6 +702,18 @@
 </blockquote>
 </li>
 </ol>
+<h2 id="characterのcollisionが機能せず地面に埋まってしまう">characterのcollisionが機能せず地面に埋まってしまう</h2>
+<p>GASと統合するとcity sampleに置かれた物体に触れられません。</p>
+<p>原因は<code>Gameplay Camera</code>というpluginです。<code>$project/Config/DefaultEngine.ini</code>に<code>DDCVar.NewGameplayCameraSystem.Enable</code>を追加し、関数である<code>Setup Camera</code>を実行している場合、characterのcollisionが機能せず地面に埋まってしまう問題があります。</p>
+<ul>
+<li>Gameplay Camera</li>
+<li>Setup Camera</li>
+<li><code>DDCVar.NewGameplayCameraSystem.Enable</code></li>
+</ul>
+<pre><code class="lang-sh">[/Script/Engine.DataDrivenConsoleVariableSettings]
++CVarsArray=(Type=CVarBool,Name=<span class="hljs-string">"DDCVar.NewGameplayCameraSystem.Enable"</span>,ToolTip=<span class="hljs-string">""</span>,DefaultValueFloat=0.000000,DefaultValueInt=0,DefaultValueBool=True)
+</code></pre>
+<p><code>Setup Camera</code>を実行しないようにするか、<code>DDCVar.NewGameplayCameraSystem.Enable</code>をfalseにします。</p>
 
                                 
                                 </section>
@@ -728,12 +741,12 @@
 
             
                 
-                <a href="03_house.html" class="navigation navigation-prev " aria-label="Previous page: 建造物を作る">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: city sample">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../json/" class="navigation navigation-next " aria-label="Next page: json blueprint utilities">
+                <a href="01_remove.html" class="navigation navigation-next " aria-label="Next page: 惑星形式のmapを作る">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -744,7 +757,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"エラーを解消する","level":"1.5.4","depth":2,"next":{"title":"json blueprint utilities","level":"1.6","depth":1,"path":"json/README.md","ref":"json/README.md","articles":[{"title":"apiから情報を取得する","level":"1.6.1","depth":2,"path":"json/01_varest.md","ref":"json/01_varest.md","articles":[]}]},"previous":{"title":"建造物を作る","level":"1.5.3","depth":2,"path":"city/03_house.md","ref":"city/03_house.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"city/04_err.md","mtime":"2025-02-12T04:41:52.766Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-02-12T04:42:08.312Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"エラーを解消する","level":"1.5.1","depth":2,"next":{"title":"惑星形式のmapを作る","level":"1.5.2","depth":2,"path":"city/01_remove.md","ref":"city/01_remove.md","articles":[]},"previous":{"title":"city sample","level":"1.5","depth":1,"path":"city/README.md","ref":"city/README.md","articles":[{"title":"エラーを解消する","level":"1.5.1","depth":2,"path":"city/00_err.md","ref":"city/00_err.md","articles":[]},{"title":"惑星形式のmapを作る","level":"1.5.2","depth":2,"path":"city/01_remove.md","ref":"city/01_remove.md","articles":[]},{"title":"橋を作る","level":"1.5.3","depth":2,"path":"city/02_bridge.md","ref":"city/02_bridge.md","articles":[]},{"title":"建造物を作る","level":"1.5.4","depth":2,"path":"city/03_house.md","ref":"city/03_house.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"city/00_err.md","mtime":"2025-02-13T17:40:27.610Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-02-13T17:40:42.055Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
