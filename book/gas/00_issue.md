@@ -4,7 +4,7 @@
 
 ## GameplayCameraをdisableにする
 
-GASで使用されるGameplayCamera(plugin)が壊れているため、これを削除する人が多いです。
+GASPで使用されるGameplayCamera(plugin)が壊れているため、これを削除する人が多いです。
 
 削除方法は簡単で`/Content/Blueprints/CBP_SandboxCharacter`の`GameplayCamera`というcomponentを削除し、err箇所のnodeを修正すると完了です。
 

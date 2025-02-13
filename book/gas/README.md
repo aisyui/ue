@@ -2,9 +2,9 @@
 
 [game aimation sample](https://www.fab.com/ja/listings/880e319a-a59e-4ed2-b268-b32dac7fa016)は`epic games`が提供しているassetです。
 
-[G]ame [A]nimation [S]ampleでGASと略すことがあります。
+[G]ame [A]nimation [S]ampleでGASと略すことがあります。Projectを追加して、GASPと呼ばれます。
 
-なお、[G]ame [A]bility [S]ystemもGASなので紛らわしいです。
+[G]ame [A]bility [S]ystemもGASなので紛らわしいですね。
 
 まずはこれを使ってキャラクター(character)を動かしてみましょう。
 

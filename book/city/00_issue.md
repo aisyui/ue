@@ -56,7 +56,7 @@ https://github.com/EpicGames/UnrealEngine/tree/release/Engine/Plugins/Performanc
 
 ## characterのcollisionが機能せず地面に埋まってしまう
 
-GASと統合するとcity sampleに置かれた物体に触れられません。
+GASPと統合するとcity sampleに置かれた物体に触れられません。
 
 原因は`Gameplay Camera`というpluginです。`$project/Config/DefaultEngine.ini`に`DDCVar.NewGameplayCameraSystem.Enable`を追加し、関数である`Setup Camera`を実行している場合、characterのcollisionが機能せず地面に埋まってしまう問題があります。
 

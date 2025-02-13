@@ -32,7 +32,7 @@
 
 |name|body|
 |---|---|
-|[GASP-ALS](https://github.com/PolygonHive/GASP-ALS)|GASの改造版|
+|[GASP-ALS](https://github.com/PolygonHive/GASP-ALS)|GASPの改造版|
 |[animal variety pack](https://www.fab.com/ja/listings/2dd7964c-a601-4264-a53d-465dcae1644c)|有名な動物モデル|
 |[quadruped fantasy creatures](https://www.fab.com/ja/listings/52d686b6-1180-4f26-901f-ce3c69a14767)|有名な幻獣モデル|
 |[ueplugin-accessvariablebyname](https://github.com/colory-games/UEPlugin-AccessVariableByName)|名前を取得するplugin|

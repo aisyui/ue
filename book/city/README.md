@@ -36,7 +36,7 @@ GameAnimationSample
 }
 ```
 
-これでGASが機能すればokです。
+これでGASPが機能すればokです。
 
 他には`$project/Config`と`$project/xxx.uproject`を見比べてみましょう。必要そうなものを追記します。
 
@@ -393,7 +393,7 @@ GameAnimationSample
 
 ### Collision Trace Channel
 
-`Collision Trace Channel`を設定するには、`Config/DefaultEngine.ini`を編集する必要があります。以下の手順で行います。GASは`traversable`を追加します。これが追加されていないと動きません。
+`Collision Trace Channel`を設定するには、`Config/DefaultEngine.ini`を編集する必要があります。以下の手順で行います。GASPは`traversable`を追加します。これが追加されていないと動きません。
 
 `ECC_GameTraceChannel${n}`に注意してください。
 
