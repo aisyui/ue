@@ -22,14 +22,18 @@ ue5でゲームを作成するまでの過程をまとめます。
 
 ## 使用するタグ
 
+### youtube
+
+`https://www.youtube.com/embed/${id}?start=0&end=10&mute=1&rel=0&showinfo=0&controls=0`
+
 ```html
-# youtube
-## https://www.youtube.com/embed/${id}?start=0&end=10&mute=1&rel=0&showinfo=0&controls=0
 <iframe width="100%" height="415" src="https://www.youtube.com/embed/?start=0&end=10&mute=1&rel=0&showinfo=0&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ```
 
+### blueprint
+
+`https://blueprintue.com/render/${id}/${n}`
+
 ```html
-# blueprint
-## https://blueprintue.com/render/${id}/${n}
 <iframe src="https://blueprintue.com/render/" scrolling="no" allowfullscreen style="width:100%;height:400px"></iframe>
 ```

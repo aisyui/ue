@@ -1,6 +1,6 @@
-# エラーを解消する
+# issue
 
-ここではcity sampleで発生する問題をまとめます。
+[issue](/default/00_issue.html)
 
 ## buildが遅い場合
 
@@ -52,35 +52,7 @@ https://github.com/EpicGames/UnrealEngine/tree/release/Engine/Plugins/Performanc
 
 基本的に新しいprojectを作成するときは`VaultCache`からcopyされます。これがないとdownloadから`VaultCache`が生成されます。
 
-## error II-E1001
 
-`Epic Games Launcher`に非常によく出るerrorです。
-
-エラーコード「II-E1001」は、主にEpic Games LauncherまたはUnreal Engineでのプロジェクト作成やコンテンツダウンロード時に発生する問題です。このエラーの原因と解決策を以下にまとめます。`Epic Games Launcher`を再インストールすることでしか治らないこともあります。
-
-1. キャッシュの破損
-> Epic Games LauncherのVault Cacheに破損したデータが残っている場合、エラーが発生することがあります7。
-2. ダウンロード中のクラッシュ
-> コンテンツのダウンロード中にPCがクラッシュした場合、未完了のデータが原因でエラーが発生することがあります7。
-3. 外部ストレージの使用
-> ライブラリが外部ハードドライブ上にある場合、ランチャーが正しく認識できないことがあります7。
-
-### 解決策
-
-1. Vault Cacheフォルダを確認・削除
-> Epic Games Launcherの「設定」からVault Cacheの場所を確認します。
-> 対象コンテンツのフォルダを削除します（フォルダが空の場合も削除可能）。
-> 他のフォルダを選択して、元のフォルダに戻すと解消されることがあります。
-2. Vault Cacheフォルダの属性変更
-> Vault Cacheフォルダを右クリックし、「読み取り専用」のチェックを外して適用します。
-3. Epic Games Launcherの再起動
-> ランチャーを再起動し、問題が解消されるか確認します。
-> 必要であればPC自体も再起動してください。
-4. 外部ストレージの確認
-> ライブラリが外部ストレージ上にある場合、ランチャー設定で適切なキャッシュフォルダが指定されているか確認します7。
-5. Epic Games Launcherの再インストール
-> キャッシュをクリアした後、Epic Games Launcherを再インストールします。
-> これらの手順で解決しない場合は、Epic Gamesサポート（公式ヘルプページ）に問い合わせることをお勧めします。
 
 ## characterのcollisionが機能せず地面に埋まってしまう
 
