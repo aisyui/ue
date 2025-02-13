@@ -1,5 +1,7 @@
 # エラーを解消する
 
+ここではcity sampleで発生する問題をまとめます。
+
 ## buildが遅い場合
 
 もしcity sampleのmapを使わない場合は、buildが遅くなってしまいます。
@@ -8,10 +10,10 @@ ueのpackage化が遅い場合、使用するmap以外をbuildしないように
 
 1. `プロジェクト設定`を開きます。
 2. 「パッケージ化」セクションに移動します。
-3. 「マップのみをクック」オプションにチェックを入れます3。
-4. 「パッケージ化されたビルドに含めるマップのリスト」に、必要なマップ（.umapファイル）を指定します3。
+3. 「マップのみをクック」オプションにチェックを入れます。
+4. 「パッケージ化されたビルドに含めるマップのリスト」に、必要なマップ（.umapファイル）を指定します。
 
-この設定により、指定したmapのみがpackage化され、データサイズが小さくなり、処理時間も短縮されます3。
+この設定により、指定したmapのみがpackage化され、データサイズが小さくなり、処理時間も短縮されます。
 
 ## ue5.5ではbuildが通らない
 
@@ -79,3 +81,21 @@ https://github.com/EpicGames/UnrealEngine/tree/release/Engine/Plugins/Performanc
 5. Epic Games Launcherの再インストール
 > キャッシュをクリアした後、Epic Games Launcherを再インストールします。
 > これらの手順で解決しない場合は、Epic Gamesサポート（公式ヘルプページ）に問い合わせることをお勧めします。
+
+## characterのcollisionが機能せず地面に埋まってしまう
+
+GASと統合するとcity sampleに置かれた物体に触れられません。
+
+原因は`Gameplay Camera`というpluginです。`$project/Config/DefaultEngine.ini`に`DDCVar.NewGameplayCameraSystem.Enable`を追加し、関数である`Setup Camera`を実行している場合、characterのcollisionが機能せず地面に埋まってしまう問題があります。
+
+- Gameplay Camera
+- Setup Camera
+- `DDCVar.NewGameplayCameraSystem.Enable`
+
+```sh
+[/Script/Engine.DataDrivenConsoleVariableSettings]
++CVarsArray=(Type=CVarBool,Name="DDCVar.NewGameplayCameraSystem.Enable",ToolTip="",DefaultValueFloat=0.000000,DefaultValueInt=0,DefaultValueBool=True)
+```
+
+`Setup Camera`を実行しないようにするか、`DDCVar.NewGameplayCameraSystem.Enable`をfalseにします。
+
