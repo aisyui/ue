@@ -389,6 +389,8 @@ GameAnimationSample
 +CVarsArray=(Type=CVarBool,Name="DDCVar.NewGameplayCameraSystem.Enable",ToolTip="",DefaultValueFloat=0.000000,DefaultValueInt=0,DefaultValueBool=True)
 ```
 
+現在、[characterのcollisionが機能しない問題](/city/00_err.html)が発生します。
+
 ### Collision Trace Channel
 
 `Collision Trace Channel`を設定するには、`Config/DefaultEngine.ini`を編集する必要があります。以下の手順で行います。GASは`traversable`を追加します。これが追加されていないと動きません。

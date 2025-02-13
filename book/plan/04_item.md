@@ -7,3 +7,4 @@
 > The only thing you need to do now is open your Player Controller and add the AC_PC_Interaction component:
 3. Game State: `AC_GS_Interaction`
 > Now just add the AC_GS_Interaction component to your game state:
+4. project設定にてcollisionのtrace channelに`LookAtTrace`を`ignore`で追加します。
