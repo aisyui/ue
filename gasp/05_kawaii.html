@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>キャラクターを追加する · HonKit</title>
+        <title>揺れものを設定する · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 6.0.2">
@@ -56,10 +56,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="02_jump.html" />
+    <link rel="next" href="06_camera.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="04_vmc.html" />
     
 
     </head>
@@ -199,7 +199,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.3.1" data-path="01_character.html">
+        <li class="chapter " data-level="1.3.1" data-path="01_character.html">
             
                 <a href="01_character.html">
             
@@ -251,7 +251,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.5" data-path="05_kawaii.html">
+        <li class="chapter active" data-level="1.3.5" data-path="05_kawaii.html">
             
                 <a href="05_kawaii.html">
             
@@ -628,7 +628,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >キャラクターを追加する</a>
+        <a href=".." >揺れものを設定する</a>
     </h1>
 </div>
 
@@ -643,15 +643,16 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="キャラクターを追加する">キャラクターを追加する</h1>
-<p>これには<code>IKリターゲット</code>が必要です。</p>
+                                <h1 id="揺れものを設定する">揺れものを設定する</h1>
+<p><a href="https://github.com/pafuhana1213/kawaiiphysics" target="_blank">kawaiiphysics</a></p>
+<p><code>$project/Plugins/kawaiiPhysics/kawaiiPhysics.uplugin</code></p>
 <ol>
-<li><code>Content/Blueprints/CBP_SandboxCharacter_Manny</code>をcopyして<code>CBP_SandboxCharacter_test</code>を作ります。</li>
-<li><code>CBP_SandboxCharacter_test</code>を開いて、<code>Mesh</code>の下にあるSKM(スケルタルメッシュ)の<code>Manny</code>を選択します。その状態で<code>詳細(details) -&gt; タグ(tags) -&gt; Component Tags</code>から<code>index[0]</code>を<code>RTG_UEFN_to_UE5_test</code>に書き換えます。</li>
-<li><code>Content/Blueprints/RetargetedCharacters/ABP_GenericRetarget</code>を開き、変数の<code>IKRetargeter_Map</code>に新しく<code>RTG_UEFN_to_UE5_test</code>を追加し、ファイルは<code>/Content/Characters/UE5_Mannequins/Rigs/RTG_UEFN_to_UE5_Mannequin</code>を参照します。</li>
-<li><code>/Content/Widgets/GameAnimationWidget</code>を開いて、characterのiconのところをcopyして貼り付けます。そして、詳細からObjectで <code>Content/Blueprints/CBP_SandboxCharacter_test</code>を参照します。</li>
+<li>基本的には<code>/Content/Characters/$model/ABP_Pose_$model</code>に設定します。</li>
+<li>外付けの服などに設定する場合はABPを作成し、そこに設定します。</li>
 </ol>
-<p>これで新しいキャラを使用することが可能になります。</p>
+<p><a href="../img/0002.png"><img src="../img/0002.png"></img></a></p>
+<p>服が揺れる様子です。<code>limit(制限) -&gt; Capsule Limits -&gt; Driving Bone</code>にBone(ボーン)を入れて体に入りこまないようにしています。</p>
+<iframe width="100%" height="415" src="https://www.youtube.com/embed/0Ig_-JSRV0M?si=Kz_jCbYTHr_OzPpP&amp;start=28&amp;end=50&amp;mute=1&amp;rel=0&amp;showinfo=0&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
 
                                 
                                 </section>
@@ -679,12 +680,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: game animation sample">
+                <a href="04_vmc.html" class="navigation navigation-prev " aria-label="Previous page: モーションキャプチャで動かす">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="02_jump.html" class="navigation navigation-next " aria-label="Next page: 飛びつける高さを増やす">
+                <a href="06_camera.html" class="navigation navigation-next " aria-label="Next page: カメラワークの設定する">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -695,7 +696,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"キャラクターを追加する","level":"1.3.1","depth":2,"next":{"title":"飛びつける高さを増やす","level":"1.3.2","depth":2,"path":"gas/02_jump.md","ref":"gas/02_jump.md","articles":[]},"previous":{"title":"game animation sample","level":"1.3","depth":1,"path":"gas/README.md","ref":"gas/README.md","articles":[{"title":"キャラクターを追加する","level":"1.3.1","depth":2,"path":"gas/01_character.md","ref":"gas/01_character.md","articles":[]},{"title":"飛びつける高さを増やす","level":"1.3.2","depth":2,"path":"gas/02_jump.md","ref":"gas/02_jump.md","articles":[]},{"title":"キャラクターの見た目を変える","level":"1.3.3","depth":2,"path":"gas/03_vrm.md","ref":"gas/03_vrm.md","articles":[]},{"title":"モーションキャプチャで動かす","level":"1.3.4","depth":2,"path":"gas/04_vmc.md","ref":"gas/04_vmc.md","articles":[]},{"title":"揺れものを設定する","level":"1.3.5","depth":2,"path":"gas/05_kawaii.md","ref":"gas/05_kawaii.md","articles":[]},{"title":"カメラワークの設定する","level":"1.3.6","depth":2,"path":"gas/06_camera.md","ref":"gas/06_camera.md","articles":[]},{"title":"アニメーションを作成する","level":"1.3.7","depth":2,"path":"gas/07_anim.md","ref":"gas/07_anim.md","articles":[]},{"title":"niagaraでダメージを出す","level":"1.3.8","depth":2,"path":"gas/08_niagara.md","ref":"gas/08_niagara.md","articles":[]},{"title":"椅子に座る","level":"1.3.9","depth":2,"path":"gas/09_chair.md","ref":"gas/09_chair.md","articles":[]},{"title":"issue","level":"1.3.10","depth":2,"path":"gas/00_issue.md","ref":"gas/00_issue.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"gas/01_character.md","mtime":"2025-02-14T03:04:04.439Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-02-14T03:04:18.809Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"揺れものを設定する","level":"1.3.5","depth":2,"next":{"title":"カメラワークの設定する","level":"1.3.6","depth":2,"path":"gasp/06_camera.md","ref":"gasp/06_camera.md","articles":[]},"previous":{"title":"モーションキャプチャで動かす","level":"1.3.4","depth":2,"path":"gasp/04_vmc.md","ref":"gasp/04_vmc.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"gasp/05_kawaii.md","mtime":"2025-02-15T03:35:23.952Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-02-15T03:35:40.538Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>issue · HonKit</title>
+        <title>椅子に座る · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 6.0.2">
@@ -56,10 +56,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../crs/" />
+    <link rel="next" href="00_issue.html" />
     
     
-    <link rel="prev" href="09_chair.html" />
+    <link rel="prev" href="08_niagara.html" />
     
 
     </head>
@@ -303,7 +303,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.9" data-path="09_chair.html">
+        <li class="chapter active" data-level="1.3.9" data-path="09_chair.html">
             
                 <a href="09_chair.html">
             
@@ -316,7 +316,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.10" data-path="00_issue.html">
+        <li class="chapter " data-level="1.3.10" data-path="00_issue.html">
             
                 <a href="00_issue.html">
             
@@ -628,7 +628,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >issue</a>
+        <a href=".." >椅子に座る</a>
     </h1>
 </div>
 
@@ -643,33 +643,18 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="issue">issue</h1>
-<p><a href="../default/00_issue.html">issue</a></p>
-<h2 id="gameplaycameraをdisableにする">GameplayCameraをdisableにする</h2>
-<p>GASPで使用されるGameplayCamera(plugin)が壊れているため、これを削除する人が多いです。</p>
-<p>削除方法は簡単で<code>/Content/Blueprints/CBP_SandboxCharacter</code>の<code>GameplayCamera</code>というcomponentを削除し、err箇所のnodeを修正すると完了です。</p>
-<p>仕組みを解説すると、このcomponentでCameraに<code>/Blueprints/Cameras/CameraAsset_SandboxCharacter</code>を指定しています。そして、<code>SetupCamera</code>という関数でenable(有効)にします。関数では<code>$project/Config/DefaultEngine.ini</code>にある<code>DDCVar.NewGameplayCameraSystem.Enable</code>の値がtrueなら使用されます。</p>
-<pre><code class="lang-sh">[/Script/Engine.DataDrivenConsoleVariableSettings]
-+CVarsArray=(Type=CVarBool,Name=<span class="hljs-string">"DDCVar.NewGameplayCameraSystem.Enable"</span>,ToolTip=<span class="hljs-string">""</span>,DefaultValueFloat=0.000000,DefaultValueInt=0,DefaultValueBool=True)
-</code></pre>
-<p><code>DDCVar.NewGameplayCameraSystem.Enable</code>をfalseにするか、あるいは<code>branch</code>の処理を削除し、false後の処理(Set View Target with Blend)につなげるかで機能をdisable(無効)にすることができます。</p>
-<p>私はなるべく最新機能を使用したいと思っています。ですが、先に述べたように色々と壊れているため、問題がたくさん発生します。原因が<code>GameplayCamera</code>にあることを突き止めるのも苦労しますから、disableにしておくのが正解かもしれません。</p>
-<h2 id="cameraが急接近する">cameraが急接近する</h2>
-<p>よじ登ったり、柵を超えたりするとき、camera(カメラ)が急接近することがあります。</p>
-<p>これは<code>GameplayCamera</code>の<code>CameraRig_CollisionOffset</code>が原因です。<code>/Content/Blueprints/CBP_SandboxCharacter</code>の<code>SetupCamera</code>という関数で使われていますので、その部分だけ外しておきましょう。</p>
-<p>ただし、床が透けて映ってしまうようになります。</p>
-<h2 id="characterのcomponentが初期化される">characterのcomponentが初期化される</h2>
-<p>ある時点で<code>/Content/Blueprints/RetargetedCharacters/CBP_SandboxCharacter_${name}</code>にあるcompoentが初期化されていることに気づくかもしれません。</p>
-<p>原因はわかりませんが、これが起こるとcameraがおかしくなったり、<code>IA_Sprint</code>でダッシュできなくなったりすることがあります。</p>
-<p>これを解決する方法は、<code>/Content/Blueprints/CBP_SandboxCharacter</code>の<code>Event BeginPlay</code>でcomponentの初期設定をすることです。</p>
-<iframe src="https://blueprintue.com/render/0lt9y0_u/1" scrolling="no" allowfullscreen="" style="width:100%;height:400px"></iframe>
+                                <h1 id="椅子に座る">椅子に座る</h1>
+<p>椅子に座る動作を設定します。大変ですが以下のcomponentを使うと簡単にできます。調整は難しいですね。私の場合はgame animation sampleを使っていますが、最新版では勝手に動きが制御されるためanim montageをそのまま再生できません。したがって、別にabpを作成し、それを呼び出します。</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=VzyvpFvon0g" target="_blank">https://www.youtube.com/watch?v=VzyvpFvon0g</a></li>
+<li><a href="https://blueprintue.com/blueprint/wg_vyr4o/" target="_blank">https://blueprintue.com/blueprint/wg_vyr4o/</a></li>
+</ul>
+<p>その後、動作が気に入らなかったため<a href="https://www.fab.com/ja/listings/3ce13688-fd10-462f-b90d-964c85a090ad" target="_blank">replicated interaction kit vol 3</a>というassetを購入しましたが、結果はほとんど変わりませんでした。</p>
+<p>これは用意されているものをすべて使わないと設定できません。具体的にはBP_Chair, BP_InteractKitVol3, ABP_Manny, BP_ThirdPersonCharacterです。</p>
+<p>まずcomponentを<code>CBP_SandboxCharacter</code>に入れて、ABPを呼び出し、keyを設定します。なお、anim montageはcomponentの方にも別のものを設定できますので、キャラによって背丈などが合わない場合には個別に設定します。</p>
+<iframe src="https://blueprintue.com/render/9e2ls2nx/1" scrolling="no" allowfullscreen="" style="width:100%;height:400px"></iframe>
 
-<h2 id="iasprintのダッシュができなくなる">IA_Sprintのダッシュができなくなる</h2>
-<p>ダッシュは<code>/Content/Blueprints/RetargetedCharacters/CBP_SandboxCharacter_${name}</code>の<code>Event BeginPlay</code>を削除することで解消しました(nodeがつながっていなくてもevent自体を削除)。</p>
-<h2 id="traversableが機能しなくなる">traversableが機能しなくなる</h2>
-<p>突然、traversable(トラバーサブル)、つまり、よじ登ったりする機能が使えなくなることがあります。</p>
-<p>いくつか原因が考えられますが、project設定の<code>collision &gt; trace channel : Traversable</code>に問題があるのかもしれません。</p>
-<p>collision trace channelに問題が発生するときはけっこう大変です。色々とbugがあり、一度削除して同じ名前で作り直せば動作することもありますが、余計に壊れることもあります。例えば、削除したときにBPのnodeに他のtrace channelが自動で入ってしまうことも要因になります。</p>
+<p>用意されているanim montageは後ろ向きになっているため、animを180度回してから録画して新たに作ります。この際、高さなども調整してください。anim montageはloopさせるため、立ち上がり(front_end)が反対になってしまいます。これはBP_Chairにある矢印方向を180度回せばokでした。</p>
 
                                 
                                 </section>
@@ -697,12 +682,12 @@
 
             
                 
-                <a href="09_chair.html" class="navigation navigation-prev " aria-label="Previous page: 椅子に座る">
+                <a href="08_niagara.html" class="navigation navigation-prev " aria-label="Previous page: niagaraでダメージを出す">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../crs/" class="navigation navigation-next " aria-label="Next page: control rig sample">
+                <a href="00_issue.html" class="navigation navigation-next " aria-label="Next page: issue">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -713,7 +698,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"issue","level":"1.3.10","depth":2,"next":{"title":"control rig sample","level":"1.4","depth":1,"path":"crs/README.md","ref":"crs/README.md","articles":[{"title":"CRでキャラクターを動かす","level":"1.4.1","depth":2,"path":"crs/01_character.md","ref":"crs/01_character.md","articles":[]},{"title":"ボスを作る","level":"1.4.2","depth":2,"path":"crs/02_boss.md","ref":"crs/02_boss.md","articles":[]}]},"previous":{"title":"椅子に座る","level":"1.3.9","depth":2,"path":"gas/09_chair.md","ref":"gas/09_chair.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"gas/00_issue.md","mtime":"2025-02-14T03:04:04.439Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-02-14T03:04:18.809Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"椅子に座る","level":"1.3.9","depth":2,"next":{"title":"issue","level":"1.3.10","depth":2,"path":"gasp/00_issue.md","ref":"gasp/00_issue.md","articles":[]},"previous":{"title":"niagaraでダメージを出す","level":"1.3.8","depth":2,"path":"gasp/08_niagara.md","ref":"gasp/08_niagara.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"gasp/09_chair.md","mtime":"2025-02-15T03:35:23.952Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-02-15T03:35:40.538Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

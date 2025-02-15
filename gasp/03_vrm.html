@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>カメラワークの設定する · HonKit</title>
+        <title>キャラクターの見た目を変える · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 6.0.2">
@@ -56,10 +56,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="07_anim.html" />
+    <link rel="next" href="04_vmc.html" />
     
     
-    <link rel="prev" href="05_kawaii.html" />
+    <link rel="prev" href="02_jump.html" />
     
 
     </head>
@@ -225,7 +225,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3" data-path="03_vrm.html">
+        <li class="chapter active" data-level="1.3.3" data-path="03_vrm.html">
             
                 <a href="03_vrm.html">
             
@@ -264,7 +264,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.6" data-path="06_camera.html">
+        <li class="chapter " data-level="1.3.6" data-path="06_camera.html">
             
                 <a href="06_camera.html">
             
@@ -628,7 +628,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >カメラワークの設定する</a>
+        <a href=".." >キャラクターの見た目を変える</a>
     </h1>
 </div>
 
@@ -643,17 +643,104 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="カメラワークを設定する">カメラワークを設定する</h1>
-<p>スキル発動したときカメラをぐるっと回す演出です。
-正面カメラを設置し、タイムラインで動かしたあとに通常(後方)カメラに切り替えることで実現しています。</p>
-<iframe width="100%" height="415" src="https://www.youtube.com/embed/BsLOlAr-wBY?si=jahPUVD8YMMfefvm&amp;start=29&amp;end=34&amp;mute=1&amp;rel=0&amp;showinfo=0&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+                                <h1 id="キャラクターの見た目を変える">キャラクターの見た目を変える</h1>
+<p>キャラクターの見た目を変えるには<code>.vrm</code>を使うと便利です。これは<code>pixiv</code>が作っている規格です。</p>
+<p>ueで読み込むには<code>vrm4u</code>というpluginを使用します。</p>
+<iframe width="100%" height="415" src="https://www.youtube.com/embed/0Ig_-JSRV0M?si=Kz_jCbYTHr_OzPpP&amp;start=0&amp;end=23&amp;mute=1&amp;rel=0&amp;showinfo=0&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
 
-
-<pre><code class="lang-sh">/Content/Blueprints/CBP_SandboxCharacter
+<h2 id="vrm4u">vrm4u</h2>
+<ol>
+<li><a href="https://github.com/ruyo/VRM4U/releases" target="_blank">vrm4u</a>をダウンロード(download)して、<code>$project/Plugins</code>に入れる。<blockquote>
+<p>$project/Plugins/VRM4U/VRM4U.uplugin</p>
+</blockquote>
+</li>
+<li>editorのファイルエクスプローラーでモデルファイルの<code>.vrm</code>をD&amp;Dします。色々と聞かれますが適当にokや選択します。配色タイプが聞かれます。例えば、<code>$project/Content/Characters</code>に<code>model</code>フォルダを作り<code>model.vrm</code>をimport(インポート)した場合で解説します。<blockquote>
+<p>$project/Content/Characters/$model</p>
+</blockquote>
+</li>
+</ol>
+<p>モデル(model)は<a href="https://hub.vroid.com/users/36144806" target="_blank">こちら</a>からdownloadすることができます。私は、<code>vrm 1.0</code>を使用ていますが、<code>vrm 0.0</code>のほうが安定しています。</p>
+<p>重要なファイルは<code>$project/Content/Characters/$model/SK_$model</code>, <code>ABP_Post_$model</code>, <code>RTG_UEFN_$model</code>になります。</p>
+<p><a href="https://vrm.dev/vrm1/" target="_blank">https://vrm.dev/vrm1/</a></p>
+<h2 id="指の角度を調整する">指の角度を調整する</h2>
+<p>これは<code>RTG_UEFN_$model</code>で調整します。各指にある線を選択して値を変更します。</p>
+<ul>
+<li><code>回転アルファ:0.5</code></li>
+</ul>
+<h2 id="前髪の角度を調整する">前髪の角度を調整する</h2>
+<p>これは<code>/Content/Character/$model/VM_${model}_VrmMeta</code>で調整します。具体的には以下のような値にすればいいでしょう。</p>
+<pre><code class="lang-json">[
+  {
+    <span class="hljs-string">"bone Name"</span>: <span class="hljs-string">"J_Sec_Hair1_03"</span>,
+    <span class="hljs-string">"Hit Radius"</span>: <span class="hljs-number">0</span>
+  },
+  {
+    <span class="hljs-string">"bone Name"</span>: <span class="hljs-string">"J_Sec_Hair2_03"</span>,
+    <span class="hljs-string">"Hit Radius"</span>: <span class="hljs-number">0.01</span>
+  },
+  {
+    <span class="hljs-string">"bone Name"</span>: <span class="hljs-string">"J_Sec_Hair3_03"</span>,
+    <span class="hljs-string">"Hit Radius"</span>: <span class="hljs-number">0.01</span>
+  }
+],
+[
+  {
+    <span class="hljs-string">"bone Name"</span>: <span class="hljs-string">"J_Sec_Hair1_04"</span>,
+    <span class="hljs-string">"Hit Radius"</span>: <span class="hljs-number">0</span>
+  },
+  {
+    <span class="hljs-string">"bone Name"</span>: <span class="hljs-string">"J_Sec_Hair2_04"</span>,
+    <span class="hljs-string">"Hit Radius"</span>: <span class="hljs-number">0.01</span>
+  },
+  {
+    <span class="hljs-string">"bone Name"</span>: <span class="hljs-string">"J_Sec_Hair3_04"</span>,
+    <span class="hljs-string">"Hit Radius"</span>: <span class="hljs-number">0.01</span>
+  }
+],
+[
+  {
+    <span class="hljs-string">"bone Name"</span>: <span class="hljs-string">"J_Sec_Hair1_05"</span>,
+    <span class="hljs-string">"Hit Radius"</span>: <span class="hljs-number">0</span>
+  },
+  {
+    <span class="hljs-string">"bone Name"</span>: <span class="hljs-string">"J_Sec_Hair2_05"</span>,
+    <span class="hljs-string">"Hit Radius"</span>: <span class="hljs-number">0.01</span>
+  },
+  {
+    <span class="hljs-string">"bone Name"</span>: <span class="hljs-string">"J_Sec_Hair3_05"</span>,
+    <span class="hljs-string">"Hit Radius"</span>: <span class="hljs-number">0.01</span>
+  }
+]
 </code></pre>
-<iframe src="https://blueprintue.com/render/exmpoyfu/1/" scrolling="no" allowfullscreen="" style="width:100%;height:400px"></iframe>
-
-<p>ボス戦のときだけこの演出を実行します。なお、<code>true</code>, <code>false</code>はどちらも最終的に<code>skill(スキル)</code>の実行につながるようにしてください。</p>
+<p>飛行時に髪が爆散する問題は以下です。</p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">"bone Name"</span>: <span class="hljs-string">"J_Sec_Hair2_03"</span>,
+  <span class="hljs-string">"Hit Radius"</span>: <span class="hljs-number">0.0</span>
+},
+{
+  <span class="hljs-string">"bone Name"</span>: <span class="hljs-string">"J_Sec_Hair1_09"</span>,
+  <span class="hljs-string">"Hit Radius"</span>: <span class="hljs-number">0.01</span>
+},
+{
+  <span class="hljs-string">"bone Name"</span>: <span class="hljs-string">"J_Sec_Hair1_10"</span>,
+  <span class="hljs-string">"Hit Radius"</span>: <span class="hljs-number">0.01</span>
+}
+</code></pre>
+<h2 id="アウトラインを追加する">アウトラインを追加する</h2>
+<p>アウトライン(outline)</p>
+<ol>
+<li><code>/Content/Blueprints/RetargetedCharacters/CBP_SandboxCharacter_$model</code>を作成します。前と同じ要領で新しいキャラクターを追加し、GASPで使えるようにします。</li>
+<li>componentで<code>BP_VrmOutlineComponent</code>を追加します。</li>
+</ol>
+<h2 id="見た目をきれいにする">見た目をきれいにする</h2>
+<p>これには様々なやり方が存在します。調べた限りではちゃんと機能するやり方がわからないように感じます。</p>
+<p>私はcomponentの<code>VrmPoseableMesh</code>を追加して、そこに配色タイプの<code>custom</code>を当てることで調整しています。ベースは配色タイプの<code>unlit</code>を使用します。もし<code>unlit</code>で<code>.vrm</code>をimportしていない場合は再度importしてください。</p>
+<ol>
+<li>アセットブラウザで<code>All/Plugins/</code>を見えるようにします(プラグインコンテンツを表示)。</li>
+<li><code>/All/Plugins/VRM4U/Util/Actor/PostShadow/BP_PoseCopyToon</code>と<code>/All/Content/Blueprints/Characters/${name}/SK_${name}</code>をmapに配置します。そして、<code>BP_PoseCopyToon</code>に<code>SK_${name}</code>を選択します。</li>
+<li><code>/All/Plugins/VRM4U/Util/Actor/PostShadow/MI_PostToon</code>が更新されているので<code>/All/Plugins/VRM4U/ImportData/DS_VRMCustom</code>を開いて、全部をMI_PostToonにする</li>
+<li><code>.vrm</code>を<code>custom</code>で読み込む。そして、<code>/All/Content/Blueprints/CBP_SandboxCharater</code>のcomponentで<code>Vrm Poseable Mesh</code>を追加して、<code>custom/SK_${name}</code>を選択します。</li>
+</ol>
 
                                 
                                 </section>
@@ -681,12 +768,12 @@
 
             
                 
-                <a href="05_kawaii.html" class="navigation navigation-prev " aria-label="Previous page: 揺れものを設定する">
+                <a href="02_jump.html" class="navigation navigation-prev " aria-label="Previous page: 飛びつける高さを増やす">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="07_anim.html" class="navigation navigation-next " aria-label="Next page: アニメーションを作成する">
+                <a href="04_vmc.html" class="navigation navigation-next " aria-label="Next page: モーションキャプチャで動かす">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -697,7 +784,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"カメラワークの設定する","level":"1.3.6","depth":2,"next":{"title":"アニメーションを作成する","level":"1.3.7","depth":2,"path":"gas/07_anim.md","ref":"gas/07_anim.md","articles":[]},"previous":{"title":"揺れものを設定する","level":"1.3.5","depth":2,"path":"gas/05_kawaii.md","ref":"gas/05_kawaii.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"gas/06_camera.md","mtime":"2025-02-14T03:04:04.439Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-02-14T03:04:18.809Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"キャラクターの見た目を変える","level":"1.3.3","depth":2,"next":{"title":"モーションキャプチャで動かす","level":"1.3.4","depth":2,"path":"gasp/04_vmc.md","ref":"gasp/04_vmc.md","articles":[]},"previous":{"title":"飛びつける高さを増やす","level":"1.3.2","depth":2,"path":"gasp/02_jump.md","ref":"gasp/02_jump.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"gasp/03_vrm.md","mtime":"2025-02-15T03:35:23.952Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-02-15T03:35:40.538Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
