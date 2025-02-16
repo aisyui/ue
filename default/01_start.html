@@ -706,12 +706,19 @@
 <td><a href="https://unrealengine.com/" target="_blank">https://unrealengine.com/</a></td>
 </tr>
 <tr>
-<td>github</td>
-<td><a href="https://github.com/EpicGames/UnrealEngine" target="_blank">https://github.com/EpicGames/UnrealEngine</a></td>
+<td>unity</td>
+<td><a href="https://unity.com/" target="_blank">https://unity.com/</a></td>
+</tr>
+<tr>
+<td>godto</td>
+<td><a href="https://godotengine.org/" target="_blank">https://godotengine.org/</a></td>
 </tr>
 </tbody>
 </table>
 <p>ソース(source)からビルド(build)して使うこともできます。一部でbuildしないと使えない機能があります。private repoなので<a href="https://www.unrealengine.com/ja/ue-on-github" target="_blank">こちら</a>からアクセス権をもらいます。</p>
+<ul>
+<li><a href="https://github.com/EpicGames/UnrealEngine" target="_blank">https://github.com/EpicGames/UnrealEngine</a></li>
+</ul>
 <h2 id="ueの特徴と注意">ueの特徴と注意</h2>
 <p><code>c++</code>か<code>blueprint</code>で書きます。</p>
 <p>ueの特徴はグラフィックが綺麗なことです。と言ってもきれいなグラフィックはunityなどでも実現可能です。しかし、ueは初期設定でもそれが実現できるので、主にグラフィック用途で使用されています。</p>
@@ -719,13 +726,18 @@
 <p>ueを長く使っているとわかることですが、ゲーム制作にはあまり向きません。unityのほうがおすすめです。ueはきれいな画像やシーンを作る用途におすすめです。</p>
 <p>「ueはバグが多く基本的に壊れている」このことを最初に理解しておかないと「おかしいなあ」と時間を無駄にしてしまいます。また、保存せず長時間コードを書き続けるのは危険です。クラッシュ(crash)すると消えてしまいます。プロジェクト(project)そのものが壊れることもよくあります。注意しましょう。</p>
 <p>そして、バグにぶつかっても情報がほとんどありません。自己解決するしかないのです。情報量に関してはunityと比べ明確な差があります。</p>
+<ul>
+<li>グラフィックがきれい</li>
+<li>バグが多い</li>
+<li>情報が少ない</li>
+</ul>
 <h2 id="unityやblenderも使っている">unityやblenderも使っている</h2>
 <p>私はキャラクター(character)を<code>.vrm</code>で作っています。</p>
 <p><code>.vrm</code>の開発は主に<a href="../unity">unity</a>が中心です。<code>.vrm</code>の仕様を作っているpixivがunityで読み込むためのpluginを開発しているからです。そのためかvrmに対応する多くのツールはunity専用です。</p>
 <p>もし<code>.vrm</code>を扱う場合は、どちらにせよ<code>unity</code>を使うことになると思います。私もモデルのカスタマイズなどでunityを使っています。</p>
 <p>モデルのカスタマイズには<a href="../blender">blender</a>というものもあって、<code>blender</code>も使用しています。</p>
-<p>つまり、本当にueでゲームを制作すべきかはよく考えなければいけません。</p>
-<p>特別な事情がない限りunityがオススメだと思います。情報量、安定性、ツールの豊富さなどからそう判断します。</p>
+<p>つまり、本当にueでゲームを制作すべきかはよく考えなければいけません。ゲーム開発は使用するものが少ないほど安定します。</p>
+<p>結局、unityやblenderを使うことになるなら、unityで開発するのがオススメです。情報量、安定性、ツールの豊富さなどからそう判断します。</p>
 <h2 id="ueを使う理由">ueを使う理由</h2>
 <p>私がueを使う理由は、最初にゲーム開発を始めたとき使ったものがueだったからです。その時の感動は忘れません。</p>
 <p>その後、色々な情報を見聞きし、ueは初心者に向かないことを知りました。また、vrmを使う場合はunityのほうが圧倒的に有利で、情報も多く、ツールも豊富です。</p>
@@ -905,7 +917,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"start","level":"1.2.2","depth":2,"next":{"title":"install","level":"1.2.3","depth":2,"path":"default/02_install.md","ref":"default/02_install.md","articles":[]},"previous":{"title":"asset/plugin","level":"1.2.1","depth":2,"path":"default/00_asset.md","ref":"default/00_asset.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"default/01_start.md","mtime":"2025-02-16T23:11:19.663Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-02-16T23:11:36.891Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"start","level":"1.2.2","depth":2,"next":{"title":"install","level":"1.2.3","depth":2,"path":"default/02_install.md","ref":"default/02_install.md","articles":[]},"previous":{"title":"asset/plugin","level":"1.2.1","depth":2,"path":"default/00_asset.md","ref":"default/00_asset.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"default/01_start.md","mtime":"2025-02-16T23:20:02.724Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-02-16T23:20:17.288Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
