@@ -363,8 +363,7 @@ GameAnimationSample
 		"PS5",
 		"XSX",
 		"Windows"
-	],
-	"EpicSampleNameHash": "111"
+	]
 }
 ```
 
@@ -389,7 +388,7 @@ GameAnimationSample
 +CVarsArray=(Type=CVarBool,Name="DDCVar.NewGameplayCameraSystem.Enable",ToolTip="",DefaultValueFloat=0.000000,DefaultValueInt=0,DefaultValueBool=True)
 ```
 
-現在、[characterのcollisionが機能しない問題](/city/00_err.html)が発生します。
+現在、[characterのcollisionが機能しない問題](/city/00_issue.html)が発生します。
 
 ### Collision Trace Channel
 
@@ -406,5 +405,11 @@ GameAnimationSample
 
 mapにはactorがまとめられているものがあり、それはmapにくっついていません。移動できない場合があります。
 
-基本的にはA-mapとB-mapはある程度位置を完成させてからcopyしましょう。
+基本的にはmap[A]とmap[B]はある程度位置を完成させてからcopyしましょう。
+
+## BGMを変更する
+
+例えば、BGMの一部を変更したい場合は、`プロジェクト設定 -> ゲーム -> World Audio Data`を見てください。
+
+私はmatrix(マトリックス)のテーマを消したかったので、`/Content/Audio/MetaSounds/Music/`にある`music_leavebehind_New_Mix_Meta`, `music_leavebehind_New_Mix_NHT_Meta`の音量を`0.0`にしました。
 
