@@ -49,13 +49,15 @@ https://github.com/EpicGames/UnrealEngine/tree/release/Engine/Plugins/Performanc
 1. `$(EngineDir)\Plugins\Performance\AutomatedPerfTesting\Build\Scripts`フォルダを作ります。`$(EngineDir)`はueがインストールされているディレクトリです。
 2. githubの[src](https://github.com/EpicGames/UnrealEngine/tree/release/Engine/Plugins/Performance/AutomatedPerfTesting/Build/Scripts)から持ってきた`$(EngineDir)\Plugins\Performance\AutomatedPerfTesting\Build\Scripts\AutomatedPerfTestConfig.cs`, `$(EngineDir)\Plugins\Performance\AutomatedPerfTesting\Build\Scripts\AutomatedPerfTestNode.cs`を同ディレクトリに置きます。
 
+また、`CitySampleCookedEditor.Target.cs`を削除するとbuildが通ったという報告があります。
+
+https://forums.unrealengine.com/t/automatedperftesting-plugin-does-not-build-when-building-city-sample-in-ue5-5/2134722/9
+
 ## 問題が起こったときにresetする
 
 `/Content/Map/Small_City_LVL.umap`と`/Content/__ExternalActors__/Map/Small_City_LVL`を上書きします。copy元は`VaultCache`からでもいいですし、新しく作った`CitySample`のprojectからでもいいです。
 
 基本的に新しいprojectを作成するときは`VaultCache`からcopyされます。これがないとdownloadから`VaultCache`が生成されます。
-
-
 
 ## characterのcollisionが機能せず地面に埋まってしまう
 
