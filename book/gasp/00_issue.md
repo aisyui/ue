@@ -43,6 +43,14 @@ buildすると動きやカメラがおかしくなっていることに気づく
 
 この方法でも解決しない場合があります。mapを開いて一度再生したあとにbuildするとうまくいくことがあります。
 
+また、それ以外の方法として、初期設定を全部`CBP_SandboxCharacter_${name}`の`Construction Script`ほうに書き出すことが考えられます。
+
+<iframe src="https://blueprintue.com/render/iikbmf9a/1" scrolling="no" allowfullscreen style="width:100%;height:400px"></iframe>
+
+1. mapを開いて、問題の動作を実行したあとにbuildする
+2. `CBP_SandboxCharacter`の`Event BeginPlay`に書いてみる
+3. `CBP_SandboxCharacter_${name}`の`Construction Script`に書いてみる
+
 ## IA_Sprintのダッシュができなくなる
 
 ダッシュは`/Content/Blueprints/RetargetedCharacters/CBP_SandboxCharacter_${name}`の`Event BeginPlay`を削除することで解消しました。
