@@ -207,9 +207,20 @@
         "enum": [
           "yui",
           "evolution",
+          "gender",
           "attribute",
           "status"
         ],
+        "gender": {
+          "name": "gender",
+          "full": "gender system",
+          "body": {
+            "text": "a genitalia system created using blender. aiming to reproduce the shape and movement of reality.",
+            "lang": {
+              "ja": "blenderで作った性器システムのこと。gender systemという。現実の形状や動きの再現を目指す。アイは原作で性別が不明、性別がないので、gender systemから除外される"
+            }
+          }
+        },
         "status": {
           "name": "status",
           "body": {
