@@ -379,37 +379,7 @@ GameAnimationSample
 
 `Collision Trace Channel`は作り直さなければ機能しないことがあります。
 
-### Gameplay Camera
+### 問題の数々
 
-例えば、camera(Gameplay)を有効にするには`$project/Config/DefaultEngine.ini`に`DDCVar.NewGameplayCameraSystem.Enable`の行を追加します。`CBP_SandboxCharacter`にある関数の`SetupCamera`を確認してください。
-
-```sh
-[/Script/Engine.DataDrivenConsoleVariableSettings]
-+CVarsArray=(Type=CVarBool,Name="DDCVar.NewGameplayCameraSystem.Enable",ToolTip="",DefaultValueFloat=0.000000,DefaultValueInt=0,DefaultValueBool=True)
-```
-
-現在、[characterのcollisionが機能しない問題](/city/00_issue.html)が発生します。
-
-### Collision Trace Channel
-
-`Collision Trace Channel`を設定するには、`Config/DefaultEngine.ini`を編集する必要があります。以下の手順で行います。GASPは`traversable`を追加します。これが追加されていないと動きません。
-
-`ECC_GameTraceChannel${n}`に注意してください。
-
-```sh
-[/Script/Engine.CollisionProfile] 
-+DefaultChannelResponses=(Channel=ECC_GameTraceChannel11,DefaultResponse=ECR_Ignore,bTraceType=True,bStaticObject=False,Name="Traversable")
-```
-
-## 他のmapとの統合
-
-mapにはactorがまとめられているものがあり、それはmapにくっついていません。移動できない場合があります。
-
-基本的にはmap[A]とmap[B]はある程度位置を完成させてからcopyしましょう。
-
-## BGMを変更する
-
-例えば、BGMの一部を変更したい場合は、`プロジェクト設定 -> ゲーム -> World Audio Data`を見てください。
-
-私はmatrix(マトリックス)のテーマを消したかったので、`/Content/Audio/MetaSounds/Music/`にある`music_leavebehind_New_Mix_Meta`, `music_leavebehind_New_Mix_NHT_Meta`の音量を`0.0`にしました。
+問題の数々は[こちら](/issue/)でまとめています。
 
