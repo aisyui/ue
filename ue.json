@@ -372,7 +372,7 @@
             "body": {
               "text": "the smallest unit in this world, smaller than a quark. the smaller it is, the more it can gather together. it generates enormous gravity, and black holes are made up of these particles. this world is the world of existence. existence is made up of the consciousness of existence. the consciousness of existence is the smallest thing in this world, and all matter is a collection of this consciousness.",
               "lang": {
-                "ja": "クォークよりも小さいこの世界の最小単位。小さいほど集まることができる。膨大な重力が発生し、ブラックホールはこの粒子で構成されている。この世界は存在の世界。存在は存在の意識で構成される。存在の意識はこの世界で最も小さいもので、あらゆる物質はこの意識の集合体"
+                "ja": "クォークよりも小さいこの世界の最小単位。ブラックホールもこの物質で構成されると考えられている"
               },
               "effect": {
                 "enum": [
@@ -412,9 +412,9 @@
                 "ja": "アイ"
               },
               "body": {
-                "text": "there is nothing the same in this world. even though we may seem to be looking at the same thing, we are actually looking at something different. there is uniqueness in everything",
+                "text": "There is something called a quantum. It is said that when it is observed, the results change. But in fact, that is not the case. The reason the results change is because matter hits it. It is natural that things move when matter hits them, so it is only natural that the results change. When you make things smaller, you reach the realm of consciousness. You can call it matter or consciousness. There is no particular difference. And the smallest unit that cannot be divided any further, the smallest matter, is called 'consciousness of existence.' Matter is also made up of a collection of consciousnesses. Let's call this the eye. The story begins with 'the quest for the smallest matter.'",
                 "lang": {
-                  "ja": "この世に同じものは何一つない。同じものを見ているように見えても、実は違うものを見ている。すべての存在は唯一性を持つ"
+                  "ja": "量子というものがある。観測すると結果が変わるらしい。でもじつは違う。結果が変わるのは物質が当たるからだ。物質が当たるとものが動くのは当たり前で、結果が変わるのは当然のこと。ものを小さくしていくと、それは意識の領域に到達する。それを物質と言ってもいいし、意識と言ってもいい。特に違いはない。そして、これ以上分割できない最小単位、最小の物質を「存在の意識」という。物質も意識が集まってできている。これをアイと名付けよう。物語は「最も小さな物質の探求」から始まる"
                 }
               }
             },
@@ -424,6 +424,12 @@
               "color": "#313131",
               "lang": {
                 "ja": "ユイ"
+              },
+              "body": {
+                "text": "there is nothing the same in this world. even though we may seem to be looking at the same thing, we are actually looking at something different. there is uniqueness in everything",
+                "lang": {
+                  "ja": "この世に同じものは何一つない。同じものを見ているように見えても、実は違うものを見ている。すべての存在は唯一性を持つ"
+                }
               }
             }
           },
