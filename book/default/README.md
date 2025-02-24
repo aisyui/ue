@@ -20,6 +20,15 @@ ue5でゲームを作成するまでの過程をまとめます。
 
 ただし、ストレージの読み書き速度は重要です。ueやprojectを入れるストレージには注意してください。
 
+## 便利なサイト
+
+|name|body|
+|---|---|
+|[dev.epicgames.com](https://dev.epicgames.com/community/)|開発者コミュニティ|
+|[perplexity.ai](https://www.perplexity.ai/)|検索エンジン|
+|[suno.com](https://suno.com/)|作曲|
+|[tripo3d.ai](https://www.tripo3d.ai/)|3Dモデル|
+
 ## 使用するタグ
 
 ### youtube
