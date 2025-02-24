@@ -38,6 +38,7 @@
 * [unity](unity/README.md)
 * [blender](blender/README.md)
  * [モデルをカスタマイズする](blender/01_model.md)
+ * [衣装を着せる](blender/02_costume.md)
 * [issue](issue/README.md)
  * [ue](issue/ue/README.md)
     * [error II-E1001](issue/ue/ue_01.md)
