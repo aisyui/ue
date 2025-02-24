@@ -20,3 +20,8 @@ control rigからも作成できます。しかし、購入したものを使う
 
 https://github.com/threepeatgames/ThreepeatAnimTools
 
+
+## unityから持ってくる
+
+[こちら](/unity/01_fbx.html)を参考にしてください。
+

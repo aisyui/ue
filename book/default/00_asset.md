@@ -26,6 +26,7 @@
 |[varest](https://github.com/ufna/VaRest)|20240828|curlのようなもの。supportが終了しているのでbuildが必要|
 |[tatools](https://www.fab.com/ja/listings/a5d3b60d-b886-4564-bf6d-15d46a8d27fe)|20241206|animを作る|
 |[ui navigation 3.0](https://www.fab.com/ja/listings/a91f6e67-5c2d-46ef-926d-00a35525579c)|20250126|スタート画面を作る|
+|[dlss](https://developer.nvidia.com/rtx/dlss/get-started#ue-version)|20250301|nvidiaの描写速度|
 
 ## その他のasset
 
@@ -33,10 +34,12 @@
 
 |name|body|
 |---|---|
-|[GASP-ALS](https://github.com/PolygonHive/GASP-ALS)|GASPの改造版|
+|[twinmotion-high-tech-pack-1](https://www.unrealengine.com/marketplace/ja/product/twinmotion-high-tech-pack-1)|家電製品|
+|[automotive bridge scene](https://www.fab.com/ja/listings/a472df9d-9179-4743-8d41-335f9ef55546)|道路や橋|
 |[animal variety pack](https://www.fab.com/ja/listings/2dd7964c-a601-4264-a53d-465dcae1644c)|有名な動物モデル|
 |[quadruped fantasy creatures](https://www.fab.com/ja/listings/52d686b6-1180-4f26-901f-ce3c69a14767)|有名な幻獣モデル|
 |[ueplugin-accessvariablebyname](https://github.com/colory-games/UEPlugin-AccessVariableByName)|名前を取得するplugin|
+|[GASP-ALS](https://github.com/PolygonHive/GASP-ALS)|GASPの改造版|
 
 ## 有料のasset
 
