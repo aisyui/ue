@@ -15,3 +15,8 @@
    * [playerが地面に埋まってしまう](issue/city/city_04.md)
    * [他のmapとの統合](issue/city/city_05.md)
    * [BGMを変更する](issue/city/city_06.md)
+* [blender](issue/blender/README.md)
+   * [衣装の背後に黒いチラつきが発生する](issue/blender/blender_01.md)
+* [vrm4u](issue/vrm4u/README.md)
+   * [customで衣装の半分が灰色になる](issue/vrm4u/vrm4u_01.md)
+

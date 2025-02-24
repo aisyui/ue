@@ -38,17 +38,22 @@ ueを長く使っているとわかることですが、ゲーム制作にはあ
 
 ## unityやblenderも使っている
 
-私はキャラクター(character)を`.vrm`で作っています。
+私はキャラクター(character)を[vroid](https://vroid.com/studio)で作っています。
 
-`.vrm`の開発は主に[unity](/unity/)が中心です。`.vrm`の仕様を作っているpixivがunityで読み込むためのpluginを開発しているからです。そのためかvrmに対応する多くのツールはunity専用です。
+そして、`.vrm`の開発は主に[unity](/unity/)が中心です。なぜなら`.vrm`の仕様を作っているpixivがunityで読み込むための[plugin](https://github.com/vrm-c/UniVRM)を開発しているからです。そのためかvrmに対応する多くのツールはunity専用です。
 
 もし`.vrm`を扱う場合は、どちらにせよ`unity`を使うことになると思います。私もモデルのカスタマイズなどでunityを使っています。
 
-モデルのカスタマイズには[blender](/blender)というものもあって、`blender`も使用しています。
+また、モデリングには[blender](/blender)を使用しています。
 
-つまり、本当にueでゲームを制作すべきかはよく考えなければいけません。ゲーム開発は使用するものが少ないほど安定します。
+つまり、本当にueでゲームを制作すべきかはよく考えなければいけません。ゲーム開発は使用するツールが少ないほど安定します。
 
 結局、unityやblenderを使うことになるなら、unityで開発するのがオススメです。情報量、安定性、ツールの豊富さなどからそう判断します。
+
+```diff
++ [vroid] --> [vrm] --> [blender] --> [unity]
+- [vroid] --> [vrm] --> [blender] --> [unity] --> [ue]
+```
 
 ## ueを使う理由
 
