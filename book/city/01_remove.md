@@ -25,8 +25,22 @@ city sampleの海には境界があってcollisionが設定されています。
 
 <iframe src="https://blueprintue.com/render/k3xgicx_/1" scrolling="no" allowfullscreen style="width:100%;height:400px"></iframe>
 
-- `BP_Earth`: `transform-location-z:-636000000`, `transform-scale:6360000`
+- `BP_Earth`: `transform-location-z:-636000000`, `transform-scale:6370000`
 - `Sky_Sphere_Mesh`: `transform-scale:50000`
+
+## issue: mapのcollisionがおかしくなる
+
+これはearthを`SkyAtmosphere`の下に置くと発生します。親子関係を解除しましょう。
+
+## issue: earthを下に見ると黒い丸がある
+
+earthのscaleを636から637に変更することで解消できます。
+
+earthを下に見ると、黒い丸が映り込みます。これは、udsをupdateすると発生し始めました。
+
+また、`Captured Scene Sky Lightの`Real Time Capture`をdisableにすると雲も影も無くなります。したがって、条件でon/offを切り変える方法で緩和できます。この方法は使用しなくても良いです。
+
+> リアルタイムキャプチャが有効なスカイライトがシーンにあります。少なくともskyatmosphereコンポーネント、volumetriccloudコンポーネント、またはisksyとしてマテリアルタグが付いたメッシュが必要です。これらがない場合は黒になります。
 
 ## ocean wavesで惑星の海を作る
 

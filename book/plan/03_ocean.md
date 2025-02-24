@@ -19,3 +19,10 @@
 > WaterVolume: 空間にロードされていないアクタを参照しています。
 
 これは`BP_EarthSizedOcean`, `BP_EarthSizedSphericalMesh`の詳細から`is spatially loaded`のチェックを外します。
+
+## ocean wavesが遅い理由
+
+これは`/Content/OceanWaves/Blueprints/BP_SphericalMesh`の`CreateMeshAsyncIteration`にある`Set Timer for Next Tick by Event`が原因です。
+
+しかし、取り除くと海が消えます。ロードを待つほかありません。
+
