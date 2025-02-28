@@ -617,7 +617,7 @@
                 <a href="01_model.html">
             
                     
-                    シェイプキーを使う
+                    素体を作る
             
                 </a>
             
@@ -948,13 +948,18 @@
                                 
                                 <h1 id="vrmで統合する">vrmで統合する</h1>
 <p><code>.vrm</code>を読み込んで、別の<code>.vrm</code>に統合する方法を紹介します。最終的にはueでも動くようにします。</p>
-<p>今回も衣装を着せる方法に使った<code>データ転送</code>を使います。例えば、髪の毛を設定してみましょう。</p>
-<p>ここで重要なのはblenderの物理シュミレーションです。髪の毛に物理シュミレーションが設定されているか確認してください。vrm 1.0を前提にしますが<code>Spring Bone</code>が消えている可能性があります。そして、統合する際はこのデータを持ってくることができません。blenderで設定しなくてもueの<code>kawaiiphysics</code>でも設定できます。</p>
-<p>次に、設定されているウェイトが剥がされていないか確認してください。データ転送後は髪の毛にウェイトが付いているか確認してください。</p>
-<ul>
-<li>髪の毛に物理シュミレーションはあるか。</li>
+<p>編集しているうちにblenderのシェイプキーがueのモーフターゲットにexportできなくなったり、髪の毛のウェイトが消えていたりといったトラブルが多発します。</p>
+<p>blenderのvrmはspring boneを設定して髪の毛を動かしています。これはboneに付いているcolliderと連動しています。</p>
+<p>髪の毛はboneとも連動していて、armature(bone)を統合したあとにheadとheadをつなげなければなりません。</p>
+<p>統合するobjectの動きを本体に追従したい場合は頂点とアーマチュアを正しく設定しなければなりません。データ転送を活用します。</p>
+<p>髪の毛が動かない場合、物理シュミレーションが設定されているか確認してください。ueの<code>kawaiiphysics</code>でも設定できます。私はueのほうで設定しています。また、髪の毛のウェイトが剥がされていないか確認してください。データ転送後は髪の毛にウェイトが付いているか確認しましょう。</p>
+<p>シェイプキー(モーフターゲット)が消えてしまうのは<code>vrm1</code>に起因します。blenderで編集する場合は<code>vrm0</code>をベースにしてください。また、シェイプキーは元のobject名に再統合しなければ消えてしまいます。</p>
+<ol>
+<li>vrm0をベースにしているか。</li>
+<li>objectを元の状態に再統合できているか。</li>
 <li>髪の毛にウェイトはあるか。</li>
-</ul>
+<li>髪の毛に物理シュミレーションはあるか。</li>
+</ol>
 <h2 id="具体的な手順">具体的な手順</h2>
 <p>hair(髪の毛)とbody(体)で分けられたvrmを読み込むこととします。これを統合します。</p>
 <ol>
@@ -963,10 +968,7 @@
 <li>次にhairを選択し、モディファイアからデータ転送を行います。ソースに<code>body</code>, 頂点グループに<code>J_Bip_C_Head</code>を選択します。ここが特に重要です。そして、頂点データにチェックを入れ、頂点グループを選択します。最後にデータレイヤーを生成し、適用します。これでhairとbodyがつながった状態になりました。bodyが主体になります。</li>
 </ol>
 <p>ウェイトがhair(J_Bip_C_Head)に設定されていることを確認してください。今後、hairのobjectをいじると削除される可能性があります。</p>
-<h2 id="blendshapeとvmc">blendshapeとvmc</h2>
-<p>vmcは<code>.vrm</code>をblenderで開いたときblendshape(ブレンドシェイプ)が設定されていれば大抵動くと思います。</p>
-<p>ただし、blenderで編集した際に使えなくなってしまう可能性が高いです。例えば、objectを分離した場合がそうです。後に統合すると動くようになります。</p>
-<h2 id="ueで動かす">ueで動かす</h2>
+<h2 id="ueで物理シュミレーションを設定する">ueで物理シュミレーションを設定する</h2>
 <ol>
 <li>次にueでhairを動くようにします。ueでvrmを読み込んで、<code>ABP_Post_${name}</code>を編集します。<code>kawaiiphysics</code>でRoot Boneに<code>J_Sec_Hair_1_xx</code>を1-12まで入れて、Capsule Limitsに<code>chest</code>, <code>hip</code>などを設定します。私は<code>chest</code>の値を大きめにして対処しました。</li>
 <li>次に、服が体に入りこまないようにしなければなりません。これも先ほどと同じように設定します。</li>
@@ -974,10 +976,9 @@
 </ol>
 <p>blenderから読み込んだmodelを動かしてみた。</p>
 <p><img src="../img/0007.png" alt=""></img></p>
-<ul>
-<li>髪の毛が動かない: hairにウェイトは設定されているか</li>
-<li>表情が動かない: 元のobject構成に再統合されているか</li>
-</ul>
+<h2 id="blendshapeとvmc">blendshapeとvmc</h2>
+<p>vmcは<code>.vrm</code>をblenderで開いたときblendshape(ブレンドシェイプ)が設定されていれば大抵動くと思います。</p>
+<p>ただし、blenderで編集した際に使えなくなってしまう可能性が高いです。例えば、objectを分離した場合がそうです。最初の構成にobjectを統合すると動くようになります。</p>
 
                                 
                                 </section>
@@ -1021,7 +1022,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"vrmで統合する","level":"1.10.3","depth":2,"next":{"title":"issue","level":"1.11","depth":1,"path":"issue/README.md","ref":"issue/README.md","articles":[{"title":"ue","level":"1.11.1","depth":2,"path":"issue/ue/README.md","ref":"issue/ue/README.md","articles":[{"title":"error II-E1001","level":"1.11.1.1","depth":3,"path":"issue/ue/ue_01.md","ref":"issue/ue/ue_01.md","articles":[]}]},{"title":"game animation sample","level":"1.11.2","depth":2,"path":"issue/gasp/README.md","ref":"issue/gasp/README.md","articles":[{"title":"GameplayCameraをdisableにする","level":"1.11.2.1","depth":3,"path":"issue/gasp/gasp_01.md","ref":"issue/gasp/gasp_01.md","articles":[]},{"title":"cameraが急接近する","level":"1.11.2.2","depth":3,"path":"issue/gasp/gasp_02.md","ref":"issue/gasp/gasp_02.md","articles":[]},{"title":"characterのcomponentが初期化される","level":"1.11.2.3","depth":3,"path":"issue/gasp/gasp_03.md","ref":"issue/gasp/gasp_03.md","articles":[]},{"title":"IA_Sprintのダッシュができなくなる","level":"1.11.2.4","depth":3,"path":"issue/gasp/gasp_04.md","ref":"issue/gasp/gasp_04.md","articles":[]},{"title":"traversableが機能しなくなる","level":"1.11.2.5","depth":3,"path":"issue/gasp/gasp_05.md","ref":"issue/gasp/gasp_05.md","articles":[]}]},{"title":"city sample","level":"1.11.3","depth":2,"path":"issue/city/README.md","ref":"issue/city/README.md","articles":[{"title":"buildが遅い場合","level":"1.11.3.1","depth":3,"path":"issue/city/city_01.md","ref":"issue/city/city_01.md","articles":[]},{"title":"ue5.5ではbuildが通らない","level":"1.11.3.2","depth":3,"path":"issue/city/city_02.md","ref":"issue/city/city_02.md","articles":[]},{"title":"問題が起こったときにresetする","level":"1.11.3.3","depth":3,"path":"issue/city/city_03.md","ref":"issue/city/city_03.md","articles":[]},{"title":"playerが地面に埋まってしまう","level":"1.11.3.4","depth":3,"path":"issue/city/city_04.md","ref":"issue/city/city_04.md","articles":[]},{"title":"他のmapとの統合","level":"1.11.3.5","depth":3,"path":"issue/city/city_05.md","ref":"issue/city/city_05.md","articles":[]},{"title":"BGMを変更する","level":"1.11.3.6","depth":3,"path":"issue/city/city_06.md","ref":"issue/city/city_06.md","articles":[]}]}]},"previous":{"title":"衣装を着せる","level":"1.10.2","depth":2,"path":"blender/02_costume.md","ref":"blender/02_costume.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"blender/03_vrm.md","mtime":"2025-02-27T10:42:05.740Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-02-27T10:42:19.548Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"vrmで統合する","level":"1.10.3","depth":2,"next":{"title":"issue","level":"1.11","depth":1,"path":"issue/README.md","ref":"issue/README.md","articles":[{"title":"ue","level":"1.11.1","depth":2,"path":"issue/ue/README.md","ref":"issue/ue/README.md","articles":[{"title":"error II-E1001","level":"1.11.1.1","depth":3,"path":"issue/ue/ue_01.md","ref":"issue/ue/ue_01.md","articles":[]}]},{"title":"game animation sample","level":"1.11.2","depth":2,"path":"issue/gasp/README.md","ref":"issue/gasp/README.md","articles":[{"title":"GameplayCameraをdisableにする","level":"1.11.2.1","depth":3,"path":"issue/gasp/gasp_01.md","ref":"issue/gasp/gasp_01.md","articles":[]},{"title":"cameraが急接近する","level":"1.11.2.2","depth":3,"path":"issue/gasp/gasp_02.md","ref":"issue/gasp/gasp_02.md","articles":[]},{"title":"characterのcomponentが初期化される","level":"1.11.2.3","depth":3,"path":"issue/gasp/gasp_03.md","ref":"issue/gasp/gasp_03.md","articles":[]},{"title":"IA_Sprintのダッシュができなくなる","level":"1.11.2.4","depth":3,"path":"issue/gasp/gasp_04.md","ref":"issue/gasp/gasp_04.md","articles":[]},{"title":"traversableが機能しなくなる","level":"1.11.2.5","depth":3,"path":"issue/gasp/gasp_05.md","ref":"issue/gasp/gasp_05.md","articles":[]}]},{"title":"city sample","level":"1.11.3","depth":2,"path":"issue/city/README.md","ref":"issue/city/README.md","articles":[{"title":"buildが遅い場合","level":"1.11.3.1","depth":3,"path":"issue/city/city_01.md","ref":"issue/city/city_01.md","articles":[]},{"title":"ue5.5ではbuildが通らない","level":"1.11.3.2","depth":3,"path":"issue/city/city_02.md","ref":"issue/city/city_02.md","articles":[]},{"title":"問題が起こったときにresetする","level":"1.11.3.3","depth":3,"path":"issue/city/city_03.md","ref":"issue/city/city_03.md","articles":[]},{"title":"playerが地面に埋まってしまう","level":"1.11.3.4","depth":3,"path":"issue/city/city_04.md","ref":"issue/city/city_04.md","articles":[]},{"title":"他のmapとの統合","level":"1.11.3.5","depth":3,"path":"issue/city/city_05.md","ref":"issue/city/city_05.md","articles":[]},{"title":"BGMを変更する","level":"1.11.3.6","depth":3,"path":"issue/city/city_06.md","ref":"issue/city/city_06.md","articles":[]}]}]},"previous":{"title":"衣装を着せる","level":"1.10.2","depth":2,"path":"blender/02_costume.md","ref":"blender/02_costume.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"blender/03_vrm.md","mtime":"2025-02-28T05:29:39.536Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-02-28T05:29:53.630Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
