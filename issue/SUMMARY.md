@@ -15,3 +15,6 @@
    * [playerが地面に埋まってしまう](issue/city/city_04.md)
    * [他のmapとの統合](issue/city/city_05.md)
    * [BGMを変更する](issue/city/city_06.md)
+* [blender](issue/blender/README.md)
+   * [衣装の背後に黒いチラつきが発生する](issue/blender/blender_01.md)
+
