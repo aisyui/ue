@@ -993,9 +993,12 @@
 <p>私はキャラクター(character)を<code>.vrm</code>で作っています。</p>
 <p><code>.vrm</code>の開発は主に<a href="../unity">unity</a>が中心です。<code>.vrm</code>の仕様を作っているpixivがunityで読み込むためのpluginを開発しているからです。そのためかvrmに対応する多くのツールはunity専用です。</p>
 <p>もし<code>.vrm</code>を扱う場合は、どちらにせよ<code>unity</code>を使うことになると思います。私もモデルのカスタマイズなどでunityを使っています。</p>
-<p>モデルのカスタマイズには<a href="../blender">blender</a>というものもあって、<code>blender</code>も使用しています。</p>
-<p>つまり、本当にueでゲームを制作すべきかはよく考えなければいけません。ゲーム開発は使用するものが少ないほど安定します。</p>
+<p>また、モデリングには<a href="../blender">blender</a>を使用しています。</p>
+<p>つまり、本当にueでゲームを制作すべきかはよく考えなければいけません。ゲーム開発は使用するツールが少ないほど安定します。</p>
 <p>結局、unityやblenderを使うことになるなら、unityで開発するのがオススメです。情報量、安定性、ツールの豊富さなどからそう判断します。</p>
+<pre><code class="lang-diff"><span class="hljs-addition">+ [vroid] --&gt; [vrm] --&gt; [blender] --&gt; [unity]</span>
+<span class="hljs-deletion">- [vroid] --&gt; [vrm] --&gt; [blender] --&gt; [unity] --&gt; [ue]</span>
+</code></pre>
 <h2 id="ueを使う理由">ueを使う理由</h2>
 <p>私がueを使う理由は、最初にゲーム開発を始めたとき使ったものがueだったからです。その時の感動は忘れません。</p>
 <p>その後、色々な情報を見聞きし、ueは初心者に向かないことを知りました。また、vrmを使う場合はunityのほうが圧倒的に有利で、情報も多く、ツールも豊富です。</p>
@@ -1175,7 +1178,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"start","level":"1.2.2","depth":2,"next":{"title":"install","level":"1.2.3","depth":2,"path":"default/02_install.md","ref":"default/02_install.md","articles":[]},"previous":{"title":"asset/plugin","level":"1.2.1","depth":2,"path":"default/00_asset.md","ref":"default/00_asset.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"default/01_start.md","mtime":"2025-03-02T09:33:05.258Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-03-02T09:33:19.428Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"start","level":"1.2.2","depth":2,"next":{"title":"install","level":"1.2.3","depth":2,"path":"default/02_install.md","ref":"default/02_install.md","articles":[]},"previous":{"title":"asset/plugin","level":"1.2.1","depth":2,"path":"default/00_asset.md","ref":"default/00_asset.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"default/01_start.md","mtime":"2025-03-02T09:43:12.711Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-03-02T09:43:27.391Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
