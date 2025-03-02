@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>CRでキャラクターを動かす · HonKit</title>
+        <title>もっと近づける · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 6.0.2">
@@ -56,7 +56,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="02_boss.html" />
+    <link rel="next" href="../json/" />
     
     
     <link rel="prev" href="./" />
@@ -321,9 +321,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="./">
+        <li class="chapter " data-level="1.4" data-path="../crs/">
             
-                <a href="./">
+                <a href="../crs/">
             
                     
                     control rig sample
@@ -335,9 +335,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.4.1" data-path="01_character.html">
+        <li class="chapter " data-level="1.4.1" data-path="../crs/01_character.html">
             
-                <a href="01_character.html">
+                <a href="../crs/01_character.html">
             
                     
                     CRでキャラクターを動かす
@@ -348,9 +348,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="02_boss.html">
+        <li class="chapter " data-level="1.4.2" data-path="../crs/02_boss.html">
             
-                <a href="02_boss.html">
+                <a href="../crs/02_boss.html">
             
                     
                     ボスを作る
@@ -424,9 +424,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="../camera/">
+        <li class="chapter " data-level="1.6" data-path="./">
             
-                <a href="../camera/">
+                <a href="./">
             
                     
                     gameplay camera
@@ -438,9 +438,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1" data-path="../camera/01_close.html">
+        <li class="chapter active" data-level="1.6.1" data-path="01_close.html">
             
-                <a href="../camera/01_close.html">
+                <a href="01_close.html">
             
                     
                     もっと近づける
@@ -1008,7 +1008,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >CRでキャラクターを動かす</a>
+        <a href=".." >もっと近づける</a>
     </h1>
 </div>
 
@@ -1023,21 +1023,10 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="crでキャラクターを動かす">CRでキャラクターを動かす</h1>
-<p><code>control rig</code>は<code>CR_xxx</code>というファイル名がつけられています。</p>
-<h2 id="dragon">dragon</h2>
-<p>例えば、ABPで<code>head_global_ctrl</code>の値を更新します。</p>
-<iframe src="https://blueprintue.com/render/o3glwh72/1" scrolling="no" allowfullscreen="" style="width:100%;height:400px"></iframe>
-
-<h2 id="mech">mech</h2>
-<ol>
-<li><code>/Content/ControlRig/Characters/Mech/Meshes/SKM_Mech</code>からABP, BP, SM(StaticMesh)を作成します。</li>
-<li>ABPから<code>Control Rig</code>で<code>cannon_ctrl</code>などを動かせます。</li>
-</ol>
-<pre><code class="lang-sh">- /Content/ControlRig/Characters/Mech/BP_Mech
-- /Content/ControlRig/Characters/Mech/ABP_Mech
-- /Content/ControlRig/Characters/Mech/Meshes/SM_Mech
-</code></pre>
+                                <h1 id="もっと近づける">もっと近づける</h1>
+<p>GASPにはマウスのDown/Upのキーでカメラ操作が設定されているので、それを改造します。今回は<code>Style:Close</code>でもっと近づけるようにします。</p>
+<p>例えば、<code>GamePlay Camera</code>から<code>Get Initial Variable Table</code>を<code>Set Camera Rig Parameters</code>につなげます。そして、<code>Close_Strafe</code>を選択し、<code>/Content/Blueprints/Camera/CameraAsset_SandboxCharacter</code>にある<code>Close_Strafe</code>のOffsetを公開します。公開するにはnodeを伸ばして変数を作ればokです。</p>
+<p>これで<code>/Content/Blueprints/CBP_SandboxCharacter</code>から値をいれることができます。ピンを分割して、x軸に<code>-70.0</code>を入れます。</p>
 
                                 
                                 </section>
@@ -1065,12 +1054,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: control rig sample">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: gameplay camera">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="02_boss.html" class="navigation navigation-next " aria-label="Next page: ボスを作る">
+                <a href="../json/" class="navigation navigation-next " aria-label="Next page: json blueprint utilities">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1081,7 +1070,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"CRでキャラクターを動かす","level":"1.4.1","depth":2,"next":{"title":"ボスを作る","level":"1.4.2","depth":2,"path":"crs/02_boss.md","ref":"crs/02_boss.md","articles":[]},"previous":{"title":"control rig sample","level":"1.4","depth":1,"path":"crs/README.md","ref":"crs/README.md","articles":[{"title":"CRでキャラクターを動かす","level":"1.4.1","depth":2,"path":"crs/01_character.md","ref":"crs/01_character.md","articles":[]},{"title":"ボスを作る","level":"1.4.2","depth":2,"path":"crs/02_boss.md","ref":"crs/02_boss.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"crs/01_character.md","mtime":"2025-03-02T11:47:41.216Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-03-02T11:47:55.940Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"もっと近づける","level":"1.6.1","depth":2,"next":{"title":"json blueprint utilities","level":"1.7","depth":1,"path":"json/README.md","ref":"json/README.md","articles":[{"title":"apiから情報を取得する","level":"1.7.1","depth":2,"path":"json/01_varest.md","ref":"json/01_varest.md","articles":[]}]},"previous":{"title":"gameplay camera","level":"1.6","depth":1,"path":"camera/README.md","ref":"camera/README.md","articles":[{"title":"もっと近づける","level":"1.6.1","depth":2,"path":"camera/01_close.md","ref":"camera/01_close.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"camera/01_close.md","mtime":"2025-03-02T11:47:41.214Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-03-02T11:47:55.940Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
