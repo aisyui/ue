@@ -1,6 +1,6 @@
 # 表示されなくなったサイト
 
-昔は表示され操作もできたいくつかのサイトがweb browser pluginで操作もできず、待機中になる現象が発生しています。
+昔は表示され操作もできたいくつかのサイトがweb browser pluginで操作も表示もされない現象が発生しています。ずっと待機中になります。
 
 - https://web.syu.is/profile/ai.syu.is
 - https://eyes.nasa.gov/apps/solar-system
@@ -27,6 +27,6 @@
 
 ## 今のところうまく表示されているサイト
 
-なぜか`solar-system`と同じものを使用している`asteroids`は表示されます。そのうち制限されるかもしれません。
+なぜか`solar-system`と同じものを使用している`asteroids`は表示されます。そのうち制限されるかもしれませんが。それともサイトの作りでしょうか。
 
 - https://eyes.nasa.gov/apps/asteroids/#/planets/earth
