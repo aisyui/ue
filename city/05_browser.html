@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>control rig sample · HonKit</title>
+        <title>ブラウザを作る · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 6.0.2">
@@ -56,10 +56,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="01_character.html" />
+    <link rel="next" href="../camera/" />
     
     
-    <link rel="prev" href="../gasp/10_stairs.html" />
+    <link rel="prev" href="04_bgm.html" />
     
 
     </head>
@@ -321,9 +321,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4" data-path="./">
+        <li class="chapter " data-level="1.4" data-path="../crs/">
             
-                <a href="./">
+                <a href="../crs/">
             
                     
                     control rig sample
@@ -335,9 +335,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="01_character.html">
+        <li class="chapter " data-level="1.4.1" data-path="../crs/01_character.html">
             
-                <a href="01_character.html">
+                <a href="../crs/01_character.html">
             
                     
                     CRでキャラクターを動かす
@@ -348,9 +348,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="02_boss.html">
+        <li class="chapter " data-level="1.4.2" data-path="../crs/02_boss.html">
             
-                <a href="02_boss.html">
+                <a href="../crs/02_boss.html">
             
                     
                     ボスを作る
@@ -366,9 +366,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="../city/">
+        <li class="chapter " data-level="1.5" data-path="./">
             
-                <a href="../city/">
+                <a href="./">
             
                     
                     city sample
@@ -380,9 +380,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../city/01_remove.html">
+        <li class="chapter " data-level="1.5.1" data-path="01_remove.html">
             
-                <a href="../city/01_remove.html">
+                <a href="01_remove.html">
             
                     
                     惑星形式のmapを作る
@@ -393,9 +393,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="../city/02_bridge.html">
+        <li class="chapter " data-level="1.5.2" data-path="02_bridge.html">
             
-                <a href="../city/02_bridge.html">
+                <a href="02_bridge.html">
             
                     
                     橋を作る
@@ -406,9 +406,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="../city/03_house.html">
+        <li class="chapter " data-level="1.5.3" data-path="03_house.html">
             
-                <a href="../city/03_house.html">
+                <a href="03_house.html">
             
                     
                     家を作る
@@ -419,9 +419,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4" data-path="../city/04_bgm.html">
+        <li class="chapter " data-level="1.5.4" data-path="04_bgm.html">
             
-                <a href="../city/04_bgm.html">
+                <a href="04_bgm.html">
             
                     
                     BGMを作る
@@ -432,9 +432,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.5" data-path="../city/05_browser.html">
+        <li class="chapter active" data-level="1.5.5" data-path="05_browser.html">
             
-                <a href="../city/05_browser.html">
+                <a href="05_browser.html">
             
                     
                     ブラウザを作る
@@ -1221,7 +1221,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >control rig sample</a>
+        <a href=".." >ブラウザを作る</a>
     </h1>
 </div>
 
@@ -1236,9 +1236,33 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="control-rig-sample">control rig sample</h1>
-<p><a href="https://www.fab.com/ja/listings/2ce3fe44-9ee6-4fa7-99fc-b9424a402386" target="_blank">control rig sample</a></p>
-<p><code>control rig sample</code>では人間以外のcharacterを動かすことができます。</p>
+                                <h1 id="ブラウザを作る">ブラウザを作る</h1>
+<ol>
+<li>pluginで<code>web browser</code>を有効にします。</li>
+<li>下記のような緑背景のmaterialを作成します。<blockquote>
+<p><a href="https://blueprintue.com/blueprint/-49_059w/" target="_blank">https://blueprintue.com/blueprint/-49_059w/</a></p>
+</blockquote>
+</li>
+<li>web browserを使ったwidgetを作成します。</li>
+<li>BP_browserに追加したwidget componentで呼び出します。collisionでcontrolします。<blockquote>
+<p><a href="https://blueprintue.com/blueprint/uubw_6ay/" target="_blank">https://blueprintue.com/blueprint/uubw_6ay/</a></p>
+</blockquote>
+</li>
+<li>displayにくっつければ見栄えも良くなります。<blockquote>
+<p><a href="https://www.unrealengine.com/marketplace/ja/product/twinmotion-high-tech-pack-1" target="_blank">https://www.unrealengine.com/marketplace/ja/product/twinmotion-high-tech-pack-1</a></p>
+</blockquote>
+</li>
+</ol>
+<p><img src="../img/0014.png" alt=""></img></p>
+<p>画像はNASAの<a href="https://eyes.nasa.gov/apps/solar-system/#/home" target="_blank">solar system</a>にアクセスしたときのもの。</p>
+<ul>
+<li><a href="https://eyes.nasa.gov/apps/asteroids/#/planets/earth" target="_blank">https://eyes.nasa.gov/apps/asteroids/#/planets/earth</a></li>
+</ul>
+<h2 id="issue-表示されなくなったサイト">issue: 表示されなくなったサイト</h2>
+<p><a href="../issue/city/city_07.html">こちら</a>を見てください。</p>
+<h2 id="webでuiやシステムを作る">webでUIやシステムを作る</h2>
+<p>これを利用すると、webで動くUIやシステムを作成し、ゲームに取り入れることができます。</p>
+<p>しかし、運用は大変だと思います。</p>
 
                                 
                                 </section>
@@ -1266,12 +1290,12 @@
 
             
                 
-                <a href="../gasp/10_stairs.html" class="navigation navigation-prev " aria-label="Previous page: 階段に登る">
+                <a href="04_bgm.html" class="navigation navigation-prev " aria-label="Previous page: BGMを作る">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="01_character.html" class="navigation navigation-next " aria-label="Next page: CRでキャラクターを動かす">
+                <a href="../camera/" class="navigation navigation-next " aria-label="Next page: gameplay camera">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1282,7 +1306,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"control rig sample","level":"1.4","depth":1,"next":{"title":"CRでキャラクターを動かす","level":"1.4.1","depth":2,"path":"crs/01_character.md","ref":"crs/01_character.md","articles":[]},"previous":{"title":"階段に登る","level":"1.3.10","depth":2,"path":"gasp/10_stairs.md","ref":"gasp/10_stairs.md","articles":[]},"articles":[{"title":"CRでキャラクターを動かす","level":"1.4.1","depth":2,"path":"crs/01_character.md","ref":"crs/01_character.md","articles":[]},{"title":"ボスを作る","level":"1.4.2","depth":2,"path":"crs/02_boss.md","ref":"crs/02_boss.md","articles":[]}],"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"crs/README.md","mtime":"2025-03-04T12:55:30.375Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-03-04T12:55:44.425Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ブラウザを作る","level":"1.5.5","depth":2,"next":{"title":"gameplay camera","level":"1.6","depth":1,"path":"camera/README.md","ref":"camera/README.md","articles":[{"title":"もっと近づける","level":"1.6.1","depth":2,"path":"camera/01_close.md","ref":"camera/01_close.md","articles":[]}]},"previous":{"title":"BGMを作る","level":"1.5.4","depth":2,"path":"city/04_bgm.md","ref":"city/04_bgm.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"city/05_browser.md","mtime":"2025-03-04T12:55:30.373Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-03-04T12:55:44.425Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
