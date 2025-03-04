@@ -1,4 +1,4 @@
-# 建造物を作る
+# 家を作る
 
 1. [twinmotion](https://www.twinmotion.com/)をinstallして、建造物を作ります。template(テンプレート)を編集しても構いません。
 2. できたらexportしてueの$projectを選択します。`$project/${name}_Assets`が作成されます。`datasmith`の置き場所は変更しても構いません。
