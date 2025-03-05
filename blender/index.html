@@ -1237,10 +1237,18 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="blender">blender</h1>
-<p><a href="https://blender.org/" target="_blank">blender</a>でモデルを編集して、ueで読み込みます。</p>
+<p><a href="https://projects.blender.org/blender/blender" target="_blank">blender</a>でモデルを編集して、ueで読み込みます。</p>
 <ul>
-<li>version: <code>4.2</code></li>
+<li>version: <code>4.5</code></li>
 </ul>
+<pre><code class="lang-sh"><span class="hljs-comment"># https://developer.blender.org/docs/handbook/building_blender/windows/</span>
+$ <span class="hljs-built_in">cd</span> c:\blender-git
+$ git <span class="hljs-built_in">clone</span> https://projects.blender.org/blender/blender.git
+$ <span class="hljs-built_in">cd</span> c:\blender-git\blender
+$ make update 
+$ make
+</code></pre>
+<h2 id="addon">addon</h2>
 <table>
 <thead>
 <tr>
@@ -1327,7 +1335,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"blender","level":"1.12","depth":1,"next":{"title":"素体を作る","level":"1.12.1","depth":2,"path":"blender/01_model.md","ref":"blender/01_model.md","articles":[]},"previous":{"title":"unity","level":"1.11","depth":1,"path":"unity/README.md","ref":"unity/README.md","articles":[]},"articles":[{"title":"素体を作る","level":"1.12.1","depth":2,"path":"blender/01_model.md","ref":"blender/01_model.md","articles":[]},{"title":"衣装を着せる","level":"1.12.2","depth":2,"path":"blender/02_costume.md","ref":"blender/02_costume.md","articles":[]},{"title":"vrmで統合する","level":"1.12.3","depth":2,"path":"blender/03_vrm.md","ref":"blender/03_vrm.md","articles":[]}],"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"blender/README.md","mtime":"2025-03-05T12:32:08.867Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-03-05T12:32:24.298Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"blender","level":"1.12","depth":1,"next":{"title":"素体を作る","level":"1.12.1","depth":2,"path":"blender/01_model.md","ref":"blender/01_model.md","articles":[]},"previous":{"title":"unity","level":"1.11","depth":1,"path":"unity/README.md","ref":"unity/README.md","articles":[]},"articles":[{"title":"素体を作る","level":"1.12.1","depth":2,"path":"blender/01_model.md","ref":"blender/01_model.md","articles":[]},{"title":"衣装を着せる","level":"1.12.2","depth":2,"path":"blender/02_costume.md","ref":"blender/02_costume.md","articles":[]},{"title":"vrmで統合する","level":"1.12.3","depth":2,"path":"blender/03_vrm.md","ref":"blender/03_vrm.md","articles":[]}],"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"blender/README.md","mtime":"2025-03-05T12:59:55.943Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-03-05T13:00:10.264Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
