@@ -1258,9 +1258,18 @@
 <iframe src="https://blueprintue.com/render/k3xgicx_/1" scrolling="no" allowfullscreen="" style="width:100%;height:400px"></iframe>
 
 <ul>
-<li><code>BP_Earth</code>: <code>transform-location-z:-636000000</code>, <code>transform-scale:6360000</code></li>
+<li><code>BP_Earth</code>: <code>transform-location-z:-636000000</code>, <code>transform-scale:6370000</code></li>
 <li><code>Sky_Sphere_Mesh</code>: <code>transform-scale:50000</code></li>
 </ul>
+<h2 id="issue-mapのcollisionがおかしくなる">issue: mapのcollisionがおかしくなる</h2>
+<p>これはearthを<code>SkyAtmosphere</code>の下に置くと発生します。親子関係を解除しましょう。</p>
+<h2 id="issue-earthを下に見ると黒い丸がある">issue: earthを下に見ると黒い丸がある</h2>
+<p>earthのscaleを636から637に変更することで解消できます。</p>
+<p>earthを下に見ると、黒い丸が映り込みます。これは、udsをupdateすると発生し始めました。</p>
+<p>また、<code>Captured Scene Sky Lightの</code>Real Time Capture`をdisableにすると雲も影も無くなります。したがって、条件でon/offを切り変える方法で緩和できます。この方法は使用しなくても良いです。</p>
+<blockquote>
+<p>リアルタイムキャプチャが有効なスカイライトがシーンにあります。少なくともskyatmosphereコンポーネント、volumetriccloudコンポーネント、またはisksyとしてマテリアルタグが付いたメッシュが必要です。これらがない場合は黒になります。</p>
+</blockquote>
 <h2 id="ocean-wavesで惑星の海を作る">ocean wavesで惑星の海を作る</h2>
 <p><a href="../plan/03_ocean.html">こちら</a></p>
 
@@ -1306,7 +1315,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"惑星形式のmapを作る","level":"1.5.1","depth":2,"next":{"title":"橋を作る","level":"1.5.2","depth":2,"path":"city/02_bridge.md","ref":"city/02_bridge.md","articles":[]},"previous":{"title":"city sample","level":"1.5","depth":1,"path":"city/README.md","ref":"city/README.md","articles":[{"title":"惑星形式のmapを作る","level":"1.5.1","depth":2,"path":"city/01_remove.md","ref":"city/01_remove.md","articles":[]},{"title":"橋を作る","level":"1.5.2","depth":2,"path":"city/02_bridge.md","ref":"city/02_bridge.md","articles":[]},{"title":"家を作る","level":"1.5.3","depth":2,"path":"city/03_house.md","ref":"city/03_house.md","articles":[]},{"title":"BGMを作る","level":"1.5.4","depth":2,"path":"city/04_bgm.md","ref":"city/04_bgm.md","articles":[]},{"title":"ブラウザを作る","level":"1.5.5","depth":2,"path":"city/05_browser.md","ref":"city/05_browser.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"city/01_remove.md","mtime":"2025-03-04T12:57:00.337Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-03-04T12:57:12.796Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"惑星形式のmapを作る","level":"1.5.1","depth":2,"next":{"title":"橋を作る","level":"1.5.2","depth":2,"path":"city/02_bridge.md","ref":"city/02_bridge.md","articles":[]},"previous":{"title":"city sample","level":"1.5","depth":1,"path":"city/README.md","ref":"city/README.md","articles":[{"title":"惑星形式のmapを作る","level":"1.5.1","depth":2,"path":"city/01_remove.md","ref":"city/01_remove.md","articles":[]},{"title":"橋を作る","level":"1.5.2","depth":2,"path":"city/02_bridge.md","ref":"city/02_bridge.md","articles":[]},{"title":"家を作る","level":"1.5.3","depth":2,"path":"city/03_house.md","ref":"city/03_house.md","articles":[]},{"title":"BGMを作る","level":"1.5.4","depth":2,"path":"city/04_bgm.md","ref":"city/04_bgm.md","articles":[]},{"title":"ブラウザを作る","level":"1.5.5","depth":2,"path":"city/05_browser.md","ref":"city/05_browser.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"city/01_remove.md","mtime":"2025-03-05T12:32:08.868Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-03-05T12:32:24.298Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
