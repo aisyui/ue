@@ -1268,15 +1268,25 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="animation-clipをfbxにexportする">animation clipをfbxにexportする</h1>
-<p>unityのmotionはanimation clipといいます。</p>
+                                <h1 id="animation-clipをueで使う">animation clipをueで使う</h1>
+<h2 id="fbxでexportする">fbxでexportする</h2>
+<p>unityのmotionはanimation clipといいます。fbxでexportするには<code>fbx</code>, <code>recorder</code>を使います。</p>
 <ol>
-<li><code>.vrm</code>を読み込みます。vrmを読み込むaddonを追加してください。</li>
+<li><code>.vrm</code>を読み込みます。vrmを読み込むpackage(plugin/addon)を追加してください。</li>
 <li>Sceneにmodel(object)をD&amp;Dします。</li>
 <li>animation clipをmodelにD&amp;Dします。すると、Animatorが追加されます。具体的には<code>Entry -&gt; Animation Clip</code>になります。再生するとmotionが再生されます。</li>
-<li>package-managerでfbxとrecorderをinstallします。</li>
+<li>package-managerの<code>unity registry</code>でfbxとrecorderと検索し、packageをinstallします。</li>
 <li><code>Window -&gt; General -&gt; Recorder -&gt; Recorder Window -&gt; Add: FBX</code>を追加します。</li>
 <li>GameObjectの欄にmodelをD&amp;Dします。そして、Start Recordingを実行します。止めると<code>.fbx</code>が保存されます。</li>
+</ol>
+<h2 id="vrmaでexportする">vrmaでexportする</h2>
+<p>ueでfbxをimportしてもリターゲットが設定されていません。これは非常に面倒です。したがって、<code>.vrma</code>でexportして、ue(vrm4u)で読み込む方法があります。</p>
+<p>今回は、原神やProject Mugenなどに出てくる通称、アラレちゃん走りを作ってみます。</p>
+<p><a href="https://booth.pm/ja/items/2845548" target="_blank">https://booth.pm/ja/items/2845548</a></p>
+<ol>
+<li>unityの<a href="https://github.com/malaybaku/AnimationClipToVrmaSample" target="_blank">AnimationClipToVrmaSample</a>を使って<code>.vrma</code>にexportする。</li>
+<li><code>${model}/RTG_UEFN_${animation_clip}</code>を開く。この際、<code>ルートボーンに垂直オフセットを適用</code>します。</li>
+<li>そこでグローバル設定にて<code>ルートを有効化</code>のチェックを外します。そして、animをexportします。</li>
 </ol>
 
                                 
@@ -1321,7 +1331,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"motionをfbxにexportする","level":"1.11.1","depth":2,"next":{"title":"blender","level":"1.12","depth":1,"path":"blender/README.md","ref":"blender/README.md","articles":[{"title":"素体を作る","level":"1.12.1","depth":2,"path":"blender/01_model.md","ref":"blender/01_model.md","articles":[]},{"title":"衣装を着せる","level":"1.12.2","depth":2,"path":"blender/02_costume.md","ref":"blender/02_costume.md","articles":[]},{"title":"vrmで統合する","level":"1.12.3","depth":2,"path":"blender/03_vrm.md","ref":"blender/03_vrm.md","articles":[]}]},"previous":{"title":"unity","level":"1.11","depth":1,"path":"unity/README.md","ref":"unity/README.md","articles":[{"title":"motionをfbxにexportする","level":"1.11.1","depth":2,"path":"unity/01_fbx.md","ref":"unity/01_fbx.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"unity/01_fbx.md","mtime":"2025-03-08T17:54:09.790Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-03-08T17:54:25.487Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"motionをfbxにexportする","level":"1.11.1","depth":2,"next":{"title":"blender","level":"1.12","depth":1,"path":"blender/README.md","ref":"blender/README.md","articles":[{"title":"素体を作る","level":"1.12.1","depth":2,"path":"blender/01_model.md","ref":"blender/01_model.md","articles":[]},{"title":"衣装を着せる","level":"1.12.2","depth":2,"path":"blender/02_costume.md","ref":"blender/02_costume.md","articles":[]},{"title":"vrmで統合する","level":"1.12.3","depth":2,"path":"blender/03_vrm.md","ref":"blender/03_vrm.md","articles":[]}]},"previous":{"title":"unity","level":"1.11","depth":1,"path":"unity/README.md","ref":"unity/README.md","articles":[{"title":"motionをfbxにexportする","level":"1.11.1","depth":2,"path":"unity/01_fbx.md","ref":"unity/01_fbx.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"unity/01_fbx.md","mtime":"2025-03-08T19:31:00.197Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-03-08T19:31:14.780Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
