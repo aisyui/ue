@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>city sample · HonKit</title>
+        <title>motionをfbxにexportする · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 6.0.2">
@@ -56,10 +56,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="01_remove.html" />
+    <link rel="next" href="../blender/" />
     
     
-    <link rel="prev" href="../crs/02_boss.html" />
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -366,9 +366,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5" data-path="./">
+        <li class="chapter " data-level="1.5" data-path="../city/">
             
-                <a href="./">
+                <a href="../city/">
             
                     
                     city sample
@@ -380,9 +380,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="01_remove.html">
+        <li class="chapter " data-level="1.5.1" data-path="../city/01_remove.html">
             
-                <a href="01_remove.html">
+                <a href="../city/01_remove.html">
             
                     
                     惑星形式のmapを作る
@@ -393,9 +393,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="02_bridge.html">
+        <li class="chapter " data-level="1.5.2" data-path="../city/02_bridge.html">
             
-                <a href="02_bridge.html">
+                <a href="../city/02_bridge.html">
             
                     
                     橋を作る
@@ -406,9 +406,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="03_house.html">
+        <li class="chapter " data-level="1.5.3" data-path="../city/03_house.html">
             
-                <a href="03_house.html">
+                <a href="../city/03_house.html">
             
                     
                     家を作る
@@ -419,9 +419,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4" data-path="04_bgm.html">
+        <li class="chapter " data-level="1.5.4" data-path="../city/04_bgm.html">
             
-                <a href="04_bgm.html">
+                <a href="../city/04_bgm.html">
             
                     
                     BGMを作る
@@ -432,9 +432,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.5" data-path="05_browser.html">
+        <li class="chapter " data-level="1.5.5" data-path="../city/05_browser.html">
             
-                <a href="05_browser.html">
+                <a href="../city/05_browser.html">
             
                     
                     ブラウザを作る
@@ -740,9 +740,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11" data-path="../unity/">
+        <li class="chapter " data-level="1.11" data-path="./">
             
-                <a href="../unity/">
+                <a href="./">
             
                     
                     unity
@@ -754,9 +754,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.11.1" data-path="../unity/01_fbx.html">
+        <li class="chapter active" data-level="1.11.1" data-path="01_fbx.html">
             
-                <a href="../unity/01_fbx.html">
+                <a href="01_fbx.html">
             
                     
                     motionをfbxにexportする
@@ -1253,7 +1253,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >city sample</a>
+        <a href=".." >motionをfbxにexportする</a>
     </h1>
 </div>
 
@@ -1268,370 +1268,16 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="city-sample">city sample</h1>
-<p><a href="https://www.unrealengine.com/marketplace/ja/product/city-sample" target="_blank">city sample</a></p>
-<p>ニューヨーク(NY)をモデルに都市が作られています。人と自動車が動いています。自動車は乗ることや破壊することができます。</p>
-<h2 id="game-animation-sampleとの統合">game animation sampleとの統合</h2>
-<p>他のassetとの統合を考えるとき、city sampleをベースにします。なぜなら、city sampleは複雑すぎるためです。ここではcity sampleをinstallした上で、game animation sampleをそこにcopyします。</p>
-<p>なお、<code>GameAnimationSample/Binaries/Win64/UnrealEditor.modules</code>だけはcopyしません。</p>
-<pre><code class="lang-sh"><span class="hljs-comment"># 以下のfileをcopy</span>
-GameAnimationSample
-    Binaries
-        Win64/UnrealEditor.modules <span class="hljs-comment">#このfileだけはcopy(rewrite)しない</span>
-    Build
-    Content
-</code></pre>
-<p>次に<code>CitySample/Binaries/Win64/UnrealEditor.modules</code>を編集します。</p>
-<pre><code class="lang-json">{
-    <span class="hljs-string">"BuildId"</span>: <span class="hljs-string">"xxx"</span>,
-        <span class="hljs-string">"Modules"</span>:
-        {
-            <span class="hljs-string">"CitySample"</span>: <span class="hljs-string">"UnrealEditor-CitySample.dll"</span>,
-            <span class="hljs-string">"CitySampleAnimGraphRuntime"</span>: <span class="hljs-string">"UnrealEditor-CitySampleAnimGraphRuntime.dll"</span>,
-            <span class="hljs-string">"CitySampleEditor"</span>: <span class="hljs-string">"UnrealEditor-CitySampleEditor.dll"</span>
-        },
-        {
-            <span class="hljs-string">"GameAnimationSample"</span>: <span class="hljs-string">"UnrealEditor-GameAnimationSample.dll"</span>
-        }
-}
-</code></pre>
-<p>これでGASPが機能すればokです。</p>
-<p>他には<code>$project/Config</code>と<code>$project/xxx.uproject</code>を見比べてみましょう。必要そうなものを追記します。</p>
-<pre><code class="lang-json">{
-    <span class="hljs-string">"FileVersion"</span>: <span class="hljs-number">3</span>,
-    <span class="hljs-string">"EngineAssociation"</span>: <span class="hljs-string">"5.5"</span>,
-    <span class="hljs-string">"Category"</span>: <span class="hljs-string">"Samples"</span>,
-    <span class="hljs-string">"Description"</span>: <span class="hljs-string">""</span>,
-    <span class="hljs-string">"Modules"</span>: [
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"CitySample"</span>,
-            <span class="hljs-string">"Type"</span>: <span class="hljs-string">"Runtime"</span>,
-            <span class="hljs-string">"LoadingPhase"</span>: <span class="hljs-string">"Default"</span>,
-            <span class="hljs-string">"AdditionalDependencies"</span>: [
-                <span class="hljs-string">"Engine"</span>,
-                <span class="hljs-string">"AIModule"</span>,
-                <span class="hljs-string">"ChaosVehicles"</span>,
-                <span class="hljs-string">"UMG"</span>,
-                <span class="hljs-string">"MovieScene"</span>
-            ]
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"CitySampleEditor"</span>,
-            <span class="hljs-string">"Type"</span>: <span class="hljs-string">"Editor"</span>,
-            <span class="hljs-string">"LoadingPhase"</span>: <span class="hljs-string">"Default"</span>,
-            <span class="hljs-string">"AdditionalDependencies"</span>: [
-                <span class="hljs-string">"Engine"</span>
-            ]
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"CitySampleAnimGraphRuntime"</span>,
-            <span class="hljs-string">"Type"</span>: <span class="hljs-string">"UncookedOnly"</span>,
-            <span class="hljs-string">"LoadingPhase"</span>: <span class="hljs-string">"Default"</span>
-        }
-    ],
-    <span class="hljs-string">"Plugins"</span>: [
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"AlembicHairImporter"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"HairStrands"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"PythonScriptPlugin"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"ControlRig"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"Takes"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"D3DExternalGPUStatistics"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>,
-            <span class="hljs-string">"Optional"</span>: <span class="hljs-literal">true</span>,
-            <span class="hljs-string">"SupportedTargetPlatforms"</span>: [
-                <span class="hljs-string">"Win64"</span>
-            ]
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"LiveLinkCurveDebugUI"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"ChaosVehiclesPlugin"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"RigLogic"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"RawInput"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"GameplayInsights"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"TraceSourceFilters"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"TraceDataFilters"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"ModelingToolsEditorMode"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"Traffic"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"CitySampleMassCrowd"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"StateTree"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"OnlineSubsystem"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"OnlineSubsystemUtils"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"MassAI"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"MassCrowd"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"MassEntity"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"MassGameplay"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"HoverDrone"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"EnhancedInput"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"Volumetrics"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"ContextualAnimation"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"ChaosCaching"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"FieldSystemPlugin"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"Paper2D"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"WinDualShock"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>,
-            <span class="hljs-string">"SupportedTargetPlatforms"</span>: [
-                <span class="hljs-string">"Win64"</span>
-            ]
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"ZoneGraph"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"AnimationWarping"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"ElectraPlayer"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"LiveLinkCamera"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"AudioModulation"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"Metasound"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"MovieRenderPipeline"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"Soundscape"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"FullBodyIK"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"RemoteControl"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"ImagePlate"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"LightWeightInstancesEditor"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"GameFeatures"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"ModularGameplay"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"CitySampleSensorGrid"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"IKRig"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"ColorCorrectRegions"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"Gauntlet"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"CustomizableSequencerTracks"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"NetworkPrediction"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"NiagaraFluids"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"Text3D"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"MotoSynth"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"EditorDataStorage"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"EditorDataStorageFeatures"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>,
-            <span class="hljs-string">"TargetAllowList"</span>: [
-                <span class="hljs-string">"Editor"</span>
-            ]
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"AnimToTexture"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"SequencerScripting"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>,
-            <span class="hljs-string">"TargetAllowList"</span>: [
-                <span class="hljs-string">"Editor"</span>
-            ]
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"GeometryCollectionPlugin"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>,
-            <span class="hljs-string">"TargetAllowList"</span>: [
-                <span class="hljs-string">"Editor"</span>
-            ]
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"AutomatedPerfTesting"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"LiveLink"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"LiveLinkControlRig"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"PoseSearch"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"AnimationLocomotionLibrary"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"MotionWarping"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"Chooser"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        },
-        {
-            <span class="hljs-string">"Name"</span>: <span class="hljs-string">"Mover"</span>,
-            <span class="hljs-string">"Enabled"</span>: <span class="hljs-literal">true</span>
-        }
-    ],
-    <span class="hljs-string">"TargetPlatforms"</span>: [
-        <span class="hljs-string">"PS5"</span>,
-        <span class="hljs-string">"XSX"</span>,
-        <span class="hljs-string">"Windows"</span>
-    ]
-}
-</code></pre>
-<p>また、<code>/Config/DefaultEngine.ini</code>に注意してください。</p>
-<pre><code class="lang-sh">[/Script/Engine.CollisionProfile]
-+DefaultChannelResponses=(Channel=ECC_GameTraceChannel11,DefaultResponse=ECR_Ignore,bTraceType=True,bStaticObject=False,Name=<span class="hljs-string">"Traversable"</span>)
-+DefaultChannelResponses=(Channel=ECC_GameTraceChannel12,DefaultResponse=ECR_Ignore,bTraceType=True,bStaticObject=False,Name=<span class="hljs-string">"EnemyProjectile"</span>)
-+DefaultChannelResponses=(Channel=ECC_GameTraceChannel13,DefaultResponse=ECR_Block,bTraceType=True,bStaticObject=False,Name=<span class="hljs-string">"BulletHell"</span>)
-+DefaultChannelResponses=(Channel=ECC_GameTraceChannel14,DefaultResponse=ECR_Ignore,bTraceType=True,bStaticObject=False,Name=<span class="hljs-string">"LookAtTrace"</span>)
-</code></pre>
-<p><code>Collision Trace Channel</code>は作り直さなければ機能しないことがあります。</p>
-<h3 id="問題の数々">問題の数々</h3>
-<p>問題の数々は<a href="../issue">こちら</a>でまとめています。</p>
+                                <h1 id="animation-clipをfbxにexportする">animation clipをfbxにexportする</h1>
+<p>unityのmotionはanimation clipといいます。</p>
+<ol>
+<li><code>.vrm</code>を読み込みます。vrmを読み込むaddonを追加してください。</li>
+<li>Sceneにmodel(object)をD&amp;Dします。</li>
+<li>animation clipをmodelにD&amp;Dします。すると、Animatorが追加されます。具体的には<code>Entry -&gt; Animation Clip</code>になります。再生するとmotionが再生されます。</li>
+<li>package-managerでfbxとrecorderをinstallします。</li>
+<li><code>Window -&gt; General -&gt; Recorder -&gt; Recorder Window -&gt; Add: FBX</code>を追加します。</li>
+<li>GameObjectの欄にmodelをD&amp;Dします。そして、Start Recordingを実行します。止めると<code>.fbx</code>が保存されます。</li>
+</ol>
 
                                 
                                 </section>
@@ -1659,12 +1305,12 @@ GameAnimationSample
 
             
                 
-                <a href="../crs/02_boss.html" class="navigation navigation-prev " aria-label="Previous page: ボスを作る">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: unity">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="01_remove.html" class="navigation navigation-next " aria-label="Next page: 惑星形式のmapを作る">
+                <a href="../blender/" class="navigation navigation-next " aria-label="Next page: blender">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1675,7 +1321,7 @@ GameAnimationSample
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"city sample","level":"1.5","depth":1,"next":{"title":"惑星形式のmapを作る","level":"1.5.1","depth":2,"path":"city/01_remove.md","ref":"city/01_remove.md","articles":[]},"previous":{"title":"ボスを作る","level":"1.4.2","depth":2,"path":"crs/02_boss.md","ref":"crs/02_boss.md","articles":[]},"articles":[{"title":"惑星形式のmapを作る","level":"1.5.1","depth":2,"path":"city/01_remove.md","ref":"city/01_remove.md","articles":[]},{"title":"橋を作る","level":"1.5.2","depth":2,"path":"city/02_bridge.md","ref":"city/02_bridge.md","articles":[]},{"title":"家を作る","level":"1.5.3","depth":2,"path":"city/03_house.md","ref":"city/03_house.md","articles":[]},{"title":"BGMを作る","level":"1.5.4","depth":2,"path":"city/04_bgm.md","ref":"city/04_bgm.md","articles":[]},{"title":"ブラウザを作る","level":"1.5.5","depth":2,"path":"city/05_browser.md","ref":"city/05_browser.md","articles":[]}],"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"city/README.md","mtime":"2025-03-08T17:54:09.729Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-03-08T17:54:25.487Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"motionをfbxにexportする","level":"1.11.1","depth":2,"next":{"title":"blender","level":"1.12","depth":1,"path":"blender/README.md","ref":"blender/README.md","articles":[{"title":"素体を作る","level":"1.12.1","depth":2,"path":"blender/01_model.md","ref":"blender/01_model.md","articles":[]},{"title":"衣装を着せる","level":"1.12.2","depth":2,"path":"blender/02_costume.md","ref":"blender/02_costume.md","articles":[]},{"title":"vrmで統合する","level":"1.12.3","depth":2,"path":"blender/03_vrm.md","ref":"blender/03_vrm.md","articles":[]}]},"previous":{"title":"unity","level":"1.11","depth":1,"path":"unity/README.md","ref":"unity/README.md","articles":[{"title":"motionをfbxにexportする","level":"1.11.1","depth":2,"path":"unity/01_fbx.md","ref":"unity/01_fbx.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"unity/01_fbx.md","mtime":"2025-03-08T17:54:09.790Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-03-08T17:54:25.487Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
