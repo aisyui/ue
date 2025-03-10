@@ -9,6 +9,8 @@
 3. blendにアニメシーケンスをつなぎます。私は`unity -> .vrma -> vrm4u`で作成したものを使いました。
 4. blend weightsの値をconfigから持ってきます。これで`CBP_SandboxCharacter`から制御できます。ダッシュが一定速度に達すれば1、それ以外は0にします。
 
+![](/img/0015.png)
+
 <iframe src="https://blueprintue.com/render/9jgpq1oj/1" scrolling="no" allowfullscreen style="width:100%;height:400px"></iframe>
 
 ## アニメシーケンスを作る
