@@ -1282,22 +1282,32 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="アニメーションを変更する">アニメーションを変更する</h1>
-<p>今回はダッシュ時に<code>kawaii run</code>と名付けたアラレちゃん走りを目指します。</p>
-<p><code>CHT_AnimationsForStateMachine</code>でそれぞれの項目のanimを変更すればいいのだろうかと思いましたが、走るanimに関しては、複雑すぎる上に全方位のものを用意する必要があります。</p>
-<p>したがって、<code>ABP_SandboxCharacter</code>のblendを活用しながら適用しました。</p>
-<ol>
-<li><code>cached pose</code>を作って分割</li>
-<li>それを呼び出して<code>Layered blend per bone</code>のbaseにつなぐ。重要なのはここに<code>spine_03</code>のボーンを入れること</li>
-<li>もう一つはアニメーションシーケンス</li>
-<li>blend weightsの値をconfigから持ってくる。ダッシュが一定速度に達すれば1、それ以外は0にする</li>
-</ol>
+<p>今回はダッシュ(sprint)で一定のスピード(speed)に達すると<code>kawaii_run</code>と名付けたアラレちゃん走りに切り替わるようにします。</p>
 <video src="https://git.syui.ai/ai/ue/raw/branch/main/issue/img/gasp_kawaii_run.mp4" width="100%" height="450px" controls="" muted=""></video>
 
-<h2 id="必要なもの">必要なもの</h2>
+<ol>
+<li>ABP_SandboxCharacterのAnimGraphを開きます。<code>cached pose</code>を作って処理を分割します。</li>
+<li>cached poseを呼び出して<code>Layered blend per bone</code>のbaseにつなぎます。重要なのはLayered blendの詳細で<code>spine_03</code>のボーンを入れること。</li>
+<li>blendにアニメシーケンスをつなぎます。私は<code>unity -&gt; .vrma -&gt; vrm4u</code>で作成したものを使いました。</li>
+<li>blend weightsの値をconfigから持ってきます。これで<code>CBP_SandboxCharacter</code>から制御できます。ダッシュが一定速度に達すれば1、それ以外は0にします。</li>
+</ol>
+<iframe src="https://blueprintue.com/render/9jgpq1oj/1" scrolling="no" allowfullscreen="" style="width:100%;height:400px"></iframe>
+
+<h2 id="アニメシーケンスを作る">アニメシーケンスを作る</h2>
 <ul>
 <li><a href="https://booth.pm/ja/items/2845548" target="_blank">https://booth.pm/ja/items/2845548</a></li>
 </ul>
 <p>これをunityを使って<a href="../unity/01_fbx.html">変換</a>して使いました。</p>
+<h2 id="リターゲットによる調整">リターゲットによる調整</h2>
+<p><code>kawaii_run</code>は走っているときに両足を中央に持っていくのが正しいですが、このままでは足が開いてしまいます。</p>
+<p>これを調整するにはリターゲットのposeを変更します。使用している<code>RTG_UEFN_$model</code>を開いて、<code>Running Retarget</code>から<code>Editing Retarget Pose</code>にします。両足を回転さればokです。一方はプラス、もう一方はマイナスの値です。</p>
+<ul>
+<li>left: 0.0, -2.0, 20.0</li>
+<li>right:  0.0, 2.0, -20.0</li>
+</ul>
+<h2 id="gaspでアニメーションを変更するには">GASPでアニメーションを変更するには</h2>
+<p><code>CHT_AnimationsForStateMachine</code>でそれぞれの項目のanimを変更すればいいのだろうかと思いましたが、走るanimに関しては、複雑すぎる上に全方位のものを用意する必要があります。</p>
+<p>したがって、<code>ABP_SandboxCharacter</code>のblendを活用しながら適用しました。</p>
 
                                 
                                 </section>
@@ -1341,7 +1351,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"アニメーションを変更する","level":"1.3.11","depth":2,"next":{"title":"control rig sample","level":"1.4","depth":1,"path":"crs/README.md","ref":"crs/README.md","articles":[{"title":"CRでキャラクターを動かす","level":"1.4.1","depth":2,"path":"crs/01_character.md","ref":"crs/01_character.md","articles":[]},{"title":"ボスを作る","level":"1.4.2","depth":2,"path":"crs/02_boss.md","ref":"crs/02_boss.md","articles":[]}]},"previous":{"title":"階段に登る","level":"1.3.10","depth":2,"path":"gasp/10_stairs.md","ref":"gasp/10_stairs.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"gasp/11_run.md","mtime":"2025-03-10T16:02:42.263Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-03-10T16:02:58.948Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"アニメーションを変更する","level":"1.3.11","depth":2,"next":{"title":"control rig sample","level":"1.4","depth":1,"path":"crs/README.md","ref":"crs/README.md","articles":[{"title":"CRでキャラクターを動かす","level":"1.4.1","depth":2,"path":"crs/01_character.md","ref":"crs/01_character.md","articles":[]},{"title":"ボスを作る","level":"1.4.2","depth":2,"path":"crs/02_boss.md","ref":"crs/02_boss.md","articles":[]}]},"previous":{"title":"階段に登る","level":"1.3.10","depth":2,"path":"gasp/10_stairs.md","ref":"gasp/10_stairs.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"gasp/11_run.md","mtime":"2025-03-10T16:02:55.814Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-03-10T16:03:10.162Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
