@@ -1,0 +1,15 @@
+*/*-lock.json
+*/node_modules
+*.sqlite
+*.lock
+*target
+*.db
+**.DS_Store
+*.DS_Store
+/scpt/*.jpeg
+/scpt/*.png
+config
+book/_book
+book/node_modules
+book/*/*.ini
+book/*.ini

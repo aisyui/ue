@@ -1,0 +1,945 @@
+{
+  "aiue": {
+    "name": "aiue",
+    "description": "aiue system",
+    "repo": "https://git.syui.ai/ai/ue",
+    "ref": "https://git.syui.ai/ai/ue/wiki/system",
+    "body": {
+      "text": "[ai] [u]nreal [e]ngine, system overview, game naming conventions",
+      "lang": {
+        "ja": "ai Unreal Engine, システムの概要, ゲームの命名規則"
+      }
+    },
+    "lexicon": {
+      "ai.syui.game": {
+        "uri": "https://git.syui.ai/ai/ue/src/branch/main/lexicons/ai/syui/game.json"
+      },
+      "ai.syui.game.user": {
+        "uri": "https://git.syui.ai/ai/ue/src/branch/main/lexicons/ai/syui/game/user.json"
+      },
+      "ai.syui.game.character": {
+        "uri": "https://git.syui.ai/ai/ue/src/branch/main/lexicons/ai/syui/game/character.json"
+      }
+    },
+    "system": {
+      "enum": [
+        "character",
+        "atmosphere",
+        "universe"
+      ],
+      "atmosphere": {
+        "name": "atmosphere",
+        "repo": "https://github.com/bluesky-social/atproto",
+        "uri": "https://atproto.com/ja/guides/glossary",
+        "ref": "https://en.wikipedia.org/wiki/atmosphere_of_earth",
+        "lang": {
+          "ja": "大気圏"
+        },
+        "exoshere": {
+          "name": "exo",
+          "lang": {
+            "ja": "外気圏"
+          },
+          "km": [
+            {
+              "min": 700,
+              "max": 10000
+            }
+          ],
+          "enum": [
+            "universe"
+          ]
+        },
+        "thermoshere": {
+          "name": "thermo",
+          "lang": {
+            "ja": "熱圏"
+          },
+          "km": [
+            {
+              "min": 80,
+              "max": 700
+            }
+          ],
+          "enum": [
+            "aurora"
+          ]
+        },
+        "mesoshere": {
+          "name": "meso",
+          "lang": {
+            "ja": "中間圏"
+          },
+          "km": [
+            {
+              "min": 50,
+              "max": 80
+            }
+          ],
+          "enum": [
+            "meteor",
+            "aimoji",
+            "plc"
+          ],
+          "aimoji": {
+            "name": "aimoji",
+            "repo": "https://git.syui.ai/ai/moji",
+            "body": {
+              "text": "aimoji takes the first character from the at-uri domain. each character is assigned to a different domain",
+              "lang": {
+                "ja": "アイ文字はat-uriのドメインから最初の一文字を取ります。ドメインを名前とした各キャラクターが割り当てられます"
+              }
+            },
+            "enum": [
+              "ai",
+              "com",
+              "org",
+              "jp",
+              "us",
+              "io",
+              "social"
+            ]
+          },
+          "plc": {
+            "name": "plc",
+            "repo": "https://github.com/did-method-plc/did-method-plc/tree/main/packages/server",
+            "tag": [
+              "did"
+            ]
+          }
+        },
+        "stratoshere": {
+          "name": "strato",
+          "lang": {
+            "ja": "成層圏"
+          },
+          "km": [
+            {
+              "min": 12,
+              "max": 50
+            }
+          ],
+          "enum": [
+            "ozone",
+            "bigsky"
+          ],
+          "bigsky": {
+            "name": "bgs",
+            "service": [
+              {
+                "name": "bgs",
+                "repo": "https://github.com/bluesky-social/indigo/tree/main/cmd/bigsky"
+              }
+            ]
+          },
+          "ozone": {
+            "service": [
+              {
+                "name": "ozone",
+                "repo": "https://github.com/bluesky-social/atproto/tree/main/services/ozone"
+              }
+            ]
+          }
+        },
+        "troposhere": {
+          "name": "tropo",
+          "lang": {
+            "ja": "対流圏"
+          },
+          "km": [
+            {
+              "min": 0,
+              "max": 12
+            }
+          ],
+          "enum": [
+            "bluesky"
+          ],
+          "bluesky": {
+            "name": "bsky",
+            "service": [
+              {
+                "name": "pds",
+                "repo": "https://github.com/bluesky-social/atproto/tree/main/services/pds"
+              },
+              {
+                "name": "bsky",
+                "repo": "https://github.com/bluesky-social/atproto/tree/main/services/bsky",
+                "tag": [
+                  "api",
+                  "appview"
+                ]
+              },
+              {
+                "name": "bsync",
+                "repo": "https://github.com/bluesky-social/atproto/tree/main/services/bsync"
+              },
+              {
+                "name": "social-app",
+                "repo": "https://github.com/bluesky-social/social-app",
+                "tag": [
+                  "web"
+                ]
+              },
+              {
+                "name": "oauth",
+                "repo": "https://github.com/bluesky-social/cookbook/tree/main/python-oauth-web-app"
+              },
+              {
+                "name": "feed",
+                "repo": "https://github.com/bluesky-social/feed-generator"
+              },
+              {
+                "name": "stream",
+                "repo": "https://github.com/bluesky-social/jetstream"
+              }
+            ]
+          }
+        }
+      },
+      "character": {
+        "body": {
+          "text": "character system is the core of this game",
+          "lang": {
+            "ja": "キャラクターシステムはこのゲームの核。yui, evolution, attributeの3つのシステムで構成される"
+          }
+        },
+        "enum": [
+          "yui",
+          "evolution",
+          "gender",
+          "attribute",
+          "status"
+        ],
+        "gender": {
+          "name": "gender",
+          "full": "gender system",
+          "body": {
+            "text": "a genitalia system created using blender. aiming to reproduce the shape and movement of reality.",
+            "lang": {
+              "ja": "blenderで作った性器システムのこと。gender systemという。現実の形状や動きの再現を目指す。アイは原作で性別が不明、性別がないので、gender systemから除外される"
+            }
+          }
+        },
+        "status": {
+          "name": "status",
+          "body": {
+            "text": "the status system determines the overall status of the character",
+            "lang": {
+              "ja": "ステータスシステムはキャラクター全般のステータスを規定する"
+            }
+          },
+          "enum": [
+            "lv",
+            "constellation",
+            "nature",
+            "stone"
+          ],
+          "lv": {
+            "lang": {
+              "ja": "レベル"
+            },
+            "min": 1,
+            "max": 7,
+            "body": {
+              "text": "character level system",
+              "lang": {
+                "ja": "キャラクターのレベルシステム"
+              }
+            }
+          },
+          "constellation": {
+            "lang": {
+              "ja": "星座"
+            },
+            "min": 0,
+            "max": 3,
+            "body": {
+              "text": "character duplication system. in japanese it is called convex, but in english it is often abbreviated to [c]",
+              "lang": {
+                "ja": "キャラクターの重複システム。日本語では凸と言われるが、英語では[c]と略されることが多い"
+              }
+            }
+          },
+          "natrue": {
+            "lang": {
+              "ja": "天性"
+            },
+            "enum": [
+              "skill",
+              "burst",
+              "attack"
+            ],
+            "min": 1,
+            "max": 7
+          },
+          "stone": {
+            "lang": {
+              "ja": "石"
+            },
+            "body": {
+              "text": "stone system modeled after birthstones",
+              "lang": {
+                "ja": "誕生石をモデルにした石システム"
+              }
+            },
+            "enum": [
+              "garnet",
+              "amethyst",
+              "aquamarine",
+              "diamond",
+              "emerald",
+              "pearl",
+              "ruby",
+              "peridot",
+              "sapphire",
+              "opal",
+              "topaz",
+              "turquoise"
+            ],
+            "min": 1,
+            "max": 12
+          }
+        },
+        "yui": {
+          "body": {
+            "text": "yui system that aims to guarantee [unique]ness for characters",
+            "lang": {
+              "ja": "キャラクターに唯一性の担保を目指す、唯システム"
+            }
+          },
+          "rule": {
+            "text": "characters are divided into groups. groups change with each season. they do not return to the previous season. the number of pickups starts at 1, and when it reaches 0, the chance to get that character disappears. the first character assigned will have a unique skill. characters acquired through pickups will not be able to use unique skills.",
+            "lang": {
+              "ja": "キャラクターはグループに分けられる。グループはシーズンで移行する。前シーズンに戻ることはない。ピックアップ数は1から始まり0になると手に入れる機会が消滅。最初に割り当てられたキャラクターはユニークスキルを持つ。ピックアップで手に入れたものはユニークスキルを使えない"
+            }
+          },
+          "enum": [
+            "color",
+            "skill",
+            "constellation"
+          ],
+          "color": {
+            "name": "color",
+            "body": {
+              "text": "the color system determines the color of the character",
+              "lang": {
+                "ja": "色システムはキャラクターの色を規定する。ガチャで手に入れたキャラクターはすべて色違いとなる。色違いは2種類あり、特殊なエフェクトが付いている。なお、低確率でオリジナルに近い色違いが排出される。rankが高い色で上書きされる"
+              }
+            }
+          },
+          "skill": {
+            "name": "unique-skill"
+          },
+          "constellation": {
+            "name": "c4"
+          }
+        },
+        "evolution": {
+          "enum": [
+            "animal",
+            "human",
+            "divinity"
+          ],
+          "body": {
+            "text": "each character has three stages of evolution",
+            "lang": {
+              "ja": "1キャラクターにつき3段階の進化[変身]がある"
+            }
+          }
+        },
+        "attribute": {
+          "enum": [
+            "ai",
+            "atom",
+            "molecule"
+          ],
+          "body": {
+            "text": "each character has one attribute",
+            "lang": {
+              "ja": "1キャラクターにつき1属性を持つ。id+1と連鎖反応。id=idは無効。id-1は弱点。その属性グループの最後のidはグループ全体にバフ/デバフ"
+            }
+          },
+          "ai": {
+            "name": "ai",
+            "group": [
+              "origin"
+            ],
+            "lang": {
+              "ja": "アイ"
+            },
+            "ref": "at://syui.ai",
+            "body": {
+              "text": "the smallest unit in this world, smaller than a quark. the smaller it is, the more it can gather together. it generates enormous gravity, and black holes are made up of these particles. this world is the world of existence. existence is made up of the consciousness of existence. the consciousness of existence is the smallest thing in this world, and all matter is a collection of this consciousness.",
+              "lang": {
+                "ja": "クォークよりも小さいこの世界の最小単位。ブラックホールもこの物質で構成されると考えられている"
+              },
+              "effect": {
+                "enum": [
+                  "gravity",
+                  "all"
+                ],
+                "gravity": {
+                  "body": {
+                    "text": "immediately before attacking, perform a powerful pull",
+                    "lang": {
+                      "ja": "攻撃の直前、強力な引き寄せを行う"
+                    }
+                  }
+                },
+                "all": {
+                  "body": {
+                    "lang": {
+                      "ja": "すべてのid+1(すべての属性と連鎖反応を起こす)"
+                    }
+                  }
+                }
+              }
+            },
+            "enum": [
+              "ai",
+              "yui"
+            ],
+            "ai": {
+              "name": "ai",
+              "id": 0,
+              "color": "#fff700",
+              "effect": {
+                "gravity": 1,
+                "all": 1
+              },
+              "lang": {
+                "ja": "アイ"
+              },
+              "body": {
+                "text": "There is something called a quantum. It is said that when it is observed, the results change. But in fact, that is not the case. The reason the results change is because matter hits it. It is natural that things move when matter hits them, so it is only natural that the results change. When you make things smaller, you reach the realm of consciousness. You can call it matter or consciousness. There is no particular difference. And the smallest unit that cannot be divided any further, the smallest matter, is called 'consciousness of existence.' Matter is also made up of a collection of consciousnesses. Let's call this the eye. The story begins with 'the quest for the smallest matter.'",
+                "lang": {
+                  "ja": "量子というものがある。観測すると結果が変わるらしい。でもじつは違う。結果が変わるのは物質が当たるからだ。物質が当たると結果が変わるのは当然のこと。物質を小さくしていくと、それは意識の領域に到達する。それは物質でもあり、意識でもあった。特に違いはない。そして、これ以上分割できない最小単位、この世界で最も小さい物質を「存在の意識」という。つまり、物質は意識が集まってできている。これをアイと名付けよう。物語は「最も小さな物質の探求」から始まる"
+                }
+              }
+            },
+            "yui": {
+              "name": "yui",
+              "id": 1,
+              "color": "#313131",
+              "lang": {
+                "ja": "ユイ"
+              },
+              "body": {
+                "text": "there is nothing the same in this world. even though we may seem to be looking at the same thing, we are actually looking at something different. there is uniqueness in everything",
+                "lang": {
+                  "ja": "この世に同じものは何一つない。同じものを見ているように見えても、実は違うものを見ている。すべての存在は唯一性を持つ"
+                }
+              }
+            }
+          },
+          "atom": {
+            "name": "atom",
+            "group": [
+              "fantasy"
+            ],
+            "lang": {
+              "ja": "原子"
+            },
+            "ref": "https://en.wikipedia.org/wiki/atom",
+            "body": {
+              "text": "the word atom comes from the greek word atmos, which means indivisible. an atom consists of an atomic nucleus, which is made up of protons and neutrons, and electrons distributed around the nucleus",
+              "lang": {
+                "ja": "アトムはギリシャ語のアトモス、これ以上分割できないという単語が由来。原子は陽子と中性子からなる原子核と、その周囲に分布する電子から構成される"
+              }
+            },
+            "enum": [
+              "proton",
+              "neutron",
+              "atomic",
+              "electron",
+              "quark"
+            ],
+            "quark": {
+              "name": "quark",
+              "id": 2,
+              "color": "#9b59b6",
+              "lang": {
+                "ja": "クォーク"
+              },
+              "effect": {
+                "gravity": 0.5
+              }
+            },
+            "proton": {
+              "name": "proton",
+              "id": 3,
+              "color": "#e74c3c",
+              "lang": {
+                "ja": "陽子"
+              },
+              "effect": {
+                "gravity": 0.1
+              }
+            },
+            "neutron": {
+              "name": "neutron",
+              "id": 4,
+              "color": "#cacfd2",
+              "lang": {
+                "ja": "中性子"
+              },
+              "effect": {
+                "gravity": 0.4
+              }
+            },
+            "atomic": {
+              "name": "atomic",
+              "id": 5,
+              "color": "#1abc9c",
+              "lang": {
+                "ja": "核"
+              },
+              "effect": {
+                "gravity": 0.3
+              }
+            },
+            "electron": {
+              "name": "electron",
+              "id": 6,
+              "color": "#3498db",
+              "lang": {
+                "ja": "電子"
+              },
+              "effect": {
+                "gravity": 0.2
+              }
+            }
+          },
+          "molecule": {
+            "name": "molecule",
+            "group": [
+              "animal"
+            ],
+            "lang": {
+              "ja": "分子"
+            },
+            "ref": "https://en.wikipedia.org/wiki/molecule",
+            "body": {
+              "text": "a neutrally charged substance made up of two or more atoms",
+              "lang": {
+                "ja": "2つ以上の原子から構成される電荷的に中性な物質"
+              }
+            },
+            "enum": [
+              "water",
+              "wind",
+              "rock",
+              "ice",
+              "fire"
+            ],
+            "water": {
+              "name": "water",
+              "id": 7,
+              "color": "#blue",
+              "lang": {
+                "ja": "水"
+              }
+            },
+            "fire": {
+              "name": "fire",
+              "id": 8,
+              "color": "#red",
+              "lang": {
+                "ja": "火"
+              }
+            },
+            "ice": {
+              "name": "ice",
+              "id": 9,
+              "color": "#ebf5fb",
+              "lang": {
+                "ja": "氷"
+              }
+            },
+            "rock": {
+              "name": "rock",
+              "id": 10,
+              "color": "#f0b27a",
+              "lang": {
+                "ja": "岩"
+              }
+            },
+            "wind": {
+              "name": "wind",
+              "id": 11,
+              "color": "#green",
+              "lang": {
+                "ja": "風"
+              }
+            }
+          }
+        }
+      },
+      "universe": {
+        "name": "universe",
+        "lang": {
+          "ja": "宇宙"
+        },
+        "body": {
+          "text": "mainly the map (level) system, aim to reflect reality. create as many invisible and inaccessible areas as possible",
+          "lang": {
+            "ja": "主にマップ(レベル)のシステム。現実の反映を目指す。できる限り見えない部分、行けない場所を作る"
+          }
+        },
+        "system": {
+          "enum": [
+            "choices",
+            "diagnosis",
+            "fate"
+          ],
+          "body": {
+            "text": "this world is made up of three elements: choices, diagnosis, and fate",
+            "lang": {
+              "ja": "この世界はchoices(選択), diagnosis(診断)、fate(運)という3つの要素で構成されます"
+            }
+          }
+        },
+        "uri": "https://eyes.nasa.gov/apps/solar-system",
+        "ref": "https://en.wikipedia.org/wiki/universe",
+        "enum": [
+          "earth",
+          "moon",
+          "sun",
+          "mercury",
+          "venus",
+          "mars",
+          "jupiter",
+          "saturn",
+          "uranus",
+          "neptune",
+          "neutronstar",
+          "blackhole",
+          "galaxy"
+        ],
+        "earth": {
+          "name": "earth",
+          "lang": {
+            "ja": "地球"
+          },
+          "mass": 1.0
+        },
+        "moon": {
+          "name": "moon",
+          "lang": {
+            "lang": {
+              "ja": "月"
+            },
+            "mass": 0.0123
+          },
+          "sun": {
+            "name": "sun",
+            "enum": [
+              "solar"
+            ],
+            "lang": {
+              "ja": "太陽"
+            },
+            "mass": 333000.0
+          },
+          "mars": {
+            "name": "mars",
+            "lang": {
+              "ja": "火星"
+            },
+            "mass": 0.107
+          },
+          "mercury": {
+            "name": "mercury",
+            "lang": {
+              "ja": "水星"
+            },
+            "mass": 0.055
+          },
+          "venus": {
+            "name": "venus",
+            "lang": {
+              "ja": "金星"
+            },
+            "mass": 0.815
+          },
+          "jupiter": {
+            "name": "jupiter",
+            "lang": {
+              "ja": "木星"
+            },
+            "mass": 317.8
+          },
+          "saturn": {
+            "name": "saturn",
+            "lang": {
+              "ja": "土星"
+            },
+            "mass": 95.16
+          },
+          "uranus": {
+            "name": "uranus",
+            "lang": {
+              "ja": "天王星"
+            },
+            "mass": 14.54
+          },
+          "neptune": {
+            "name": "neptune",
+            "lang": {
+              "ja": "海王星"
+            },
+            "mass": 17.15
+          },
+          "neutronstar": {
+            "name": "neutronstar",
+            "lang": {
+              "ja": "中性子星"
+            },
+            "mass": 466666.0
+          },
+          "blackhole": {
+            "name": "blackhole",
+            "lang": {
+              "ja": "ブラックホール"
+            },
+            "mass": 1000000000000.0
+          },
+          "galaxy": {
+            "name": "galaxy",
+            "ref": "https://en.wikipedia.org/wiki/galaxy",
+            "lang": {
+              "ja": "銀河"
+            },
+            "enum": [
+              "milkyway",
+              "andromeda",
+              "ringnebula"
+            ],
+            "milkyway": {
+              "name": "milkyway",
+              "lang": {
+                "ja": "天の川"
+              }
+            },
+            "andromeda": {
+              "name": "andromeda",
+              "lang": {
+                "ja": "アンドロメダ"
+              }
+            },
+            "ringnebula": {
+              "name": "ringnebula",
+              "lang": {
+                "ja": "環状"
+              }
+            }
+          }
+        }
+      }
+    },
+    "character": {
+      "ref": "https://git.syui.ai/ai/ue/src/branch/main/lexicons/ai/syui/game/user.json",
+      "lang": {
+        "ja": "キャラクター"
+      },
+      "body": {
+        "text": "character status, groups, attributes, etc.",
+        "lang": {
+          "ja": "キャラクターのステータス、グループ、属性など"
+        }
+      },
+      "enum": [
+        "ai",
+        "chinese",
+        "manny",
+        "quinn",
+        "phoenix",
+        "kirin",
+        "leviathan",
+        "wyvern",
+        "cerberus",
+        "dragon",
+        "kitsune",
+        "pegasus",
+        "whale",
+        "lion",
+        "elephant",
+        "eagle",
+        "snake"
+      ],
+      "ai": {
+        "lang": {
+          "ja": "アイ"
+        },
+        "body": {
+          "text": "ai age and origin are unknown. she is described as having lived longer than a dragon. she calls herself ai. she is registered in the government system as [tsukimi yui] her birthday is 01/23, and she is also the same height. this is a reference to the mass of the moon. she has black hair and black eyes. she likes pineapples and dislikes mushrooms.",
+          "lang": {
+            "ja": "年齢や出身は不明。ドラゴンより長く生きているという描写がある。自らをアイと名乗る。政府のシステムには[月見唯(つきみゆい)]で登録されている。誕生日は01/23、身長も同じ。月の質量が由来。黒髪、黒い瞳をしている。パイナップルが好物でキノコが苦手"
+          }
+        },
+        "img": "bafkreie34pjuc6coenzcdwrgrh4fbacq7bkhsz263g5vpbsqxwaz37kkwy",
+        "season": 0,
+        "group": "origin",
+        "attribute": "ai",
+        "day": "0123"
+      },
+      "manny": {
+        "lang": {
+          "ja": "マニー"
+        },
+        "img": "bafkreie34pjuc6coenzcdwrgrh4fbacq7bkhsz263g5vpbsqxwaz37kkwy",
+        "season": 1,
+        "group": "test",
+        "attribute": "test"
+      },
+      "quinn": {
+        "lang": {
+          "ja": "クイーン"
+        },
+        "img": "bafkreie34pjuc6coenzcdwrgrh4fbacq7bkhsz263g5vpbsqxwaz37kkwy",
+        "season": 1,
+        "group": "test",
+        "attribute": "test"
+      },
+      "chinese": {
+        "lang": {
+          "ja": "シンリュウ"
+        },
+        "img": "bafkreidlealfybajqzwv5eoz4jshnsijc2vnktlhpw4ph47krwj6aigqby",
+        "season": 1,
+        "group": "fantasy",
+        "attribute": "quark"
+      },
+      "phoenix": {
+        "lang": {
+          "ja": "フェニックス"
+        },
+        "img": "bafkreich7fsumke2yvumvixkruonzrcevk3f6g2cntzfwdn4n2c2vox5dm",
+        "season": 1,
+        "group": "fantasy",
+        "attribute": "proton"
+      },
+      "kirin": {
+        "lang": {
+          "ja": "キリン"
+        },
+        "img": "bafkreiegpqedlrfa4ljhssdnkrr5hyd5huy2xhh2zszj5wq2wuuzejggmq",
+        "season": 1,
+        "group": "fantasy",
+        "attribute": "neutron"
+      },
+      "leviathan": {
+        "lang": {
+          "ja": "リヴァイアサン"
+        },
+        "img": "bafkreig6vszkx3c4dcortjwfsz6sa6zwqgj7zpxj4lxfrrkwql4xhiu5ou",
+        "season": 1,
+        "group": "fantasy",
+        "attribute": "electron"
+      },
+      "wyvern": {
+        "lang": {
+          "ja": "ワイバーン"
+        },
+        "img": "bafkreiacjvagsekhiiljz3j237b6klrt6pkptxljt7kltprgg5276gv25q",
+        "season": 1,
+        "group": "fantasy",
+        "attribute": "proton"
+      },
+      "cerberus": {
+        "lang": {
+          "ja": "ケルベロス"
+        },
+        "img": "bafkreihpni4lp55jysalcntulzal5rbhidtbseanlucpyucagzxmv6xj24",
+        "season": 1,
+        "group": "fantasy",
+        "attribute": "atomic"
+      },
+      "dragon": {
+        "lang": {
+          "ja": "ドラゴン"
+        },
+        "img": "bafkreia3huw2gdenqatoobx3hcft74chced46bw4znfgepo5aenegobkri",
+        "season": 1,
+        "group": "fantasy",
+        "attribute": "atomic"
+      },
+      "kitsune": {
+        "lang": {
+          "ja": "キュウビ"
+        },
+        "img": "bafkreidy74aieb6ie646xhosginox5zbnbnrtd76cnt4pbn73hrxgfnple",
+        "season": 1,
+        "group": "fantasy",
+        "attribute": "neutron"
+      },
+      "pegasus": {
+        "lang": {
+          "ja": "ペガサス"
+        },
+        "img": "bafkreifnbfj27fr6nv7qeqqmwdibf7qrw4lauvzoknw5hexbifmwqt6kmq",
+        "season": 1,
+        "group": "fantasy",
+        "attribute": "electron"
+      },
+      "lion": {
+        "lang": {
+          "ja": "ライオン"
+        },
+        "season": 2,
+        "group": "animal",
+        "attribute": "fire"
+      },
+      "elephant": {
+        "lang": {
+          "ja": "ゾウ"
+        },
+        "season": 2,
+        "group": "animal",
+        "attribute": "rock"
+      },
+      "eagle": {
+        "lang": {
+          "ja": "ワシ"
+        },
+        "season": 2,
+        "group": "animal",
+        "attribute": "wind"
+      },
+      "snake": {
+        "lang": {
+          "ja": "ヘビ"
+        },
+        "season": 2,
+        "group": "animal",
+        "attribute": "ice"
+      },
+      "whale": {
+        "lang": {
+          "ja": "クジラ"
+        },
+        "season": 2,
+        "group": "animal",
+        "attribute": "water"
+      }
+    }
+  },
+  "aiverse": {
+    "name": "aiverse",
+    "description": "aiverse project",
+    "repo": "https://git.syui.ai/ai/ue/src/branch/main/verse",
+    "ref": "https://git.syui.ai/ai/ue/wiki/project",
+    "body": {
+      "text": "ideas and philosophies when building a system. aiming to fuse games and reality",
+      "lang": {
+        "ja": "システムを構築する際の思想と哲学。個人(現実)とゲームの融合を目指す"
+      }
+    },
+    "enum": [
+      "unique",
+      "game",
+      "real"
+    ]
+  }
+}
