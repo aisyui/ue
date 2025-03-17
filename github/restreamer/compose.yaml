@@ -1,0 +1,13 @@
+services:
+
+  restreamer:
+    image: datarhei/restreamer
+    #image: datarhei/restreamer:cuda-latest
+    ports:
+      - 8080:8080
+      - 1935:1935
+      - 6000:6000/udp
+    restart: always
+    volumes:
+      - ./data/config:/core/config
+      - ./data/data:/core/data

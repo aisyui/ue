@@ -1,0 +1,60 @@
+{
+  "uri": "at://did:plc:4hqjfn7m6n5hno3doamuhgef/ai.syui.game/syui",
+  "cid": "bafyreidsk2dwqvxt2be5qpoehy5au7cuiuqicpesky7bmxrsofrqwnweeq",
+  "value": {
+    "did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn",
+    "pds": "bsky.social",
+    "plc": "plc.directory",
+    "item": {
+      "card": [
+        {
+          "cp": 0,
+          "id": 0,
+          "rare": 0,
+          "count": 0
+        }
+      ],
+      "coin": [
+        {
+          "cp": 0,
+          "id": 0,
+          "rare": 0,
+          "count": 0
+        }
+      ],
+      "weapon": [
+        {
+          "cp": 0,
+          "id": 0,
+          "rare": 0,
+          "count": 0
+        }
+      ]
+    },
+    "$type": "ai.syui.game",
+    "handle": "syui.ai",
+    "player": {
+      "aiten": 0,
+      "limit": false,
+      "login": false,
+      "gender": "male"
+    },
+    "version": 2,
+    "character": {
+      "chinese": {
+        "hp": 1,
+        "lv": 1,
+        "exp": 0,
+        "mode": 0,
+        "rank": 0,
+        "group": "fantasy",
+        "attack": 0,
+        "season": 1,
+        "critical": 0,
+        "critical_d": 0
+      }
+    },
+    "createdAt": "2020-01-01T00:00:00+09:00",
+    "updatedAt": "2020-01-01T00:00:00+09:00"
+  }
+}

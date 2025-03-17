@@ -1,0 +1,42 @@
+{
+  "did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn",
+  "$type": "ai.syui.game.user",
+		"version": 1,
+  "aiten": 10,
+  "limit": false,
+  "login": false,
+  "gender": "famale",
+  "handle": "syui.ai",
+  "character": {
+    "ai": {
+      "hp": 999,
+      "lv": 1,
+      "exp": 0,
+      "img": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:4hqjfn7m6n5hno3doamuhgef/bafkreie34pjuc6coenzcdwrgrh4fbacq7bkhsz263g5vpbsqxwaz37kkwy@jpeg",
+      "mode": 1,
+      "rank": 1,
+      "group": "origin",
+      "attach": 1,
+      "season": 0,
+      "critical": 1,
+      "critical_d": 1,
+      "attach_post": 1
+    },
+    "chinese": {
+      "hp": 50,
+      "lv": 1,
+      "exp": 0,
+      "img": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:4hqjfn7m6n5hno3doamuhgef/bafkreidlealfybajqzwv5eoz4jshnsijc2vnktlhpw4ph47krwj6aigqby@jpeg",
+      "mode": 1,
+      "rank": 1,
+      "group": "origin",
+      "attach": 1,
+      "season": 0,
+      "critical": 1,
+      "critical_d": 1,
+      "attach_post": 1
+    }
+  },
+  "createdAt": "2001-01-01T00:00:00+09:00",
+  "updatedAt": "2001-01-01T00:00:00+09:00"
+}
