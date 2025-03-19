@@ -1,4 +1,4 @@
-# asset/plugin
+# asset
 
 現在使用しているplugin(プラグイン)やasset(アセット)の`version(バージョン)`を記述します。
 

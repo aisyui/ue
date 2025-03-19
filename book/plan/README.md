@@ -51,4 +51,6 @@ assetを購入する際は必ず作者を確認してください。他にどの
 |name|latest|body|docs|
 |---|---|---|---|
 |[mocap tools](https://www.fab.com/ja/listings/7608fd4d-4c2c-40be-9a06-274e6f7ef6cc)|5.4|root motionの修正|[docs](https://docs.google.com/document/d/1OVx8H7VGQ1_XdaPFxRNlVYDktbdolx7KWTXBbxJLyac/)|
+|[ultimate gameplay camera](https://www.fab.com/listings/4d3a1a73-a38d-4704-b552-8b543f24fd25)|5.5|gameplay camera plugin|[docs](https://coda.io/@aurora-devs/documentation-ultimate-gameplay-camera)|
+|[fluid ninja vfx tools](https://www.fab.com/ja/listings/90266972-0597-4404-a54a-8c0b7e00a005)|5.5|台風を作る|[docs](https://drive.google.com/file/d/1eRQtcUtkkL6idelmbsfXCO03pbqBuwRu/edit)|
 

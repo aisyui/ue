@@ -8,7 +8,8 @@ ue5でゲームを作成するまでの過程をまとめます。
 
 |name|latest|body|
 |---|---|---|
-|[unreal engine](https://dev.epicgames.com/documentation/ja-jp/unreal-engine/unreal-engine-5.5-release-notes)|5.5.3|ゲームエンジン|
+|[Unreal Engine](https://dev.epicgames.com/documentation/ja-jp/unreal-engine/unreal-engine-5.5-release-notes)|5.5.4|公式サイト|
+|[EpicGames/UnrealEngine](https://github.com/EpicGames/UnrealEngine)|src|github|
 
 ## パソコンのスペック
 

@@ -42,12 +42,3 @@ C:\Program Files\Epic\UE_5.5\Engine\Binaries\Win64\UnrealEditor.exe
 C:\Users\$USER\Documents\Unreal Projects\MyProject\MyProject.uproject
 ```
 
-## windows tool
-
-|name|url|
-|---|---|
-|pwsh|https://github.com/PowerShell/PowerShell|
-|windows terminal|https://github.com/microsoft/terminal|
-|openssh|https://github.com/PowerShell/Win32-OpenSSH|
-|vscode|https://github.com/microsoft/vscode|
-

@@ -1,8 +1,29 @@
 {
   "uri": "at://did:plc:4hqjfn7m6n5hno3doamuhgef/ai.syui.game/ai",
-  "cid": "bafyreiglmj347wv2pmqczo7zwalhzlygzwbqrwryu22mkwgl7b2lr3it4m",
+  "cid": "bafyreiey75xm4j4uu5iyexymn4jroj3wxdlhhlivxhzqzqeqyisjfsyiqy",
   "value": {
     "did": "did:plc:4hqjfn7m6n5hno3doamuhgef",
+    "pds": "bsky.social",
+    "plc": "plc.directory",
+    "item": {
+      "card": {
+        "cp": 0,
+        "id": 0,
+        "rare": 0,
+        "count": 0
+      },
+      "coin": {
+        "id": 0,
+        "count": 0
+      },
+      "weapon": {
+        "id": 0,
+        "tp": 0,
+        "type": 0,
+        "count": 0,
+        "attack": 0
+      }
+    },
     "$type": "ai.syui.game",
     "handle": "yui.syui.ai",
     "player": {
@@ -17,15 +38,13 @@
         "hp": 1,
         "lv": 1,
         "exp": 0,
-        "img": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:4hqjfn7m6n5hno3doamuhgef/bafkreie34pjuc6coenzcdwrgrh4fbacq7bkhsz263g5vpbsqxwaz37kkwy@jpeg",
         "mode": 2,
         "rank": 0,
         "group": "origin",
         "attack": 0,
         "season": 0,
         "critical": 0,
-        "critical_d": 0,
-        "attack_post": 0
+        "critical_d": 0
       }
     },
     "createdAt": "2020-01-01T00:00:00+09:00",

@@ -1,10 +1,8 @@
 {
-  "uri": "at://did:plc:4hqjfn7m6n5hno3doamuhgef/ai.syui.game/syui",
-  "cid": "bafyreiabqdtzydrm247wtof6fdhjkdcijp5p6viru5hbg6ixybxpkp62pm",
+  "uri": "",
+  "cid": "",
   "value": {
-    "did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn",
-    "pds": "bsky.social",
-    "plc": "plc.directory",
+    "did": "",
     "item": {
       "card": {
         "cp": 0,
@@ -25,7 +23,7 @@
       }
     },
     "$type": "ai.syui.game",
-    "handle": "syui.ai",
+    "handle": "",
     "player": {
       "aiten": 0,
       "limit": false,
@@ -34,17 +32,19 @@
     },
     "version": 2,
     "character": {
-      "chinese": {
+      "dragon": {
         "hp": 1,
         "lv": 1,
         "exp": 0,
+        "img": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:4hqjfn7m6n5hno3doamuhgef/bafkreia3huw2gdenqatoobx3hcft74chced46bw4znfgepo5aenegobkri@jpeg",
         "mode": 0,
         "rank": 0,
         "group": "fantasy",
         "attack": 0,
         "season": 1,
         "critical": 0,
-        "critical_d": 0
+        "critical_d": 0,
+        "attack_post": 0
       }
     },
     "createdAt": "2020-01-01T00:00:00+09:00",
