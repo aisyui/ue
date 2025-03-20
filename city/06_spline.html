@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>基本事項 · HonKit</title>
+        <title>惑星を動かす · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 6.0.2">
@@ -56,10 +56,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../vrm4u/" />
+    <link rel="next" href="../camera/" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="05_browser.html" />
     
 
     </head>
@@ -405,9 +405,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="../city/">
+        <li class="chapter " data-level="1.5" data-path="./">
             
-                <a href="../city/">
+                <a href="./">
             
                     
                     city sample
@@ -419,9 +419,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../city/01_remove.html">
+        <li class="chapter " data-level="1.5.1" data-path="01_remove.html">
             
-                <a href="../city/01_remove.html">
+                <a href="01_remove.html">
             
                     
                     惑星形式のmapを作る
@@ -432,9 +432,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="../city/02_bridge.html">
+        <li class="chapter " data-level="1.5.2" data-path="02_bridge.html">
             
-                <a href="../city/02_bridge.html">
+                <a href="02_bridge.html">
             
                     
                     橋を作る
@@ -445,9 +445,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="../city/03_house.html">
+        <li class="chapter " data-level="1.5.3" data-path="03_house.html">
             
-                <a href="../city/03_house.html">
+                <a href="03_house.html">
             
                     
                     家を作る
@@ -458,9 +458,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4" data-path="../city/04_bgm.html">
+        <li class="chapter " data-level="1.5.4" data-path="04_bgm.html">
             
-                <a href="../city/04_bgm.html">
+                <a href="04_bgm.html">
             
                     
                     BGMを作る
@@ -471,9 +471,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.5" data-path="../city/05_browser.html">
+        <li class="chapter " data-level="1.5.5" data-path="05_browser.html">
             
-                <a href="../city/05_browser.html">
+                <a href="05_browser.html">
             
                     
                     ブラウザを作る
@@ -484,9 +484,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.6" data-path="../city/06_spline.html">
+        <li class="chapter active" data-level="1.5.6" data-path="06_spline.html">
             
-                <a href="../city/06_spline.html">
+                <a href="06_spline.html">
             
                     
                     惑星を動かす
@@ -566,9 +566,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8" data-path="./">
+        <li class="chapter " data-level="1.8" data-path="../pixel/">
             
-                <a href="./">
+                <a href="../pixel/">
             
                     
                     pixel streaming
@@ -580,9 +580,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.8.1" data-path="01_server.html">
+        <li class="chapter " data-level="1.8.1" data-path="../pixel/01_server.html">
             
-                <a href="01_server.html">
+                <a href="../pixel/01_server.html">
             
                     
                     基本事項
@@ -1389,7 +1389,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >基本事項</a>
+        <a href=".." >惑星を動かす</a>
     </h1>
 </div>
 
@@ -1404,8 +1404,15 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="基本事項">基本事項</h1>
-<p>pcのdisplay(ディスプレイ)が必要になる。画面の電源もつけておく必要があります。</p>
+                                <h1 id="惑星を動かす">惑星を動かす</h1>
+<p>splineで惑星を動かします。</p>
+<ol>
+<li><code>BP_Spline</code>を作成し、componentでsplineを追加し、右クリックで生成パネルを出す</li>
+<li>円弧を選択し、90のところを360にする。あとは大きさを変更する数値を大きくする</li>
+<li>次にsplineで動かしたいBPを開いて、<code>BP_Spline</code>を入れます。</li>
+<li>処理をTickに追加する。なお、<code>BP_Spline(子アクター)</code>から持ってくる場合は<code>Get Child Actor</code>, <code>Get Component by Class: Spline Component</code>を使用します。</li>
+</ol>
+<iframe src="https://blueprintue.com/render/8gfrd45h/1" scrolling="no" width="100%" height="450px" allowfullscreen=""></iframe>
 
                                 
                                 </section>
@@ -1433,12 +1440,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: pixel streaming">
+                <a href="05_browser.html" class="navigation navigation-prev " aria-label="Previous page: ブラウザを作る">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../vrm4u/" class="navigation navigation-next " aria-label="Next page: vrm4u">
+                <a href="../camera/" class="navigation navigation-next " aria-label="Next page: gameplay camera">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1449,7 +1456,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"基本事項","level":"1.8.1","depth":2,"next":{"title":"vrm4u","level":"1.9","depth":1,"path":"vrm4u/README.md","ref":"vrm4u/README.md","articles":[{"title":"キャラクターを作る","level":"1.9.1","depth":2,"path":"vrm4u/01_make.md","ref":"vrm4u/01_make.md","articles":[]},{"title":"指の角度を調整する","level":"1.9.2","depth":2,"path":"vrm4u/02_yubi.md","ref":"vrm4u/02_yubi.md","articles":[]},{"title":"前髪の角度を調整する","level":"1.9.3","depth":2,"path":"vrm4u/03_hair.md","ref":"vrm4u/03_hair.md","articles":[]},{"title":"アウトラインを追加する","level":"1.9.4","depth":2,"path":"vrm4u/04_outline.md","ref":"vrm4u/04_outline.md","articles":[]},{"title":"トーンを変える","level":"1.9.5","depth":2,"path":"vrm4u/05_toon.md","ref":"vrm4u/05_toon.md","articles":[]}]},"previous":{"title":"pixel streaming","level":"1.8","depth":1,"path":"pixel/README.md","ref":"pixel/README.md","articles":[{"title":"基本事項","level":"1.8.1","depth":2,"path":"pixel/01_server.md","ref":"pixel/01_server.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pixel/01_server.md","mtime":"2025-03-20T23:56:28.178Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-03-20T23:56:42.172Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"惑星を動かす","level":"1.5.6","depth":2,"next":{"title":"gameplay camera","level":"1.6","depth":1,"path":"camera/README.md","ref":"camera/README.md","articles":[{"title":"もっと近づける","level":"1.6.1","depth":2,"path":"camera/01_close.md","ref":"camera/01_close.md","articles":[]}]},"previous":{"title":"ブラウザを作る","level":"1.5.5","depth":2,"path":"city/05_browser.md","ref":"city/05_browser.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"city/06_spline.md","mtime":"2025-03-20T23:56:28.117Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-03-20T23:56:42.172Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
