@@ -29,6 +29,8 @@ $ winget install git.git
 |lazygit|https://github.com/jesseduffield/lazygit|jesseduffield.lazygit|
 |node|https://github.com/nodejs/node|openjs.nodejs|
 |nvm|https://github.com/nvm-sh/nvm|coreybutler.nvmforwindows|
+|python|https://github.com/python|python.python.3.11|
+|conda|https://github.com/anaconda|anaconda.miniconda3|
 
 ## その他
 
@@ -42,6 +44,7 @@ $ winget install git.git
 |unity hub|unity.unityhub|
 |godot|godot.godot|
 |obs|obsproject.obsstudio|
+|ollama|ollama.ollama|
 
 ## update
 

@@ -11,6 +11,7 @@
  * [ssh](pwsh/02_ssh.md)
  * [ttyd](pwsh/03_ttyd.md)
  * [slidev](pwsh/04_slidev.md)
+ * [aibot](pwsh/05_aibot.md)
 * [game animation sample](gasp/README.md)
  * [キャラクターを追加する](gasp/01_character.md)
  * [飛びつける高さを増やす](gasp/02_jump.md)
