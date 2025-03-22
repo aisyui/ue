@@ -27,6 +27,8 @@ $ winget install git.git
 |vim|https://github.com/vim/vim-win32-installer|vim.vim|
 |git|https://github.com/git/git|git.git|
 |lazygit|https://github.com/jesseduffield/lazygit|jesseduffield.lazygit|
+|node|https://github.com/nodejs/node|openjs.nodejs|
+|nvm|https://github.com/nvm-sh/nvm|coreybutler.nvmforwindows|
 
 ## その他
 
@@ -39,6 +41,7 @@ $ winget install git.git
 |unity|unity.unity|
 |unity hub|unity.unityhub|
 |godot|godot.godot|
+|obs|obsproject.obsstudio|
 
 ## update
 
@@ -53,3 +56,8 @@ $ winget upgrade --all
 
 昔は`winget`よりも[choco](https://chocolatey.org/install)や[scoop](https://github.com/ScoopInstaller/Scoop)を使っていました。
 
+## pnpm
+
+```sh
+$ npm -g i pnpm
+```
