@@ -6,7 +6,7 @@
 
 |title|body|
 |---|---|
-|aibot|ai/bot|
+|bot|ai/bot|
 |server|archlinux|
 |os|ai/os|
 |ai|ai/ai|
