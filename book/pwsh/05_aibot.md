@@ -11,6 +11,8 @@
 |os|ai/os|
 |ai|ai/ai|
 
+ゲームはatprotoのアカウントを使用するので、testでは[ai.syu.is](https://web.syu.is/profile/ai.syu.is)などを使います。
+
 ```sh
 $ winget install ollama.ollama
 $ ollama server
