@@ -29,8 +29,6 @@
 
 特にボタンが重要です。tipsを確認しましょう。
 
-- https://www.youtube.com/watch?v=IqHrhcA7Rsk
-
 `/Content/Levels/DefaultLevel`を右クリックして`参照ビューア`を選択してみます。どのファイルを参照しているかわかります。
 
 ## BP
