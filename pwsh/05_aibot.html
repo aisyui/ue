@@ -1545,49 +1545,6 @@
 </tr>
 </tbody>
 </table>
-<p>ゲームはatprotoのアカウントを使用するので、testでは<a href="https://web.syu.is/profile/ai.syu.is" target="_blank">ai.syu.is</a>などを使います。</p>
-<pre><code class="lang-sh">$ winget install ollama.ollama
-$ ollama server
-$ ollama run llama3.2
-
-$ winget install --<span class="hljs-built_in">id</span> Python.Python.3.11 -e
-$ python --version
-$ python -m venv webui
-$ <span class="hljs-built_in">cd</span> webui
-$ .\Scripts\activate
-$ pip install open-webui
-$ open-webui serve
-
-http://localhost:8080
-</code></pre>
-<h2 id="lora">LoRA</h2>
-<p>finetuning</p>
-<pre><code class="lang-sh">$ conda create -n finetuning python=3.11
-$ conda activate finetuning
-$ pip install mlx-lm <span class="hljs-comment">#apple silicon</span>
-$ ollama run llama3.2
-$ <span class="hljs-built_in">echo</span> <span class="hljs-string">"{ \"model\": \"https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct\", \"data\": \"https://github.com/ml-explore/mlx-examples/tree/main/lora/data\" }"</span>|jq .
-$ model=meta-llama/Llama-3.2-3B-Instruct
-$ data=ml-explore/mlx-examples/lora/data
-$ mlx_lm.lora --train --model <span class="hljs-variable">$model</span> --data <span class="hljs-variable">$data</span> --batch-size 3
-
-$ <span class="hljs-built_in">ls</span> adapters
-$ vim Modelfile
-FROM llama3.2:3b
-ADAPTER ./adapters
-
-$ ollama create ai -f ./Modelfile
-</code></pre>
-<h2 id="unsloth">unsloth</h2>
-<pre><code class="lang-sh">$ pip install unsloth
-</code></pre>
-<pre><code class="lang-py"><span class="hljs-keyword">from</span> unsloth <span class="hljs-keyword">import</span> FastLanguageModel
-
-model, tokenizer = FastLanguageModel.from_pretrained(
-    model_name=<span class="hljs-string">"Qwen2.5-1.5B"</span>,
-    grpo=<span class="hljs-literal">True</span>
-)
-</code></pre>
 
                                 
                                 </section>
@@ -1631,7 +1588,7 @@ model, tokenizer = FastLanguageModel.from_pretrained(
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"aibot","level":"1.3.5","depth":2,"next":{"title":"game animation sample","level":"1.4","depth":1,"path":"gasp/README.md","ref":"gasp/README.md","articles":[{"title":"キャラクターを追加する","level":"1.4.1","depth":2,"path":"gasp/01_character.md","ref":"gasp/01_character.md","articles":[]},{"title":"飛びつける高さを増やす","level":"1.4.2","depth":2,"path":"gasp/02_jump.md","ref":"gasp/02_jump.md","articles":[]},{"title":"キャラクターを作る","level":"1.4.3","depth":2,"path":"gasp/03_vrm.md","ref":"gasp/03_vrm.md","articles":[]},{"title":"モーションキャプチャで動かす","level":"1.4.4","depth":2,"path":"gasp/04_vmc.md","ref":"gasp/04_vmc.md","articles":[]},{"title":"揺れものを設定する","level":"1.4.5","depth":2,"path":"gasp/05_kawaii.md","ref":"gasp/05_kawaii.md","articles":[]},{"title":"カメラワークの設定する","level":"1.4.6","depth":2,"path":"gasp/06_camera.md","ref":"gasp/06_camera.md","articles":[]},{"title":"アニメーションを作成する","level":"1.4.7","depth":2,"path":"gasp/07_anim.md","ref":"gasp/07_anim.md","articles":[]},{"title":"アニメーションを変更する","level":"1.4.8","depth":2,"path":"gasp/11_run.md","ref":"gasp/11_run.md","articles":[]},{"title":"niagaraでダメージを出す","level":"1.4.9","depth":2,"path":"gasp/08_niagara.md","ref":"gasp/08_niagara.md","articles":[]},{"title":"椅子に座る","level":"1.4.10","depth":2,"path":"gasp/09_chair.md","ref":"gasp/09_chair.md","articles":[]},{"title":"階段に登る","level":"1.4.11","depth":2,"path":"gasp/10_stairs.md","ref":"gasp/10_stairs.md","articles":[]},{"title":"武器を装備する","level":"1.4.12","depth":2,"path":"gasp/12_weapon.md","ref":"gasp/12_weapon.md","articles":[]},{"title":"NPCとの会話をAIにする","level":"1.4.13","depth":2,"path":"gasp/13_chatgpt.md","ref":"gasp/13_chatgpt.md","articles":[]}]},"previous":{"title":"slidev","level":"1.3.4","depth":2,"path":"pwsh/04_slidev.md","ref":"pwsh/04_slidev.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pwsh/05_aibot.md","mtime":"2025-03-23T08:46:37.509Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-03-23T08:46:56.511Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"aibot","level":"1.3.5","depth":2,"next":{"title":"game animation sample","level":"1.4","depth":1,"path":"gasp/README.md","ref":"gasp/README.md","articles":[{"title":"キャラクターを追加する","level":"1.4.1","depth":2,"path":"gasp/01_character.md","ref":"gasp/01_character.md","articles":[]},{"title":"飛びつける高さを増やす","level":"1.4.2","depth":2,"path":"gasp/02_jump.md","ref":"gasp/02_jump.md","articles":[]},{"title":"キャラクターを作る","level":"1.4.3","depth":2,"path":"gasp/03_vrm.md","ref":"gasp/03_vrm.md","articles":[]},{"title":"モーションキャプチャで動かす","level":"1.4.4","depth":2,"path":"gasp/04_vmc.md","ref":"gasp/04_vmc.md","articles":[]},{"title":"揺れものを設定する","level":"1.4.5","depth":2,"path":"gasp/05_kawaii.md","ref":"gasp/05_kawaii.md","articles":[]},{"title":"カメラワークの設定する","level":"1.4.6","depth":2,"path":"gasp/06_camera.md","ref":"gasp/06_camera.md","articles":[]},{"title":"アニメーションを作成する","level":"1.4.7","depth":2,"path":"gasp/07_anim.md","ref":"gasp/07_anim.md","articles":[]},{"title":"アニメーションを変更する","level":"1.4.8","depth":2,"path":"gasp/11_run.md","ref":"gasp/11_run.md","articles":[]},{"title":"niagaraでダメージを出す","level":"1.4.9","depth":2,"path":"gasp/08_niagara.md","ref":"gasp/08_niagara.md","articles":[]},{"title":"椅子に座る","level":"1.4.10","depth":2,"path":"gasp/09_chair.md","ref":"gasp/09_chair.md","articles":[]},{"title":"階段に登る","level":"1.4.11","depth":2,"path":"gasp/10_stairs.md","ref":"gasp/10_stairs.md","articles":[]},{"title":"武器を装備する","level":"1.4.12","depth":2,"path":"gasp/12_weapon.md","ref":"gasp/12_weapon.md","articles":[]},{"title":"NPCとの会話をAIにする","level":"1.4.13","depth":2,"path":"gasp/13_chatgpt.md","ref":"gasp/13_chatgpt.md","articles":[]}]},"previous":{"title":"slidev","level":"1.3.4","depth":2,"path":"pwsh/04_slidev.md","ref":"pwsh/04_slidev.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pwsh/05_aibot.md","mtime":"2025-03-23T22:10:19.022Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-03-23T22:10:33.631Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
