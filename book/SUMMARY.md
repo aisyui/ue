@@ -96,5 +96,6 @@
  * [自由と不自由](project/04_ep.md)
  * [ロードマップ](project/05_ep.md)
  * [個人開発の真髄](project/06_ep.md)
+ * [テストゲーム](project/07_ep.md)
  * [youtube](project/01_youtube.md)
 * [end](end/README.md)
