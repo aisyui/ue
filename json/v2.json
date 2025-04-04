@@ -1,28 +1,35 @@
 {
   "uri": "at://did:plc:4hqjfn7m6n5hno3doamuhgef/ai.syui.game/syui",
-  "cid": "bafyreiabqdtzydrm247wtof6fdhjkdcijp5p6viru5hbg6ixybxpkp62pm",
+  "cid": "bafyreidsk2dwqvxt2be5qpoehy5au7cuiuqicpesky7bmxrsofrqwnweeq",
   "value": {
     "did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn",
     "pds": "bsky.social",
     "plc": "plc.directory",
     "item": {
-      "card": {
-        "cp": 0,
-        "id": 0,
-        "rare": 0,
-        "count": 0
-      },
-      "coin": {
-        "id": 0,
-        "count": 0
-      },
-      "weapon": {
-        "id": 0,
-        "tp": 0,
-        "type": 0,
-        "count": 0,
-        "attack": 0
-      }
+      "card": [
+        {
+          "cp": 0,
+          "id": 0,
+          "rare": 0,
+          "count": 0
+        }
+      ],
+      "coin": [
+        {
+          "cp": 0,
+          "id": 0,
+          "rare": 0,
+          "count": 0
+        }
+      ],
+      "weapon": [
+        {
+          "cp": 0,
+          "id": 0,
+          "rare": 0,
+          "count": 0
+        }
+      ]
     },
     "$type": "ai.syui.game",
     "handle": "syui.ai",

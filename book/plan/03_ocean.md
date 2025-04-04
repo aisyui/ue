@@ -26,3 +26,10 @@
 
 しかし、取り除くと海が消えます。ロードを待つほかありません。
 
+## 海中でゲームオーバー
+
+`ocean underwater`を使います。海中にいる時間を記録して、その値に応じて溺れるモーション(ゲームオーバー)を追加します。
+
+1. `BP_OceanWavesTangentPlane -> UpdateUnderwaterMask`でoutputの前に変数を作り`++`を入れます。値に応じて条件を指定します。
+2. `BP_OceanWavesTangentPlane -> SetVolumeMID`で`Is Underwater`がありますので、falseの場合は0に戻します。
+
