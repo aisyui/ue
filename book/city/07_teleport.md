@@ -21,7 +21,7 @@ apiを使ってzoom-in, zoom-outします。
 		<script type="text/javascript" src="https://static.sketchfab.com/api/sketchfab-viewer-1.12.1.js"></script>
 	</head>
 	<body>
-		<iframe id="api-frame" class="w-full" width="100%" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%;" allow="xr-spatial-tracking; autoplay; fullscreen; xr-spatial-tracking; accelerometer" xr-spatial-tracking web-share></iframe>
+		<iframe id="api-frame" class="w-full" width="100%" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%;" allow="xr-spatial-tracking; autoplay; fullscreen; xr-spatial-tracking; accelerometer" xr-spatial-tracking web-share frameborder="no" scrolling="no" ></iframe>
 		<script type="text/javascript">
 				var iframe = document.getElementById( 'api-frame' );
 				var uid = 'd6521362b37b48e3a82bce4911409303';
