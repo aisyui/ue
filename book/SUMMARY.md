@@ -37,6 +37,7 @@
  * [BGMを作る](city/04_bgm.md)
  * [ブラウザを作る](city/05_browser.md)
  * [惑星を動かす](city/06_spline.md)
+ * [惑星間の移動表現](city/07_teleport.md)
 * [gameplay camera](camera/README.md)
  * [もっと近づける](camera/01_close.md)
 * [json](json/README.md)
