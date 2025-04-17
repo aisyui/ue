@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>アニメーションを作成する · HonKit</title>
+        <title>ジャンプの高さを変更する · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 6.0.2">
@@ -56,10 +56,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="11_run.html" />
+    <link rel="next" href="../crs/" />
     
     
-    <link rel="prev" href="06_camera.html" />
+    <link rel="prev" href="13_chatgpt.html" />
     
 
     </head>
@@ -348,7 +348,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4.7" data-path="07_anim.html">
+        <li class="chapter " data-level="1.4.7" data-path="07_anim.html">
             
                 <a href="07_anim.html">
             
@@ -439,7 +439,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.14" data-path="14_jump.html">
+        <li class="chapter active" data-level="1.4.14" data-path="14_jump.html">
             
                 <a href="14_jump.html">
             
@@ -1564,7 +1564,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >アニメーションを作成する</a>
+        <a href=".." >ジャンプの高さを変更する</a>
     </h1>
 </div>
 
@@ -1579,22 +1579,19 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="アニメーションを作成する">アニメーションを作成する</h1>
-<p>control rigからも作成できます。しかし、購入したものを使うのが一番です。</p>
-<p><a href="https://www.fab.com/ja/listings/a63386b8-7cad-42cd-8b81-a9de147e1f08" target="_blank">magicalanimset</a></p>
-<p>無料でやるなら<code>.fbx</code>, <code>.vrma</code>などから作成する方法があります。</p>
-<ul>
-<li><a href="https://www.mixamo.com/" target="_blank">https://www.mixamo.com/</a></li>
-<li><a href="https://booth.pm/ja/items/5512385" target="_blank">https://booth.pm/ja/items/5512385</a></li>
-<li><a href="https://github.com/BandaiNamcoResearchInc/Bandai-Namco-Research-Motiondataset" target="_blank">https://github.com/BandaiNamcoResearchInc/Bandai-Namco-Research-Motiondataset</a></li>
-</ul>
-<h2 id="control-rigから作る">control rigから作る</h2>
-<p>再生して録画ボタンを押すと作れます。</p>
-<h2 id="tatoolsを使う">tatoolsを使う</h2>
-<p><a href="https://www.fab.com/ja/listings/a5d3b60d-b886-4564-bf6d-15d46a8d27fe" target="_blank">tatools</a>を使います。</p>
-<p><a href="https://github.com/threepeatgames/ThreepeatAnimTools" target="_blank">https://github.com/threepeatgames/ThreepeatAnimTools</a></p>
-<h2 id="unityから持ってくる">unityから持ってくる</h2>
-<p><a href="../unity/01_fbx.html">こちら</a>を参考にしてください。</p>
+                                <h1 id="ジャンプの高さを変更する">ジャンプの高さを変更する</h1>
+<p>特殊ジャンプを実装して、敵の近くに着地した場合に特別な技を繰り出す演出を目指します。</p>
+<iframe width="100%" height="415" src="https://www.youtube.com/embed/q3UcM8e7B0g?mute=1&amp;rel=0&amp;showinfo=0&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+
+<p>特殊なジャンプはクールタイムが存在し、10秒間に一回実行できます。通常ジャンプとキーを別にしてもいいですが、同じキーにしたほうがシンプルでいいと思います。</p>
+<ol>
+<li>jump drop (no collision)</li>
+<li>cool time</li>
+<li>jump attack</li>
+</ol>
+<p>まず<code>skill:1</code>の場合はjump dropが発動します。発動すると<code>skill:0</code>になります。もし着地時にboss(enemy)のcollisionにあたっていると、jump attackが発動します。</p>
+<iframe src="https://blueprintue.com/render/r4d91x-8/1" scrolling="no" allowfullscreen="" style="width:100%;height:400px"></iframe>
+
 
                                 
                                 </section>
@@ -1622,12 +1619,12 @@
 
             
                 
-                <a href="06_camera.html" class="navigation navigation-prev " aria-label="Previous page: カメラワークの設定する">
+                <a href="13_chatgpt.html" class="navigation navigation-prev " aria-label="Previous page: NPCとの会話をAIにする">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="11_run.html" class="navigation navigation-next " aria-label="Next page: アニメーションを変更する">
+                <a href="../crs/" class="navigation navigation-next " aria-label="Next page: control rig sample">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1638,7 +1635,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"アニメーションを作成する","level":"1.4.7","depth":2,"next":{"title":"アニメーションを変更する","level":"1.4.8","depth":2,"path":"gasp/11_run.md","ref":"gasp/11_run.md","articles":[]},"previous":{"title":"カメラワークの設定する","level":"1.4.6","depth":2,"path":"gasp/06_camera.md","ref":"gasp/06_camera.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"gasp/07_anim.md","mtime":"2025-04-17T23:45:59.541Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-04-17T23:46:14.508Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ジャンプの高さを変更する","level":"1.4.14","depth":2,"next":{"title":"control rig sample","level":"1.5","depth":1,"path":"crs/README.md","ref":"crs/README.md","articles":[{"title":"CRでキャラクターを動かす","level":"1.5.1","depth":2,"path":"crs/01_character.md","ref":"crs/01_character.md","articles":[]},{"title":"ボスを作る","level":"1.5.2","depth":2,"path":"crs/02_boss.md","ref":"crs/02_boss.md","articles":[]},{"title":"ボスのジャンプ攻撃を作る","level":"1.5.3","depth":2,"path":"crs/03_jump.md","ref":"crs/03_jump.md","articles":[]}]},"previous":{"title":"NPCとの会話をAIにする","level":"1.4.13","depth":2,"path":"gasp/13_chatgpt.md","ref":"gasp/13_chatgpt.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"gasp/14_jump.md","mtime":"2025-04-17T23:45:59.541Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-04-17T23:46:14.508Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
