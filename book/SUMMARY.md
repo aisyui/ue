@@ -26,6 +26,7 @@
  * [階段に登る](gasp/10_stairs.md)
  * [武器を装備する](gasp/12_weapon.md)
  * [NPCとの会話をAIにする](gasp/13_chatgpt.md)
+ * [ジャンプの高さを変更する](gasp/14_jump.md)
 * [control rig sample](crs/README.md)
  * [CRでキャラクターを動かす](crs/01_character.md)
  * [ボスを作る](crs/02_boss.md)
