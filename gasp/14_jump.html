@@ -1595,6 +1595,15 @@
 <h2 id="ジャンプモーションの変更">ジャンプモーションの変更</h2>
 <p>ジャンプモーションの変更はgaspの<code>CHT_PoseSearchDatabases</code>などで調整するは難しいです。</p>
 <p>したがって、play montageをjumpにつなげる方法で作成します。</p>
+<h2 id="アクションボタン">アクションボタン</h2>
+<p>技の発動時に時間をゆっくり、あるいは停止する演出とアクションボタンを表示します。</p>
+<ol>
+<li>まず、技を実装しているところで、<code>set global time:0.0</code>にして、widgetでbuttonが押されたら<code>set global time:1.0</code>にします。</li>
+<li>場合によっては<code>set global time:0.5</code> -&gt; <code>delay 0.1</code> -&gt; <code>set global time:1.0</code>にします。</li>
+</ol>
+<iframe width="100%" height="415" src="https://www.youtube.com/embed/M8DKaRGj05I?mute=1&amp;rel=0&amp;showinfo=0&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+
+
 
                                 
                                 </section>
@@ -1638,7 +1647,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ジャンプの高さを変更する","level":"1.4.14","depth":2,"next":{"title":"control rig sample","level":"1.5","depth":1,"path":"crs/README.md","ref":"crs/README.md","articles":[{"title":"CRでキャラクターを動かす","level":"1.5.1","depth":2,"path":"crs/01_character.md","ref":"crs/01_character.md","articles":[]},{"title":"ボスを作る","level":"1.5.2","depth":2,"path":"crs/02_boss.md","ref":"crs/02_boss.md","articles":[]},{"title":"ボスのジャンプ攻撃を作る","level":"1.5.3","depth":2,"path":"crs/03_jump.md","ref":"crs/03_jump.md","articles":[]}]},"previous":{"title":"NPCとの会話をAIにする","level":"1.4.13","depth":2,"path":"gasp/13_chatgpt.md","ref":"gasp/13_chatgpt.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"gasp/14_jump.md","mtime":"2025-04-18T01:33:24.939Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-04-18T01:33:41.499Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ジャンプの高さを変更する","level":"1.4.14","depth":2,"next":{"title":"control rig sample","level":"1.5","depth":1,"path":"crs/README.md","ref":"crs/README.md","articles":[{"title":"CRでキャラクターを動かす","level":"1.5.1","depth":2,"path":"crs/01_character.md","ref":"crs/01_character.md","articles":[]},{"title":"ボスを作る","level":"1.5.2","depth":2,"path":"crs/02_boss.md","ref":"crs/02_boss.md","articles":[]},{"title":"ボスのジャンプ攻撃を作る","level":"1.5.3","depth":2,"path":"crs/03_jump.md","ref":"crs/03_jump.md","articles":[]}]},"previous":{"title":"NPCとの会話をAIにする","level":"1.4.13","depth":2,"path":"gasp/13_chatgpt.md","ref":"gasp/13_chatgpt.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"gasp/14_jump.md","mtime":"2025-04-18T03:25:38.749Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-04-18T03:25:54.071Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
