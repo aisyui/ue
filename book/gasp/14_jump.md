@@ -1,4 +1,4 @@
-# ジャンプの高さを変更する
+# ジャンプの高さを変更
 
 特殊ジャンプを実装して、敵の近くに着地した場合に特別な技を繰り出す演出を目指します。
 
@@ -14,3 +14,8 @@
 
 <iframe src="https://blueprintue.com/render/r4d91x-8/1" scrolling="no" allowfullscreen style="width:100%;height:400px"></iframe>
 
+## ジャンプモーションの変更
+
+ジャンプモーションの変更はgaspの`CHT_PoseSearchDatabases`などで調整するは難しいです。
+
+したがって、play montageをjumpにつなげる方法で作成します。
