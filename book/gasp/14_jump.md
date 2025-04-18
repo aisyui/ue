@@ -19,3 +19,14 @@
 ジャンプモーションの変更はgaspの`CHT_PoseSearchDatabases`などで調整するは難しいです。
 
 したがって、play montageをjumpにつなげる方法で作成します。
+
+## アクションボタン
+
+技の発動時に時間をゆっくり、あるいは停止する演出とアクションボタンを表示します。
+
+1. まず、技を実装しているところで、`set global time:0.0`にして、widgetでbuttonが押されたら`set global time:1.0`にします。
+2. 場合によっては`set global time:0.5` -> `delay 0.1` -> `set global time:1.0`にします。
+
+<iframe width="100%" height="415" src="https://www.youtube.com/embed/M8DKaRGj05I?mute=1&rel=0&showinfo=0&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
