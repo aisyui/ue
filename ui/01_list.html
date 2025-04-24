@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>install · HonKit</title>
+        <title>listview · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 6.0.2">
@@ -56,10 +56,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="03_tips.html" />
+    <link rel="next" href="../json/" />
     
     
-    <link rel="prev" href="01_start.html" />
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -101,9 +101,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="../default/">
             
-                <a href="./">
+                <a href="../default/">
             
                     
                     default
@@ -115,9 +115,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="00_asset.html">
+        <li class="chapter " data-level="1.2.1" data-path="../default/00_asset.html">
             
-                <a href="00_asset.html">
+                <a href="../default/00_asset.html">
             
                     
                     asset
@@ -128,9 +128,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="01_start.html">
+        <li class="chapter " data-level="1.2.2" data-path="../default/01_start.html">
             
-                <a href="01_start.html">
+                <a href="../default/01_start.html">
             
                     
                     start
@@ -141,9 +141,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.3" data-path="02_install.html">
+        <li class="chapter " data-level="1.2.3" data-path="../default/02_install.html">
             
-                <a href="02_install.html">
+                <a href="../default/02_install.html">
             
                     
                     install
@@ -154,9 +154,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="03_tips.html">
+        <li class="chapter " data-level="1.2.4" data-path="../default/03_tips.html">
             
-                <a href="03_tips.html">
+                <a href="../default/03_tips.html">
             
                     
                     tips
@@ -657,9 +657,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8" data-path="../ui/">
+        <li class="chapter " data-level="1.8" data-path="./">
             
-                <a href="../ui/">
+                <a href="./">
             
                     
                     ui
@@ -671,9 +671,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.8.1" data-path="../ui/01_list.html">
+        <li class="chapter active" data-level="1.8.1" data-path="01_list.html">
             
-                <a href="../ui/01_list.html">
+                <a href="01_list.html">
             
                     
                     listview
@@ -1596,7 +1596,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >install</a>
+        <a href=".." >listview</a>
     </h1>
 </div>
 
@@ -1611,34 +1611,23 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="install">install</h1>
-<p>srcからbuildしない場合は<code>epicgames launcher</code>からinstallします。</p>
-<p><a href="https://www.unrealengine.com/download" target="_blank">https://www.unrealengine.com/download</a></p>
-<p>また、<a href="https://visualstudio.microsoft.com/ja/downloads/" target="_blank">vsinstaller</a>を使用して必要なpackageを入れてください。</p>
-<p><img src="../img/0001.png" alt=""></img></p>
-<p><a href="https://github.com/microsoft/vscode" target="_blank">vscode</a>でbuildするには<code>.uproject</code>を右クリックして<code>.sln</code>を作ります。</p>
-<h2 id="package-build">package build</h2>
-<p>まずは新しいprojectを作り、package buildできるかを試してみましょう。</p>
-<p>ueではbuildが通らないことがよくあります。長い時間をかけて作り上げたもののbuildが通らない事態は避けましょう。</p>
-<p>なお、<code>mac</code>, <code>linux</code>は、ほとんどうまくいきません。package化に成功してもappが正常に起動しないことがあります。使用するpluginやassetなども影響します。</p>
-<pre><code class="lang-sh"><span class="hljs-comment"># corss compile tool : https://dev.epicgames.com/documentation/ja-jp/unreal-engine/linux-development-requirements-for-unreal-engine</span>
-<span class="hljs-comment"># ubuntu(xorg + nvidia)</span>
+                                <h1 id="listview">listview</h1>
+<ol>
+<li>BPでuser widgetを2つ作ります。<code>(1)WBP_player</code>, <code>(2)WBP_text</code>とします。WBP_textには<code>TextBlock</code>を追加します。</li>
+<li>BPでobjectを作ります。<code>(3)BP_text</code>とします。変数にtextを作ります。スポーン時に公開します。</li>
+<li>WBP_textはclassの実装インターフェイスに<code>UserObjectListEntry</code>を検索して追加します。これで<code>EventOnListItemObjectSet</code>を使えるようになります。そこから<code>cast BP_text</code>してtextを取得し、それをTextBlockにSetTextします。</li>
+<li>WBP_playerには<code>ListView</code>を追加し、<code>WBP_text</code>を参照します。</li>
+</ol>
+<p>これでforから値をlist化することができます。WBP_playerでEvent Constructを追加し、そこからfor -&gt; Construct Objectに<code>BP_text</code>を参照し、textに入れいます。最後に<code>ListView -&gt; Add item</code>します。</p>
+<h3 id="wbptext">WBP_text</h3>
+<iframe src="https://blueprintue.com/render/__2rf1mk/2" scrolling="no" allowfullscreen="" style="width:100%;height:400px"></iframe>
 
-$ <span class="hljs-built_in">sudo</span> apt-get install xorg xvfb
-Xvfb :99 &amp;
-<span class="hljs-built_in">export</span> DISPLAY=:99
+<h3 id="wbpplayer">WBP_player</h3>
+<iframe src="https://blueprintue.com/render/__2rf1mk/3" scrolling="no" allowfullscreen="" style="width:100%;height:400px"></iframe>
 
-$ <span class="hljs-built_in">sudo</span> apt-get install vulkan-tools
-$ <span class="hljs-built_in">sudo</span> apt-get install mesa-vulkan-drivers
-</code></pre>
-<h2 id="engineとproject">engineとproject</h2>
-<p>installする場所は自分で決められます。参考の場所を紹介します。</p>
-<pre><code class="lang-sh"><span class="hljs-comment"># engine</span>
-C:\Program Files\Epic\UE_5.5\Engine\Binaries\Win64\UnrealEditor.exe
-
-<span class="hljs-comment"># project</span>
-C:\Users\<span class="hljs-variable">$USER</span>\Documents\Unreal Projects\MyProject\MyProject.uproject
-</code></pre>
+<h2 id="ueは簡単なことが複雑すぎる">ueは簡単なことが複雑すぎる</h2>
+<p>正直、uiにlistを使いたい場面は多いと思います。しかし、現状、複雑な方法でしか実装できません。</p>
+<p>また、<code>UMG Viewmodel</code>というpluginがありますが、壊れていました。</p>
 
                                 
                                 </section>
@@ -1666,12 +1655,12 @@ C:\Users\<span class="hljs-variable">$USER</span>\Documents\Unreal Projects\MyPr
 
             
                 
-                <a href="01_start.html" class="navigation navigation-prev " aria-label="Previous page: start">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: ui">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="03_tips.html" class="navigation navigation-next " aria-label="Next page: tips">
+                <a href="../json/" class="navigation navigation-next " aria-label="Next page: json">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1682,7 +1671,7 @@ C:\Users\<span class="hljs-variable">$USER</span>\Documents\Unreal Projects\MyPr
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"install","level":"1.2.3","depth":2,"next":{"title":"tips","level":"1.2.4","depth":2,"path":"default/03_tips.md","ref":"default/03_tips.md","articles":[]},"previous":{"title":"start","level":"1.2.2","depth":2,"path":"default/01_start.md","ref":"default/01_start.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"default/02_install.md","mtime":"2025-04-24T09:22:56.279Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-04-24T09:23:08.668Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"listview","level":"1.8.1","depth":2,"next":{"title":"json","level":"1.9","depth":1,"path":"json/README.md","ref":"json/README.md","articles":[{"title":"apiから情報を取得する","level":"1.9.1","depth":2,"path":"json/01_varest.md","ref":"json/01_varest.md","articles":[]},{"title":"atprotoでloginする","level":"1.9.2","depth":2,"path":"json/02_atproto.md","ref":"json/02_atproto.md","articles":[]}]},"previous":{"title":"ui","level":"1.8","depth":1,"path":"ui/README.md","ref":"ui/README.md","articles":[{"title":"listview","level":"1.8.1","depth":2,"path":"ui/01_list.md","ref":"ui/01_list.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ui/01_list.md","mtime":"2025-04-24T09:22:56.338Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-04-24T09:23:08.668Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
