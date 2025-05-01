@@ -80,6 +80,7 @@
     * [characterのcomponentが初期化される](issue/gasp/gasp_03.md)
     * [IA_Sprintのダッシュができなくなる](issue/gasp/gasp_04.md)
     * [traversableが機能しなくなる](issue/gasp/gasp_05.md)
+    * [キャラがカメラ視点で勝手に動く](issue/gasp/gasp_06.md)
  * [city sample](issue/city/README.md)
     * [buildが遅い場合](issue/city/city_01.md)
     * [ue5.5ではbuildが通らない](issue/city/city_02.md)
