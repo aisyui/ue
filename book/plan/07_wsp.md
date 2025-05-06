@@ -61,3 +61,7 @@ UDSの統合はかなり大変だと思われます。
 > 最近、私は Worldscape Plugin を深く掘り下げて、すべての機能を実際に活用しようとしています。私は開発者たちの仕事を本当に尊敬していますが、そうですね、彼らのビデオチュートリアルは実際にはそれほど良くはなく、古い機能とインターフェイスを備えた時代遅れの ue4 のものです。私は独自の Worldscape Plugin チュートリアルを作成する予定です。新しいチュートリアルができたら、また返信します。
 
 チュートリアル動画には、いくつか抜けている点があるようです。
+
+- "Sky Atmosphere" in the UDS (Self) and turning off `Keep Planet Top at Camera XY Location`
+- toolbar(ツールバー)を使うには [link](https://iolacorp-1.gitbook.io/worldscape-plugin/getting-started/ws-tools/how-to-get-toolbar-running)
+
