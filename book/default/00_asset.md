@@ -14,6 +14,7 @@
 |[city sample](https://www.unrealengine.com/marketplace/ja/product/city-sample)|5.5|大規模な都市を構築|
 |[control rig sample](https://www.fab.com/ja/listings/2ce3fe44-9ee6-4fa7-99fc-b9424a402386)|5.5|人間以外のキャラクター|
 |[content examples](https://www.fab.com/ja/listings/4d251261-d98c-48e2-baee-8f4e47c67091)|5.5|機能別サンプル|
+[[cesium](https://www.fab.com/ja/listings/76c295fe-0dc6-4fd6-8319-e9833be427cd)|5.5|惑星形式の地上を作る|
 
 ## plugin
 

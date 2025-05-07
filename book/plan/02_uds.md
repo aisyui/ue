@@ -23,6 +23,8 @@ blueprintなどでも`uds`と略されます。
 - `BP_Earth`: `transform-location-z:-636000000`, `transform-scale:6370000`
 - `Sky_Sphere_Mesh`: `transform-scale:50000`
 
+この方法に関しては、[worldscape](https://iolacorp-1.gitbook.io/worldscape-plugin)と[cesium](https://cesium.com/platform/cesium-for-unreal/)が有名です。worldscape + udsの実装は[こちら](/plan/07_wsp.html)です。
+
 ## issue: mapのcollisionがおかしくなる
 
 これはearthを`SkyAtmosphere`の下に置くと発生します。親子関係を解除しましょう。
