@@ -95,6 +95,8 @@
     * [髪の毛が頭に追従しなくなる事がある](issue/blender/blender_03.md)
  * [vrm4u](issue/vrm4u/README.md)
     * [customで衣装の半分が灰色になる](issue/vrm4u/vrm4u_01.md)
+ * [worldscape plugin](issue/wsp/README.md)
+    * [地上のちらつき](issue/wsp/wsp_01.md)
 * [project](project/README.md)
  * [自己紹介](project/01_ep.md)
  * [最初の体験](project/02_ep.md)

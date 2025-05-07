@@ -11,7 +11,7 @@
 4. 地球を横から入っても後ろから入っても雲が描写される
 
 [issue]
-1. 地上がちらつく
+1. [地上のちらつき](/issue/wsp/wsp_01.html)
 2. 惑星地球に横から入った場合、坂道になるので、多分、下からも着陸はできないと思う。重力システムが必要です
 3. カスタマイズが複雑でチュートリアルがわからない
 
@@ -80,4 +80,5 @@ UDSの統合はかなり大変だと思われます。
 惑星は小さくなりますが、これでudsと連携することができました。
 
 <iframe width="100%" height="415" src="https://www.youtube.com/embed/fT1rX3YLF9Q?mute=1&rel=0&showinfo=0&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 
