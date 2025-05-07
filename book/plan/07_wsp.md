@@ -17,6 +17,8 @@
 
 <iframe width="100%" height="415" src="https://www.youtube.com/embed/LbjAgOLDkA0?rel=0&showinfo=0&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+![](https://bsky.syu.is/img/feed_fullsize/plain/did:plc:vzsvtbtbnwn22xjqhcu3vd6y/bafkreig5qs3ixzcb2zwivw3o3flpyifmeo6md6psihu67ys5mc75y3ex4i@jpeg)
+
 toolbar(ツールバー)を使うには [link](https://iolacorp-1.gitbook.io/worldscape-plugin/getting-started/ws-tools/how-to-get-toolbar-running)
 
 ## worldscapeとはなにか
