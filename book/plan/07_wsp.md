@@ -17,6 +17,8 @@
 
 <iframe width="100%" height="415" src="https://www.youtube.com/embed/LbjAgOLDkA0?rel=0&showinfo=0&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+toolbar(ツールバー)を使うには [link](https://iolacorp-1.gitbook.io/worldscape-plugin/getting-started/ws-tools/how-to-get-toolbar-running)
+
 ## worldscapeとはなにか
 
 worldscapeとは、landscapeのplanet版です。惑星形式の地上を表現します。
@@ -62,6 +64,21 @@ UDSの統合はかなり大変だと思われます。
 
 チュートリアル動画には、いくつか抜けている点があるようです。
 
-- "Sky Atmosphere" in the UDS (Self) and turning off `Keep Planet Top at Camera XY Location`
-- toolbar(ツールバー)を使うには [link](https://iolacorp-1.gitbook.io/worldscape-plugin/getting-started/ws-tools/how-to-get-toolbar-running)
+主にplanetとudsを小さくして、それを合わせます。
+
+> "Sky Atmosphere" in the UDS (Self) and turning off `Keep Planet Top at Camera XY Location`
+
+1. `$project/Plugins/WorldScape/Levels/Planets_Levels/Demonstration_EarthLikePlanet`を開いきます。
+2. Planet以下にあるWindVolume以外を削除します。例えば、SkyAtmosphereやVolumetricCloudなどです。
+3. `Ultra_Dynamic_Sky`, `Ultra_Dynamic_Weather`を置きます。locationなどを0, 0, 0の位置します。
+4. `Ultra_Dynamic_Sky -> SkyAtmophere`で以下を設定します。Transform Mode: Planet Center, Ground Radius: 100
+5. Planetで`Distance to Freeze Generation: 10000000, Planet Scale: 10000000にします。
+6. PlanetBp2で`Distance to Freeze Generation: 10000000, Planet Scale: 5000000にします。
+7. `Ultra_Dynamic_Sky`でKeep Planet Top at Camera XY Location: falseにします。
+
+`WindVolume`は移動速度に応じて風の音を出します。
+
+惑星は小さくなりますが、これでudsと連携することができました。
+
+<iframe width="100%" height="415" src="https://www.youtube.com/embed/fT1rX3YLF9Q?mute=1&rel=0&showinfo=0&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
