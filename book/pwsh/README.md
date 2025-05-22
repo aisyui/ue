@@ -13,31 +13,28 @@ package managerの[winget](https://github.com/microsoft/winget-cli)を入れて�
 commandは`winget install xxx`です。
 `.preview`を外すと古いverがinstallされます。
 
-```sh
-$ winget install git.git
-```
-
-|title|url|command(id)|
+|title|command(id)|url|
 |---|---|---|
-|terminal|https://github.com/microsoft/terminal|microsoft.windowsterminal.preview|
-|pwsh|https://github.com/powershell/powershell|microsoft.powershell.preview|
-|openssh|https://github.com/powershell/win32-openssh|microsoft.openssh.preview|
-|wsl|https://github.com/microsoft/wsl|microsoft.wsl|
-|vscode|https://github.com/microsoft/vscode|microsoft.visualstudiocode|
-|vim|https://github.com/vim/vim-win32-installer|vim.vim|
-|git|https://github.com/git/git|git.git|
-|lazygit|https://github.com/jesseduffield/lazygit|jesseduffield.lazygit|
-|node|https://github.com/nodejs/node|openjs.nodejs|
-|nvm|https://github.com/nvm-sh/nvm|coreybutler.nvmforwindows|
-|python|https://github.com/python|python.python.3.12|
-|conda|https://github.com/anaconda|anaconda.miniconda3|
+|terminal|microsoft.windowsterminal.preview|https://github.com/microsoft/terminal|
+|pwsh|microsoft.powershell.preview|https://github.com/powershell/powershell|
+|aishell|microsoft.aishell|https://github.com/powershell/aishell/|
+|openssh|microsoft.openssh.preview|https://github.com/powershell/win32-openssh|
+|wsl|microsoft.wsl|https://github.com/microsoft/wsl|
+|vscode|microsoft.visualstudiocode|https://github.com/microsoft/vscode|
+|vim|vim.vim|https://github.com/vim/vim-win32-installer|
+|git|git.git|https://github.com/git/git|
+|lazygit|jesseduffield.lazygit|https://github.com/jesseduffield/lazygit|
+|node|openjs.nodejs|https://github.com/nodejs/node|
+|nvm|coreybutler.nvmforwindows|https://github.com/nvm-sh/nvm|
+|python|python.python.3.12|https://github.com/python|
+|conda|anaconda.miniconda3|https://github.com/anaconda|
 
 ## その他
 
 |title|command(id)|
 |---|---|
 |cuda|nvidia.cuda|
-|epicgames launcher|epicgames.epicgameslauncher|
+|epicgameslauncher|epicgames.epicgameslauncher|
 |blender|blenderfoundation.blender|
 |discord|discord.discord|
 |unity|unity.unity|
@@ -45,6 +42,15 @@ $ winget install git.git
 |godot|godot.godot|
 |obs|obsproject.obsstudio|
 |ollama|ollama.ollama|
+|chatgpt|--id=9NT1R1C2HH7J --source=msstore|
+
+```sh
+$ winget install git.git
+
+$ winget show --id=9NT1R1C2HH7J --source=msstore
+公開元: OpenAI
+発行元 URL: https://help.openai.com
+```
 
 https://github.com/microsoft/winget-pkgs/tree/master/manifests/e/EpicGames/EpicGamesLauncher
 
