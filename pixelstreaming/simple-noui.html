@@ -1,0 +1,64 @@
+<!-- Copyright Epic Games, Inc. All Rights Reserved. -->
+<!DOCTYPE HTML>
+<html style="width: 100%; height: 100%">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="43ef81525e6853dc.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+
+    <title>Pixel Streaming - Simple No UI</title>
+    
+    <!-- Load player.js with auto-play parameters in URL -->
+    <script>
+        // Set auto-play parameters before loading player.js
+        if (!window.location.search.includes('AutoPlayVideo')) {
+            window.location.href = window.location.pathname + '?AutoPlayVideo=true&AutoConnect=true&StartVideoMuted=true';
+        }
+    </script>
+    
+    <script defer src="player.js"></script>
+    
+    <style>
+        /* Hide all UI elements with minimal CSS */
+        #controls,
+        #fullscreen-btn,
+        #minimizeIcon,
+        #settingsBtn,
+        #settings-panel,
+        #statsBtn,
+        #stats-panel,
+        #xrBtn,
+        #qualityStatus,
+        #videoQPIndicator,
+        /* Hide WiFi/network status icon */
+        #connectionIndicator,
+        #connection-indicator,
+        #connectionUITool,
+        .connection-indicator,
+        [id*="wifi"],
+        [id*="Wifi"],
+        [id*="network"],
+        [id*="Network"],
+        [class*="wifi"],
+        [class*="network"],
+        [class*="connection"],
+        /* Additional UI elements */
+        .UiTool,
+        .ui-tool,
+        [class*="UITool"] {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body style="width: 100vw; height: 100svh; min-height: -webkit-fill-available; overflow: hidden; overscroll-behavior: none; font-family: 'Montserrat'; margin: 0px">
+</body>
+</html>
