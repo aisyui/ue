@@ -13,6 +13,7 @@
 |[stylized nature](https://www.fab.com/ja/listings/842f8137-94b0-4a0c-9a11-e918a0d1158d)|2|アニメ風のmap|[docs](https://docs.google.com/document/d/147wCDvZg6-9jZNyqSxX-I_HQkE2tGINZIhyjc2QHirY/)|
 |[stylized vfx mix](https://www.fab.com/ja/listings/52ffdc11-ad0f-4170-ac4d-77267db17246)|2|アニメ風の爆発||
 |[skill spell attack](https://www.fab.com/ja/listings/c80d8810-4937-4f17-aa0c-509567994030)|2|様々な種類のniagara|[docs](https://www.youtube.com/watch?v=GKrlTYPknok)|
+|[slash and hit vfx](https://www.fab.com/ja/listings/9d886fdb-8011-49e7-a10d-0d8897fe9dc2)|2|様々なhitのniagara|[docs](https://www.youtube.com/watch?v=IXAOg5JT55g)|
 |[sword animset pro](https://www.fab.com/ja/listings/4ee684a3-df87-4462-a005-2d7ca13851a7)|1|ソードアニメーション|[docs](https://www.youtube.com/watch?v=Xq-Tvn6MxZE)|
 |[clazy runner action pack](https://www.fab.com/ja/listings/3f4f4475-c9d1-46e8-992c-4a8f3aff58ed)|1|ダッシュのシステム||
 |[rts camera system](https://www.fab.com/ja/listings/d063c9c9-6df3-4eeb-b7f3-797b5507379e)|1|カメラシステム|[docs](https://docs.google.com/document/d/e/2PACX-1vQevvLmKDkw0Z6okftdwGCTTLYOYFO-71mvyV6co4wN8oMuJFJDQAGXCx4CckKcpd-FQEUz5i8QHeQS/pub)|
@@ -23,7 +24,7 @@
 
 1. 赤文字の`rank:3`がオススメのassetになります。
 2. `rank`は更新頻度(追加)や価格、個人的な使用頻度から判断されます。
-3. 非常に良いassetも`rank:1`になることがあり、個人的な使用頻度から判断されます。使っていなければどんなに良いassetもここに分類されます。つまり、確実に使っているassetが`rank:3`に分類されています。
+3. 非常に良いassetも`rank:1`になることがあり、個人的な使用頻度から判断されます。使っていなければどんなに良いassetもここに分類されます。つまり、確実に使っているassetで最高評価のものが`rank:3`に分類されています。
 
 ## アセット購入の基本
 

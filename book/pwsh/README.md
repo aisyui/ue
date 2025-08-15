@@ -42,7 +42,7 @@ commandは`winget install xxx`です。
 |godot|godot.godot|
 |obs|obsproject.obsstudio|
 |ollama|ollama.ollama|
-|chatgpt|--id=9NT1R1C2HH7J --source=msstore|
+|vlc|videolan.vlc|
 
 ```sh
 $ winget install git.git

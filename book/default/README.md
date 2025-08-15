@@ -26,11 +26,21 @@ $ winget install epicgames.epicgameslauncher
 
 ただし、ストレージの読み書き速度は重要です。ueやprojectを入れるストレージには注意してください。
 
+## 使用するAI
+
+[claude.ai](https://claude.ai)
+
+```sh
+# https://docs.anthropic.com/ja/docs
+$ npm install -g @anthropic-ai/claude-code
+```
+
 ## 便利なサイト
 
 |name|body|
 |---|---|
 |[dev.epicgames.com](https://dev.epicgames.com/community/)|開発者コミュニティ|
+|[fab.com](https://www.fab.com/)|assetやpluginを購入できるマーケット|
 |[perplexity.ai](https://www.perplexity.ai/)|検索エンジン|
 |[suno.com](https://suno.com/)|作曲|
 |[vroid.com](https://vroid.com/studio/)|3Dモデル|
