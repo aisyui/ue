@@ -1657,7 +1657,14 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="json-blueprint-utilities">json blueprint utilities</h1>
-<p><code>json</code>を扱う。</p>
+<p><code>json</code>を扱うには、できる限り公式pluginのみを使用するようにしましょう。</p>
+<p>多少の不便はありますが、そうしないとueのupdateには完全に対応できません。</p>
+<p>依存関係はできる限り最小限にすること、epic公式のみに留めること、その方針が重要です。</p>
+<p>これは、他のpluginにも言えることですが、仮にasset, pluginを大量に入れ、依存性のあるproject codeを生成してしまうと、ueのupdateで地獄を見ます。</p>
+<p>動かなくなり、大量のバグに見舞われ、すべてを一から作り直すことになります。</p>
+<p>これは依存関係を最小限にして、epic公式のみを使用していたとしても発生します。</p>
+<p>しかし、そんな時にも短時間で作り直し修正できるのが、上記方針です。</p>
+<p>何かあったときにもリカバリしやすくするよう設計する。それが最も重要な考え方です。</p>
 
                                 
                                 </section>
@@ -1701,7 +1708,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"json","level":"1.9","depth":1,"next":{"title":"apiから情報を取得する","level":"1.9.1","depth":2,"path":"json/01_varest.md","ref":"json/01_varest.md","articles":[]},"previous":{"title":"listview","level":"1.8.1","depth":2,"path":"ui/01_list.md","ref":"ui/01_list.md","articles":[]},"articles":[{"title":"apiから情報を取得する","level":"1.9.1","depth":2,"path":"json/01_varest.md","ref":"json/01_varest.md","articles":[]},{"title":"atprotoでloginする","level":"1.9.2","depth":2,"path":"json/02_atproto.md","ref":"json/02_atproto.md","articles":[]}],"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"json/README.md","mtime":"2025-08-14T00:40:11.631Z","type":"markdown"},"gitbook":{"version":"6.0.3","time":"2025-08-14T00:40:19.565Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"json","level":"1.9","depth":1,"next":{"title":"apiから情報を取得する","level":"1.9.1","depth":2,"path":"json/01_varest.md","ref":"json/01_varest.md","articles":[]},"previous":{"title":"listview","level":"1.8.1","depth":2,"path":"ui/01_list.md","ref":"ui/01_list.md","articles":[]},"articles":[{"title":"apiから情報を取得する","level":"1.9.1","depth":2,"path":"json/01_varest.md","ref":"json/01_varest.md","articles":[]},{"title":"atprotoでloginする","level":"1.9.2","depth":2,"path":"json/02_atproto.md","ref":"json/02_atproto.md","articles":[]}],"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"json/README.md","mtime":"2025-08-15T02:45:26.702Z","type":"markdown"},"gitbook":{"version":"6.0.3","time":"2025-08-15T02:45:35.084Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
