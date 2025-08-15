@@ -28,6 +28,7 @@
 |[tatools](https://www.fab.com/ja/listings/a5d3b60d-b886-4564-bf6d-15d46a8d27fe)|animを作る|
 |[ui navigation 3.0](https://www.fab.com/ja/listings/a91f6e67-5c2d-46ef-926d-00a35525579c)|スタート画面を作る|
 |[dlss](https://developer.nvidia.com/rtx/dlss/get-started#ue-version)|nvidiaの描写速度|
+|[windows dualsense](https://www.fab.com/ja/listings/e77a8f1d-8bbe-4673-a5ae-7f222c8c0960)|ps5 controllerのサポート|
 
 ## その他のasset
 
