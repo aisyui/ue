@@ -11,6 +11,7 @@
 |name|body|
 |---|---|
 |[game animation sample](https://dev.epicgames.com/documentation/en-us/unreal-engine/game-animation-sample-project-in-unreal-engine)|キャラクターをパルクールアクション|
+|[stack o bot](https://www.fab.com/ja/listings/b4dfff49-0e7d-4c4b-a6c5-8a0315831c9c)|ジャンプゲーム、ステージ|
 |[city sample](https://www.unrealengine.com/marketplace/ja/product/city-sample)|大規模な都市を構築|
 |[control rig sample](https://www.fab.com/ja/listings/2ce3fe44-9ee6-4fa7-99fc-b9424a402386)|人間以外のキャラクター|
 |[content examples](https://www.fab.com/ja/listings/4d251261-d98c-48e2-baee-8f4e47c67091)|機能別サンプル|

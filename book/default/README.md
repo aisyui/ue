@@ -52,7 +52,7 @@ $ npm install -g @anthropic-ai/claude-code
 `https://www.youtube.com/embed/${id}?start=0&end=10&mute=1&rel=0&showinfo=0&controls=0`
 
 ```html
-<iframe width="100%" height="415" src="https://www.youtube.com/embed/?start=0&end=10&mute=1&rel=0&showinfo=0&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="100%" height="415" src="https://www.youtube.com/embed/?rel=0&showinfo=0&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ```
 
 ### blueprint
