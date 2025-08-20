@@ -2,7 +2,9 @@
 
 現在使用しているplugin(プラグイン)やasset(アセット)の`version(バージョン)`を記述します。
 
-ゲームは無料のassetだけでも作れます。しかし、時間やクオリティを向上させたい場合は有料のassetを使いましょう。
+ゲームは無料のassetだけでも作れます。
+
+しかし、時間やクオリティを向上させたい場合は、最終的に有料のassetをいくつか使うことになるかもしれません。その判断はepicの公式テンプレートなどを学習してからでも遅くありません。
 
 本書の一部では有料assetの使い方を解説します。[sale](https://www.fab.com/ja/channels/unreal-engine?ui_filter_price=1&ui_filter_is_discounted=1&is_discounted=1)中のものを探しましょう。
 
@@ -58,6 +60,4 @@ https://fonts.google.com/specimen/Orbitron
 
 こちらで最新情報を取り扱っています。
 
-- https://git.syui.ai/ai/ue/
 - https://blueprintue.com/profile/ai/
-- https://dev.epicgames.com/community/profile/organization/gdkg/ai/
