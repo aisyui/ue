@@ -6,4 +6,4 @@
 2. Lampが動きませんので、選択した上で`Static Mesh`を`city sample`に入っている`/Content/Prop/Kit_StreetLamp_C/Mesh/streetLampC`と入れ替えます。
 3. 私はベンチのところを`traversable(トラバーサブル)`するためにGASの`/Content/LevelPrototyping/LevelBlock_Traversable`を入れています。Base Materialを`/Content/Characters/Echo/Materials/M_hide`にして透明にします。
 
-![](../img/0003.png)
+![](/img/0003.png)
