@@ -20,7 +20,7 @@ control rigからも作成できます。しかし、購入したものを使う
 
 https://github.com/threepeatgames/ThreepeatAnimTools
 
-使い方は簡単ですが、動画が非常に分かりづらいので、ポイントだけ解説します。pluginの起動、既存のアニメーションの修正、保存です。ほとんどの解説では、この最も重要な説明が抜け落ちているせいで、よくわかりません。
+使い方は簡単ですが、動画が分かりづらいので、ポイントだけ解説します。pluginの起動、既存のアニメーションの修正、保存です。
 
 1. pluginの起動は、`/Engine/Plugins/ThreepeatAnimTools/Picker/ThreepeatAnimTools_CR_Picker`を起動します。アウトライナーにでもウィンドウを追加しましょう。
 2. 修正したいアニメーション(アニメシーケンス)を開いて、`シーケンサで編集 -> コントロールリグにベイク -> CR_UEFNMannyTatoolsRig`します。
